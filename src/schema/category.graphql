@@ -1,11 +1,15 @@
-input WhereInput {
-	slug: String,
-	
+input CategoryWhereInput {
+	slug: String
 }
 
 extend type Query {
 	category(id: ID!): Category
-	categories(skip: Int, take: Int, where: WhereInput): [Category!]!
+	categories(
+		skip: Int
+		first: Int
+		where: CategoryWhereInput
+	): [Category!]!
+	categoriesConnection(where: CategoryWhereInput): Connection!
 }
 
 type Category {

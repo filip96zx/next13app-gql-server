@@ -1,3 +1,11 @@
 type Query
 
 scalar DateTime
+
+type Aggregate {
+	count: Int!
+}
+
+type Connection {
+	aggregate: Aggregate
+}

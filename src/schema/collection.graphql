@@ -1,0 +1,20 @@
+input CollectionWhereInput {
+	slug: String
+}
+
+extend type Query {
+	collections(
+		skip: Int
+		first: Int
+		where: CollectionWhereInput
+	): [Collection]!
+	collectionsConnection(where: CollectionWhereInput): Connection!
+}
+
+type Collection {
+	id: String
+	name: String
+	slug: String
+	description: String
+	products: [Product]
+}

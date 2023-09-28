@@ -39,6 +39,11 @@ export type Scalars = {
 	DateTime: { input: Date; output: Date };
 };
 
+export type Aggregate = {
+	__typename?: 'Aggregate';
+	count: Scalars['Int']['output'];
+};
+
 export type Category = {
 	__typename?: 'Category';
 	id: Scalars['ID']['output'];
@@ -51,9 +56,36 @@ export type CategorySomeInput = {
 	slug?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type CategoryWhereInput = {
+	slug?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Collection = {
+	__typename?: 'Collection';
+	description?: Maybe<Scalars['String']['output']>;
+	id?: Maybe<Scalars['String']['output']>;
+	name?: Maybe<Scalars['String']['output']>;
+	products?: Maybe<Array<Maybe<Product>>>;
+	slug?: Maybe<Scalars['String']['output']>;
+};
+
+export type CollectionSomeInput = {
+	slug?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type CollectionWhereInput = {
+	slug?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Connection = {
+	__typename?: 'Connection';
+	aggregate?: Maybe<Aggregate>;
+};
+
 export type Product = {
 	__typename?: 'Product';
 	categories: Array<Maybe<Category>>;
+	collections: Array<Maybe<Collection>>;
 	description: Scalars['String']['output'];
 	id: Scalars['ID']['output'];
 	name: Scalars['String']['output'];
@@ -61,22 +93,47 @@ export type Product = {
 	slug: Scalars['String']['output'];
 };
 
+export type ProductWhereInput = {
+	categories_some?: InputMaybe<CategorySomeInput>;
+	collections_some?: InputMaybe<CollectionSomeInput>;
+	excludedIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+	nameContains?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type Query = {
 	__typename?: 'Query';
 	categories: Array<Category>;
+	categoriesConnection: Connection;
 	category?: Maybe<Category>;
+	collections: Array<Maybe<Collection>>;
+	collectionsConnection: Connection;
 	product?: Maybe<Product>;
 	products: Array<Product>;
+	productsConnection: Connection;
 };
 
 export type QueryCategoriesArgs = {
+	first?: InputMaybe<Scalars['Int']['input']>;
 	skip?: InputMaybe<Scalars['Int']['input']>;
-	take?: InputMaybe<Scalars['Int']['input']>;
-	where?: InputMaybe<WhereInput>;
+	where?: InputMaybe<CategoryWhereInput>;
+};
+
+export type QueryCategoriesConnectionArgs = {
+	where?: InputMaybe<CategoryWhereInput>;
 };
 
 export type QueryCategoryArgs = {
 	id: Scalars['ID']['input'];
+};
+
+export type QueryCollectionsArgs = {
+	first?: InputMaybe<Scalars['Int']['input']>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
+	where?: InputMaybe<CollectionWhereInput>;
+};
+
+export type QueryCollectionsConnectionArgs = {
+	where?: InputMaybe<CollectionWhereInput>;
 };
 
 export type QueryProductArgs = {
@@ -84,16 +141,13 @@ export type QueryProductArgs = {
 };
 
 export type QueryProductsArgs = {
-	excludedIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+	first?: InputMaybe<Scalars['Int']['input']>;
 	skip?: InputMaybe<Scalars['Int']['input']>;
-	take?: InputMaybe<Scalars['Int']['input']>;
-	where?: InputMaybe<WhereInput>;
+	where?: InputMaybe<ProductWhereInput>;
 };
 
-export type WhereInput = {
-	categories_some?: InputMaybe<CategorySomeInput>;
-	nameContains?: InputMaybe<Scalars['String']['input']>;
-	slug?: InputMaybe<Scalars['String']['input']>;
+export type QueryProductsConnectionArgs = {
+	where?: InputMaybe<ProductWhereInput>;
 };
 
 export type ResolverTypeWrapper<T> = Promise<T> | T;
@@ -225,32 +279,57 @@ export type DirectiveResolverFn<
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
+	Aggregate: ResolverTypeWrapper<Mapper<Aggregate>>;
+	Int: ResolverTypeWrapper<Mapper<Scalars['Int']['output']>>;
 	Category: ResolverTypeWrapper<Mapper<Category>>;
 	ID: ResolverTypeWrapper<Mapper<Scalars['ID']['output']>>;
 	String: ResolverTypeWrapper<Mapper<Scalars['String']['output']>>;
 	CategorySomeInput: ResolverTypeWrapper<Mapper<CategorySomeInput>>;
+	CategoryWhereInput: ResolverTypeWrapper<Mapper<CategoryWhereInput>>;
+	Collection: ResolverTypeWrapper<Mapper<Collection>>;
+	CollectionSomeInput: ResolverTypeWrapper<
+		Mapper<CollectionSomeInput>
+	>;
+	CollectionWhereInput: ResolverTypeWrapper<
+		Mapper<CollectionWhereInput>
+	>;
+	Connection: ResolverTypeWrapper<Mapper<Connection>>;
 	DateTime: ResolverTypeWrapper<
 		Mapper<Scalars['DateTime']['output']>
 	>;
 	Product: ResolverTypeWrapper<Mapper<Product>>;
-	Int: ResolverTypeWrapper<Mapper<Scalars['Int']['output']>>;
+	ProductWhereInput: ResolverTypeWrapper<Mapper<ProductWhereInput>>;
 	Query: ResolverTypeWrapper<{}>;
-	WhereInput: ResolverTypeWrapper<Mapper<WhereInput>>;
 	Boolean: ResolverTypeWrapper<Mapper<Scalars['Boolean']['output']>>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
+	Aggregate: Mapper<Aggregate>;
+	Int: Mapper<Scalars['Int']['output']>;
 	Category: Mapper<Category>;
 	ID: Mapper<Scalars['ID']['output']>;
 	String: Mapper<Scalars['String']['output']>;
 	CategorySomeInput: Mapper<CategorySomeInput>;
+	CategoryWhereInput: Mapper<CategoryWhereInput>;
+	Collection: Mapper<Collection>;
+	CollectionSomeInput: Mapper<CollectionSomeInput>;
+	CollectionWhereInput: Mapper<CollectionWhereInput>;
+	Connection: Mapper<Connection>;
 	DateTime: Mapper<Scalars['DateTime']['output']>;
 	Product: Mapper<Product>;
-	Int: Mapper<Scalars['Int']['output']>;
+	ProductWhereInput: Mapper<ProductWhereInput>;
 	Query: {};
-	WhereInput: Mapper<WhereInput>;
 	Boolean: Mapper<Scalars['Boolean']['output']>;
+};
+
+export type AggregateResolvers<
+	ContextType = Context,
+	ParentType extends
+		ResolversParentTypes['Aggregate'] = ResolversParentTypes['Aggregate']
+> = {
+	count?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+	__isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type CategoryResolvers<
@@ -277,6 +356,52 @@ export type CategoryResolvers<
 	__isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
+export type CollectionResolvers<
+	ContextType = Context,
+	ParentType extends
+		ResolversParentTypes['Collection'] = ResolversParentTypes['Collection']
+> = {
+	description?: Resolver<
+		Maybe<ResolversTypes['String']>,
+		ParentType,
+		ContextType
+	>;
+	id?: Resolver<
+		Maybe<ResolversTypes['String']>,
+		ParentType,
+		ContextType
+	>;
+	name?: Resolver<
+		Maybe<ResolversTypes['String']>,
+		ParentType,
+		ContextType
+	>;
+	products?: Resolver<
+		Maybe<Array<Maybe<ResolversTypes['Product']>>>,
+		ParentType,
+		ContextType
+	>;
+	slug?: Resolver<
+		Maybe<ResolversTypes['String']>,
+		ParentType,
+		ContextType
+	>;
+	__isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type ConnectionResolvers<
+	ContextType = Context,
+	ParentType extends
+		ResolversParentTypes['Connection'] = ResolversParentTypes['Connection']
+> = {
+	aggregate?: Resolver<
+		Maybe<ResolversTypes['Aggregate']>,
+		ParentType,
+		ContextType
+	>;
+	__isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export interface DateTimeScalarConfig
 	extends GraphQLScalarTypeConfig<ResolversTypes['DateTime'], any> {
 	name: 'DateTime';
@@ -289,6 +414,11 @@ export type ProductResolvers<
 > = {
 	categories?: Resolver<
 		Array<Maybe<ResolversTypes['Category']>>,
+		ParentType,
+		ContextType
+	>;
+	collections?: Resolver<
+		Array<Maybe<ResolversTypes['Collection']>>,
 		ParentType,
 		ContextType
 	>;
@@ -315,11 +445,29 @@ export type QueryResolvers<
 		ContextType,
 		Partial<QueryCategoriesArgs>
 	>;
+	categoriesConnection?: Resolver<
+		ResolversTypes['Connection'],
+		ParentType,
+		ContextType,
+		Partial<QueryCategoriesConnectionArgs>
+	>;
 	category?: Resolver<
 		Maybe<ResolversTypes['Category']>,
 		ParentType,
 		ContextType,
 		RequireFields<QueryCategoryArgs, 'id'>
+	>;
+	collections?: Resolver<
+		Array<Maybe<ResolversTypes['Collection']>>,
+		ParentType,
+		ContextType,
+		Partial<QueryCollectionsArgs>
+	>;
+	collectionsConnection?: Resolver<
+		ResolversTypes['Connection'],
+		ParentType,
+		ContextType,
+		Partial<QueryCollectionsConnectionArgs>
 	>;
 	product?: Resolver<
 		Maybe<ResolversTypes['Product']>,
@@ -333,10 +481,19 @@ export type QueryResolvers<
 		ContextType,
 		Partial<QueryProductsArgs>
 	>;
+	productsConnection?: Resolver<
+		ResolversTypes['Connection'],
+		ParentType,
+		ContextType,
+		Partial<QueryProductsConnectionArgs>
+	>;
 };
 
 export type Resolvers<ContextType = Context> = {
+	Aggregate?: AggregateResolvers<ContextType>;
 	Category?: CategoryResolvers<ContextType>;
+	Collection?: CollectionResolvers<ContextType>;
+	Connection?: ConnectionResolvers<ContextType>;
 	DateTime?: GraphQLScalarType;
 	Product?: ProductResolvers<ContextType>;
 	Query?: QueryResolvers<ContextType>;

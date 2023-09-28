@@ -21,43 +21,44 @@ const generateCategories = async (count: number) => {
 				slug: faker.helpers.slugify(categoryName).toLowerCase()
 			}
 		});
+
 		categories.push(createdCategory);
 	}
 	return categories;
 };
 
-const generateProductsCategories = async (
-	products: Array<PrismaCreateResult<typeof prisma.product.create>>,
-	categories: Array<PrismaCreateResult<typeof prisma.category.create>>
-) => {
-	const productsCategories: Array<
-		PrismaCreateResult<typeof prisma.productCategory.create>
-	> = [];
+// const generateProductsCategories = async (
+// 	products: Array<PrismaCreateResult<typeof prisma.product.create>>,
+// 	categories: Array<PrismaCreateResult<typeof prisma.category.create>>
+// ) => {
+// 	const productsCategories: Array<
+// 		PrismaCreateResult<typeof prisma.productCategory.create>
+// 	> = [];
 
-	Promise.all(
-		products.map(async (product) => {
-			categories.map(async (category) => {
-				const createdProductCategory =
-					await prisma.productCategory.create({
-						data: {
-							category: {
-								connect: {
-									id: category.id
-								}
-							},
-							product: {
-								connect: {
-									id: product.id
-								}
-							}
-						}
-					});
-				productsCategories.push(createdProductCategory);
-			});
-		})
-	);
-	return productsCategories;
-};
+// 	Promise.all(
+// 		products.map(async (product) => {
+// 			categories.map(async (category) => {
+// 				const createdProductCategory =
+// 					await prisma.productCategory.create({
+// 						data: {
+// 							category: {
+// 								connect: {
+// 									id: category.id
+// 								}
+// 							},
+// 							product: {
+// 								connect: {
+// 									id: product.id
+// 								}
+// 							}
+// 						}
+// 					});
+// 				productsCategories.push(createdProductCategory);
+// 			});
+// 		})
+// 	);
+// 	return productsCategories;
+// };
 
 const generateProducts = async (count: number) => {
 	const products: Array<
@@ -111,10 +112,60 @@ const generateRatingsForProducts = async (
 	return ratings;
 };
 
-const categories = await generateCategories(10);
+const generateCollections = async (count: number) => {
+	const collections: Array<
+		PrismaCreateResult<typeof prisma.collection.create>
+	> = [];
+	for (let i = 0; i < count; i++) {
+		const name = 'collection ' + faker.commerce.department();
+		const collection = await prisma.collection.create({
+			data: {
+				name: name,
+				slug: faker.helpers.slugify(name).toLowerCase(),
+				description: faker.commerce.productDescription()
+			}
+		});
+		collections.push(collection);
+	}
+	return collections;
+};
+
 const products = await generateProducts(100);
 const ratings = await generateRatingsForProducts(products, 5);
 
-products.forEach(async (product, i) => {
-	generateProductsCategories([product], [categories[i % 10]]);
+const collections = await generateCollections(5);
+const categories = await generateCategories(10);
+
+products.forEach(async (product) => {
+	await prisma.product.update({
+		where: { id: product.id },
+		data: {
+			collections: {
+				create: [
+					{
+						collection: {
+							connect: {
+								id: collections[
+									Math.floor(Math.random() * collections.length)
+								].id
+							}
+						}
+					}
+				]
+			},
+			categories: {
+				create: [
+					{
+						category: {
+							connect: {
+								id: categories[
+									Math.floor(Math.random() * categories.length)
+								].id
+							}
+						}
+					}
+				]
+			}
+		}
+	});
 });
