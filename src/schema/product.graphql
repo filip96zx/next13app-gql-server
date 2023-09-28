@@ -1,0 +1,27 @@
+input CategorySomeInput {
+	slug: String
+}
+
+input WhereInput {
+	nameContains: String
+	categories_some: CategorySomeInput
+}
+
+extend type Query {
+	product(id: ID!): Product
+	products(
+		where: WhereInput
+		skip: Int
+		take: Int
+		excludedIds: [ID!]
+	): [Product!]!
+}
+
+type Product {
+	id: ID!
+	name: String!
+	slug: String!
+	description: String!
+	price: Int!
+	categories: [Category]!
+}

@@ -16,7 +16,80 @@ model Product {
   slug        String
   description String
   price       Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  categories  ProductCategory[]
+  collections ProductCollection[]
+  ratings     Rating[]
+}
 
+model Category{
+  id          String @id @default(cuid())
+  name        String
+  slug        String
+  products    ProductCategory[]
+}
+
+model ProductCategory{
+  id          String @id @default(cuid())
+  productId   String
+  categoryId  String
+  product     Product @relation(fields: [productId], references: [id])
+  category    Category @relation(fields: [categoryId], references: [id])
+}
+
+model Order{
+  id          String @id @default(cuid())
+  items       OrderItem[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model OrderItem{
+  id          String @id @default(cuid())
+  orderId     String
+  productId   String
+  quantity    Int
+  order       Order @relation(fields: [orderId], references: [id])
+  orderProducts     OrderProduct[]
+}
+
+model OrderProduct {
+  id          String @id @default(cuid())
+  orderItemId String
+  orderItem   OrderItem @relation(fields: [orderItemId], references: [id])
+  name        String
+  description String
+  price       Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+model Collection{
+  id          String @id @default(cuid())
+  name        String
+  slug        String
+  description String
+  products    ProductCollection[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ProductCollection{
+  id          String @id @default(cuid())
+  productId   String
+  collectionId  String
+  product     Product @relation(fields: [productId], references: [id])
+  collection    Collection @relation(fields: [collectionId], references: [id])
+}
+
+model Rating{
+  id          String @id @default(cuid())
+  productId   String
+  product     Product @relation(fields: [productId], references: [id])
+  rating      Int
+  comment String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

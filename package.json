@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "codegen": "graphql-codegen --config .graphqlrc.ts",
+    "codegen": "graphql-codegen --config .graphqlrc.ts -w",
     "postinstall": "pnpm codegen",
     "dev": "tsx watch src/server.ts",
     "seed": "tsx prisma/seed.ts"
@@ -17,9 +17,10 @@
     "@eddeee888/gcg-typescript-resolver-files": "^0.6.0",
     "@faker-js/faker": "^8.0.2",
     "@graphql-codegen/cli": "^5.0.0",
+    "@parcel/watcher": "^2.3.0",
     "graphql": "^16.8.0",
     "prettier": "^3.0.3",
-    "prisma": "^5.2.0",
+    "prisma": "^5.3.1",
     "tsx": "^3.12.8",
     "typescript": "^5.2.2"
   },
