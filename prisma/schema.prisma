@@ -16,11 +16,12 @@ model Product {
   slug        String
   description String
   price       Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
   categories  ProductCategory[]
   collections ProductCollection[]
   ratings     Rating[]
+  images      ProductImages[]
 }
 
 model Category{
@@ -41,17 +42,17 @@ model ProductCategory{
 model Order{
   id          String @id @default(cuid())
   items       OrderItem[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 model OrderItem{
-  id          String @id @default(cuid())
-  orderId     String
-  productId   String
-  quantity    Int
-  order       Order @relation(fields: [orderId], references: [id])
-  orderProducts     OrderProduct[]
+  id              String @id @default(cuid())
+  orderId         String
+  productId       String
+  quantity        Int
+  order           Order @relation(fields: [orderId], references: [id])
+  orderProducts   OrderProduct[]
 }
 
 model OrderProduct {
@@ -61,8 +62,8 @@ model OrderProduct {
   name        String
   description String
   price       Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 
@@ -72,15 +73,15 @@ model Collection{
   slug        String
   description String
   products    ProductCollection[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 model ProductCollection{
-  id          String @id @default(cuid())
-  productId   String
+  id            String @id @default(cuid())
+  productId     String
   collectionId  String
-  product     Product @relation(fields: [productId], references: [id])
+  product       Product @relation(fields: [productId], references: [id])
   collection    Collection @relation(fields: [collectionId], references: [id])
 }
 
@@ -89,7 +90,23 @@ model Rating{
   productId   String
   product     Product @relation(fields: [productId], references: [id])
   rating      Int
-  comment String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  comment     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Images{ 
+  id          String @id @default(cuid())
+  url         String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  products    ProductImages[] 
+}
+
+model ProductImages{
+  id          String @id @default(cuid())
+  productId   String
+  imageId     String
+  product     Product @relation(fields: [productId], references: [id])
+  image       Images @relation(fields: [imageId], references: [id])
 }
