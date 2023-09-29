@@ -1,6 +1,5 @@
 import { PrismaClient } from '@prisma/client';
 import { faker } from '@faker-js/faker';
-import { product } from 'graphql/schema/resolvers/Query/product';
 
 type PrismaCreateResult<T extends (...args: any[]) => any> = Awaited<
 	ReturnType<T>
@@ -27,39 +26,6 @@ const generateCategories = async (count: number) => {
 	return categories;
 };
 
-// const generateProductsCategories = async (
-// 	products: Array<PrismaCreateResult<typeof prisma.product.create>>,
-// 	categories: Array<PrismaCreateResult<typeof prisma.category.create>>
-// ) => {
-// 	const productsCategories: Array<
-// 		PrismaCreateResult<typeof prisma.productCategory.create>
-// 	> = [];
-
-// 	Promise.all(
-// 		products.map(async (product) => {
-// 			categories.map(async (category) => {
-// 				const createdProductCategory =
-// 					await prisma.productCategory.create({
-// 						data: {
-// 							category: {
-// 								connect: {
-// 									id: category.id
-// 								}
-// 							},
-// 							product: {
-// 								connect: {
-// 									id: product.id
-// 								}
-// 							}
-// 						}
-// 					});
-// 				productsCategories.push(createdProductCategory);
-// 			});
-// 		})
-// 	);
-// 	return productsCategories;
-// };
-
 const generateProducts = async (count: number) => {
 	const products: Array<
 		PrismaCreateResult<typeof prisma.product.create>
@@ -82,32 +48,28 @@ const generateProducts = async (count: number) => {
 };
 
 const generateRatingsForProducts = async (
-	products: Array<PrismaCreateResult<typeof prisma.product.create>>,
-	count: number
+	count: number,
+	ProductId: string
 ) => {
 	const ratings: Array<
 		PrismaCreateResult<typeof prisma.rating.create>
 	> = [];
 
-	Promise.all(
-		products.map(async (product) => {
-			for (let i = 0; i < count; i++) {
-				const rating = faker.number.int({ min: 1, max: 5 });
-				const createdRating = await prisma.rating.create({
-					data: {
-						rating: rating,
-						comment: faker.lorem.sentence(),
-						product: {
-							connect: {
-								id: product.id
-							}
-						}
+	for (let i = 0; i < count; i++) {
+		const rating = faker.number.int({ min: 1, max: 5 });
+		const createdRating = await prisma.rating.create({
+			data: {
+				rating: rating,
+				comment: faker.lorem.sentence(),
+				product: {
+					connect: {
+						id: ProductId
 					}
-				});
-				ratings.push(createdRating);
+				}
 			}
-		})
-	);
+		});
+		ratings.push(createdRating);
+	}
 
 	return ratings;
 };
@@ -130,42 +92,28 @@ const generateCollections = async (count: number) => {
 	return collections;
 };
 
-const products = await generateProducts(100);
-const ratings = await generateRatingsForProducts(products, 5);
-
-const collections = await generateCollections(5);
-const categories = await generateCategories(10);
-
-products.forEach(async (product) => {
-	await prisma.product.update({
-		where: { id: product.id },
-		data: {
-			collections: {
-				create: [
-					{
-						collection: {
-							connect: {
-								id: collections[
-									Math.floor(Math.random() * collections.length)
-								].id
-							}
-						}
-					}
-				]
-			},
-			categories: {
-				create: [
-					{
-						category: {
-							connect: {
-								id: categories[
-									Math.floor(Math.random() * categories.length)
-								].id
-							}
-						}
-					}
-				]
+const generateImages = async (count: number) => {
+	const images: Array<
+		PrismaCreateResult<typeof prisma.image.create>
+	> = [];
+	for (let i = 0; i < count; i++) {
+		const image = await prisma.image.create({
+			data: {
+				url: faker.image.url({ height: 640, width: 480 }),
+				height: 640,
+				width: 480
 			}
-		}
-	});
+		});
+		images.push(image);
+	}
+	return images;
+};
+
+const allProducts = await prisma.product.findMany();
+
+allProducts.forEach(async (product) => {
+	await generateRatingsForProducts(
+		Math.floor(Math.random() * 100),
+		product.id
+	);
 });

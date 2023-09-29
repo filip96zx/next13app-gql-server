@@ -10,7 +10,8 @@ export const Collection: CollectionResolvers = {
 						product: {
 							include: {
 								categories: { include: { category: true } },
-								collections: { include: { collection: true } }
+								collections: { include: { collection: true } },
+								images: { include: { image: true } }
 							}
 						}
 					},
@@ -27,8 +28,24 @@ export const Collection: CollectionResolvers = {
 				),
 				collections: item.product.collections.map(
 					(item) => item.collection
-				)
+				),
+				images: item.product.images.map((item) => item.image)
 			})) ?? []
 		);
+	},
+	images: async (parent, args, ctx) => {
+		const { first, skip } = args;
+		const result = await ctx.prisma.collection.findUnique({
+			where: { id: parent.id },
+			include: {
+				images: {
+					include: { image: true },
+					skip: skip ?? undefined,
+					take: first ?? undefined
+				}
+			}
+		});
+
+		return result?.images.map((i) => i.image) ?? [];
 	}
 };

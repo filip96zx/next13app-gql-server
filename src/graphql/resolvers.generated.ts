@@ -4,6 +4,7 @@ import { Aggregate } from './schema/resolvers/Aggregate';
 import { Category } from './schema/resolvers/Category';
 import { Collection } from './schema/resolvers/Collection';
 import { Connection } from './schema/resolvers/Connection';
+import { Image } from './schema/resolvers/Image';
 import { Product } from './schema/resolvers/Product';
 import { categories as Query_categories } from './schema/resolvers/Query/categories';
 import { categoriesConnection as Query_categoriesConnection } from './schema/resolvers/Query/categoriesConnection';
@@ -30,6 +31,7 @@ export const resolvers: Resolvers = {
 	Category: Category,
 	Collection: Collection,
 	Connection: Connection,
+	Image: Image,
 	Product: Product,
 	DateTime: DateTimeResolver
 };

@@ -28,5 +28,20 @@ export const Product: ProductResolvers = {
 			}
 		});
 		return result?.collections.map((item) => item.collection) ?? [];
+	},
+	images: async (parent, args, ctx) => {
+		const { first, skip } = args;
+		const result = await ctx.prisma.product.findUnique({
+			where: { id: parent.id },
+			include: {
+				images: {
+					include: { image: true },
+					skip: skip ?? undefined,
+					take: first ?? undefined
+				}
+			}
+		});
+
+		return result?.images.map((i) => i.image) ?? [];
 	}
 };

@@ -3,7 +3,7 @@ import type {
 	InputMaybe,
 	ProductWhereInput,
 	QueryResolvers
-} from './../../../types.generated';
+} from 'graphql/types.generated';
 
 export const getProductWhereParams = (
 	where?: InputMaybe<ProductWhereInput>
@@ -50,7 +50,8 @@ export const products: NonNullable<
 	const products = await ctx.prisma.product.findMany({
 		include: {
 			categories: { include: { category: true } },
-			collections: { include: { collection: true } }
+			collections: { include: { collection: true } },
+			images: { include: { image: true } }
 		},
 		...(where && {
 			where: getProductWhereParams(where)
@@ -65,6 +66,7 @@ export const products: NonNullable<
 		),
 		collections: product.collections.map(
 			(collection) => collection.collection
-		)
+		),
+		images: product.images.map((image) => image.image)
 	}));
 };

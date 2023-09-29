@@ -1,5 +1,4 @@
-import { category } from 'graphql/schema/resolvers/Query/category';
-import type { QueryResolvers } from './../../../types.generated';
+import type { QueryResolvers } from 'graphql/types.generated';
 export const categories: NonNullable<
 	QueryResolvers['categories']
 > = async (_parent, arg, ctx) => {
@@ -11,7 +10,8 @@ export const categories: NonNullable<
 					product: {
 						include: {
 							collections: { include: { collection: true } },
-							categories: { include: { category: true } }
+							categories: { include: { category: true } },
+							images: { include: { image: true } }
 						}
 					}
 				}
@@ -26,7 +26,8 @@ export const categories: NonNullable<
 		products: c.products.map((p) => ({
 			...p.product,
 			categories: p.product.categories.map((pc) => pc.category),
-			collections: p.product.collections.map((pc) => pc.collection)
+			collections: p.product.collections.map((pc) => pc.collection),
+			images: p.product.images.map((pi) => pi.image)
 		}))
 	}));
 };

@@ -10,7 +10,8 @@ export const product: NonNullable<QueryResolvers['product']> = async (
 		},
 		include: {
 			categories: { include: { category: true } },
-			collections: { include: { collection: true } }
+			collections: { include: { collection: true } },
+			images: { include: { image: true } }
 		}
 	});
 	if (!product) {
@@ -24,6 +25,7 @@ export const product: NonNullable<QueryResolvers['product']> = async (
 		),
 		collections: product.collections.map(
 			(collection) => collection.collection
-		)
+		),
+		images: product.images.map((image) => image.image)
 	};
 };

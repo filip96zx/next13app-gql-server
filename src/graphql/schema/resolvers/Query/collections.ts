@@ -1,4 +1,4 @@
-import type { QueryResolvers } from './../../../types.generated';
+import type { QueryResolvers } from 'graphql/types.generated';
 export const collections: NonNullable<
 	QueryResolvers['collections']
 > = async (_parent, arg, ctx) => {
@@ -7,6 +7,6 @@ export const collections: NonNullable<
 		skip: skip ?? undefined,
 		take: first ?? undefined
 	});
-
+	
 	return collections;
 };

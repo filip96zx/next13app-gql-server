@@ -67,11 +67,17 @@ export type CategoryWhereInput = {
 
 export type Collection = {
 	__typename?: 'Collection';
-	description?: Maybe<Scalars['String']['output']>;
+	description: Scalars['String']['output'];
 	id: Scalars['ID']['output'];
-	name?: Maybe<Scalars['String']['output']>;
+	images?: Maybe<Array<Maybe<Image>>>;
+	name: Scalars['String']['output'];
 	products?: Maybe<Array<Maybe<Product>>>;
-	slug?: Maybe<Scalars['String']['output']>;
+	slug: Scalars['String']['output'];
+};
+
+export type CollectionImagesArgs = {
+	first?: InputMaybe<Scalars['Int']['input']>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type CollectionProductsArgs = {
@@ -92,12 +98,20 @@ export type Connection = {
 	aggregate?: Maybe<Aggregate>;
 };
 
+export type Image = {
+	__typename?: 'Image';
+	height: Scalars['Int']['output'];
+	url: Scalars['String']['output'];
+	width: Scalars['Int']['output'];
+};
+
 export type Product = {
 	__typename?: 'Product';
 	categories: Array<Maybe<Category>>;
 	collections: Array<Maybe<Collection>>;
 	description: Scalars['String']['output'];
 	id: Scalars['ID']['output'];
+	images: Array<Maybe<Image>>;
 	name: Scalars['String']['output'];
 	price: Scalars['Int']['output'];
 	slug: Scalars['String']['output'];
@@ -109,6 +123,11 @@ export type ProductCategoriesArgs = {
 };
 
 export type ProductCollectionsArgs = {
+	first?: InputMaybe<Scalars['Int']['input']>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type ProductImagesArgs = {
 	first?: InputMaybe<Scalars['Int']['input']>;
 	skip?: InputMaybe<Scalars['Int']['input']>;
 };
@@ -317,6 +336,7 @@ export type ResolversTypes = {
 	DateTime: ResolverTypeWrapper<
 		Mapper<Scalars['DateTime']['output']>
 	>;
+	Image: ResolverTypeWrapper<Mapper<Image>>;
 	Product: ResolverTypeWrapper<Mapper<Product>>;
 	ProductWhereInput: ResolverTypeWrapper<Mapper<ProductWhereInput>>;
 	Query: ResolverTypeWrapper<{}>;
@@ -337,6 +357,7 @@ export type ResolversParentTypes = {
 	CollectionWhereInput: Mapper<CollectionWhereInput>;
 	Connection: Mapper<Connection>;
 	DateTime: Mapper<Scalars['DateTime']['output']>;
+	Image: Mapper<Image>;
 	Product: Mapper<Product>;
 	ProductWhereInput: Mapper<ProductWhereInput>;
 	Query: {};
@@ -383,27 +404,25 @@ export type CollectionResolvers<
 		ResolversParentTypes['Collection'] = ResolversParentTypes['Collection']
 > = {
 	description?: Resolver<
-		Maybe<ResolversTypes['String']>,
+		ResolversTypes['String'],
 		ParentType,
 		ContextType
 	>;
 	id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
-	name?: Resolver<
-		Maybe<ResolversTypes['String']>,
+	images?: Resolver<
+		Maybe<Array<Maybe<ResolversTypes['Image']>>>,
 		ParentType,
-		ContextType
+		ContextType,
+		Partial<CollectionImagesArgs>
 	>;
+	name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 	products?: Resolver<
 		Maybe<Array<Maybe<ResolversTypes['Product']>>>,
 		ParentType,
 		ContextType,
 		Partial<CollectionProductsArgs>
 	>;
-	slug?: Resolver<
-		Maybe<ResolversTypes['String']>,
-		ParentType,
-		ContextType
-	>;
+	slug?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 	__isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -424,6 +443,17 @@ export interface DateTimeScalarConfig
 	extends GraphQLScalarTypeConfig<ResolversTypes['DateTime'], any> {
 	name: 'DateTime';
 }
+
+export type ImageResolvers<
+	ContextType = Context,
+	ParentType extends
+		ResolversParentTypes['Image'] = ResolversParentTypes['Image']
+> = {
+	height?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+	url?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+	width?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+	__isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
 
 export type ProductResolvers<
 	ContextType = Context,
@@ -448,6 +478,12 @@ export type ProductResolvers<
 		ContextType
 	>;
 	id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+	images?: Resolver<
+		Array<Maybe<ResolversTypes['Image']>>,
+		ParentType,
+		ContextType,
+		Partial<ProductImagesArgs>
+	>;
 	name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 	price?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
 	slug?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -515,6 +551,7 @@ export type Resolvers<ContextType = Context> = {
 	Collection?: CollectionResolvers<ContextType>;
 	Connection?: ConnectionResolvers<ContextType>;
 	DateTime?: GraphQLScalarType;
+	Image?: ImageResolvers<ContextType>;
 	Product?: ProductResolvers<ContextType>;
 	Query?: QueryResolvers<ContextType>;
 };

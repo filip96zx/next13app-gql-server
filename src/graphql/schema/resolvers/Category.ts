@@ -11,7 +11,8 @@ export const Category: CategoryResolvers = {
 						product: {
 							include: {
 								categories: { include: { category: true } },
-								collections: { include: { collection: true } }
+								collections: { include: { collection: true } },
+								images: { include: { image: true } }
 							}
 						}
 					},
@@ -28,7 +29,8 @@ export const Category: CategoryResolvers = {
 				),
 				collections: item.product.collections.map(
 					(item) => item.collection
-				)
+				),
+				images: item.product.images.map((item) => item.image)
 			})) ?? []
 		);
 	}

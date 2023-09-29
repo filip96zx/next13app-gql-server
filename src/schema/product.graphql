@@ -31,4 +31,5 @@ type Product {
 	price: Int!
 	categories(skip: Int, first: Int): [Category]!
 	collections(skip: Int, first: Int): [Collection]!
+	images(skip: Int, first: Int): [Image]!
 }

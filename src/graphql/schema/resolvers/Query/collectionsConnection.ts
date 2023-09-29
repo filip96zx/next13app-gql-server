@@ -1,4 +1,4 @@
-import type { QueryResolvers } from './../../../types.generated';
+import type { QueryResolvers } from 'graphql/types.generated';
 export const collectionsConnection: NonNullable<
 	QueryResolvers['collectionsConnection']
 > = async (_parent, arg, ctx) => {
