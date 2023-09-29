@@ -16,5 +16,5 @@ type Category {
 	id: ID!
 	name: String
 	slug: String
-	products: [Product]
+	products(skip: Int, first: Int): [Product]
 }

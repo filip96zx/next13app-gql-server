@@ -12,9 +12,9 @@ extend type Query {
 }
 
 type Collection {
-	id: String
+	id: ID!
 	name: String
 	slug: String
 	description: String
-	products: [Product]
+	products(skip: Int, first: Int): [Product]
 }

@@ -5,41 +5,41 @@ import type {
 	QueryResolvers
 } from './../../../types.generated';
 
-export const getWhereParams = (
-	where: InputMaybe<ProductWhereInput>
-): Prisma.ProductWhereInput => {
+export const getProductWhereParams = (
+	where?: InputMaybe<ProductWhereInput>
+): Prisma.ProductWhereInput | undefined => {
+	if (!where) return undefined;
+	const {
+		categories_some,
+		collections_some,
+		excludedIds,
+		nameContains
+	} = where;
+
 	return {
-		...(where?.nameContains && {
-			name: {
-				contains: where.nameContains,
-				mode: 'insensitive'
-			}
-		}),
-		...(where?.categories_some?.slug && {
-			categories: {
-				some: {
-					category: {
-						slug: where.categories_some.slug
-					}
+		name: {
+			contains: nameContains || undefined,
+			mode: 'insensitive'
+		},
+		categories: {
+			some: {
+				category: {
+					slug: categories_some?.slug || undefined
 				}
 			}
-		}),
-		...(where?.collections_some?.slug && {
-			collections: {
-				some: {
-					collection: {
-						slug: where.collections_some.slug
-					}
+		},
+		collections: {
+			some: {
+				collection: {
+					slug: collections_some?.slug || undefined
 				}
 			}
-		}),
-		...(where?.excludedIds && {
-			AND: {
-				id: {
-					notIn: where.excludedIds
-				}
+		},
+		AND: {
+			id: {
+				notIn: excludedIds || undefined
 			}
-		})
+		}
 	};
 };
 export const products: NonNullable<
@@ -53,7 +53,7 @@ export const products: NonNullable<
 			collections: { include: { collection: true } }
 		},
 		...(where && {
-			where: getWhereParams(where)
+			where: getProductWhereParams(where)
 		}),
 		skip: skip ?? undefined,
 		take: first ?? undefined

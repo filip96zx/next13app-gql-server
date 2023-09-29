@@ -52,6 +52,11 @@ export type Category = {
 	slug?: Maybe<Scalars['String']['output']>;
 };
 
+export type CategoryProductsArgs = {
+	first?: InputMaybe<Scalars['Int']['input']>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
 export type CategorySomeInput = {
 	slug?: InputMaybe<Scalars['String']['input']>;
 };
@@ -63,10 +68,15 @@ export type CategoryWhereInput = {
 export type Collection = {
 	__typename?: 'Collection';
 	description?: Maybe<Scalars['String']['output']>;
-	id?: Maybe<Scalars['String']['output']>;
+	id: Scalars['ID']['output'];
 	name?: Maybe<Scalars['String']['output']>;
 	products?: Maybe<Array<Maybe<Product>>>;
 	slug?: Maybe<Scalars['String']['output']>;
+};
+
+export type CollectionProductsArgs = {
+	first?: InputMaybe<Scalars['Int']['input']>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type CollectionSomeInput = {
@@ -91,6 +101,16 @@ export type Product = {
 	name: Scalars['String']['output'];
 	price: Scalars['Int']['output'];
 	slug: Scalars['String']['output'];
+};
+
+export type ProductCategoriesArgs = {
+	first?: InputMaybe<Scalars['Int']['input']>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type ProductCollectionsArgs = {
+	first?: InputMaybe<Scalars['Int']['input']>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type ProductWhereInput = {
@@ -346,7 +366,8 @@ export type CategoryResolvers<
 	products?: Resolver<
 		Maybe<Array<Maybe<ResolversTypes['Product']>>>,
 		ParentType,
-		ContextType
+		ContextType,
+		Partial<CategoryProductsArgs>
 	>;
 	slug?: Resolver<
 		Maybe<ResolversTypes['String']>,
@@ -366,11 +387,7 @@ export type CollectionResolvers<
 		ParentType,
 		ContextType
 	>;
-	id?: Resolver<
-		Maybe<ResolversTypes['String']>,
-		ParentType,
-		ContextType
-	>;
+	id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
 	name?: Resolver<
 		Maybe<ResolversTypes['String']>,
 		ParentType,
@@ -379,7 +396,8 @@ export type CollectionResolvers<
 	products?: Resolver<
 		Maybe<Array<Maybe<ResolversTypes['Product']>>>,
 		ParentType,
-		ContextType
+		ContextType,
+		Partial<CollectionProductsArgs>
 	>;
 	slug?: Resolver<
 		Maybe<ResolversTypes['String']>,
@@ -415,12 +433,14 @@ export type ProductResolvers<
 	categories?: Resolver<
 		Array<Maybe<ResolversTypes['Category']>>,
 		ParentType,
-		ContextType
+		ContextType,
+		Partial<ProductCategoriesArgs>
 	>;
 	collections?: Resolver<
 		Array<Maybe<ResolversTypes['Collection']>>,
 		ParentType,
-		ContextType
+		ContextType,
+		Partial<ProductCollectionsArgs>
 	>;
 	description?: Resolver<
 		ResolversTypes['String'],

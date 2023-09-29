@@ -21,7 +21,6 @@ extend type Query {
 		first: Int
 	): [Product!]!
 	productsConnection(where: ProductWhereInput): Connection!
-	# collections(first: Int, skip: Int): [Collection!]
 }
 
 type Product {
@@ -30,6 +29,6 @@ type Product {
 	slug: String!
 	description: String!
 	price: Int!
-	categories: [Category]!
-	collections: [Collection]!
+	categories(skip: Int, first: Int): [Category]!
+	collections(skip: Int, first: Int): [Collection]!
 }
