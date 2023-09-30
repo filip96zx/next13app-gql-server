@@ -145,6 +145,7 @@ export type OrderItem = {
 export type OrderProductInput = {
 	productId: Scalars['ID']['input'];
 	quantity: Scalars['Int']['input'];
+	variantId: Scalars['ID']['input'];
 };
 
 export type OrderStatus = 'DRAFT' | 'PAID' | 'PENDING';
@@ -159,6 +160,7 @@ export type Product = {
 	name: Scalars['String']['output'];
 	price: Scalars['Int']['output'];
 	slug: Scalars['String']['output'];
+	variants: Array<Maybe<Variant>>;
 };
 
 export type ProductCategoriesArgs = {
@@ -236,6 +238,13 @@ export type QueryProductsArgs = {
 
 export type QueryProductsConnectionArgs = {
 	where?: InputMaybe<ProductWhereInput>;
+};
+
+export type Variant = {
+	__typename?: 'Variant';
+	id: Scalars['ID']['output'];
+	name: Scalars['String']['output'];
+	value: Scalars['String']['output'];
 };
 
 export type ResolverTypeWrapper<T> = Promise<T> | T;
@@ -394,6 +403,7 @@ export type ResolversTypes = {
 	Product: ResolverTypeWrapper<Mapper<Product>>;
 	ProductWhereInput: ResolverTypeWrapper<Mapper<ProductWhereInput>>;
 	Query: ResolverTypeWrapper<{}>;
+	Variant: ResolverTypeWrapper<Mapper<Variant>>;
 	Boolean: ResolverTypeWrapper<Mapper<Scalars['Boolean']['output']>>;
 };
 
@@ -419,6 +429,7 @@ export type ResolversParentTypes = {
 	Product: Mapper<Product>;
 	ProductWhereInput: Mapper<ProductWhereInput>;
 	Query: {};
+	Variant: Mapper<Variant>;
 	Boolean: Mapper<Scalars['Boolean']['output']>;
 };
 
@@ -606,6 +617,11 @@ export type ProductResolvers<
 	name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 	price?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
 	slug?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+	variants?: Resolver<
+		Array<Maybe<ResolversTypes['Variant']>>,
+		ParentType,
+		ContextType
+	>;
 	__isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -670,6 +686,17 @@ export type QueryResolvers<
 	>;
 };
 
+export type VariantResolvers<
+	ContextType = Context,
+	ParentType extends
+		ResolversParentTypes['Variant'] = ResolversParentTypes['Variant']
+> = {
+	id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+	name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+	value?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+	__isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type Resolvers<ContextType = Context> = {
 	Aggregate?: AggregateResolvers<ContextType>;
 	Category?: CategoryResolvers<ContextType>;
@@ -682,4 +709,5 @@ export type Resolvers<ContextType = Context> = {
 	OrderItem?: OrderItemResolvers<ContextType>;
 	Product?: ProductResolvers<ContextType>;
 	Query?: QueryResolvers<ContextType>;
+	Variant?: VariantResolvers<ContextType>;
 };

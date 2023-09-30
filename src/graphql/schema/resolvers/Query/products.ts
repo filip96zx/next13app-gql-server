@@ -1,4 +1,5 @@
 import { Prisma } from '@prisma/client';
+import { parseProductToProductWithNotNullableLists } from 'graphql/schema/resolvers/shared/product.utils';
 import type {
 	InputMaybe,
 	ProductWhereInput,
@@ -54,10 +55,5 @@ export const products: NonNullable<
 		skip: skip ?? undefined,
 		take: first ?? undefined
 	});
-	return products.map((product) => ({
-		...product,
-		categories: [],
-		collections: [],
-		images: []
-	}));
+	return products.map(parseProductToProductWithNotNullableLists);
 };

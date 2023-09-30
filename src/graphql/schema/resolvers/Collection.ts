@@ -1,3 +1,4 @@
+import { parseProductToProductWithNotNullableLists } from 'graphql/schema/resolvers/shared/product.utils';
 import type { CollectionResolvers } from './../../types.generated';
 export const Collection: CollectionResolvers = {
 	products: async (parent, args, ctx) => {
@@ -15,12 +16,9 @@ export const Collection: CollectionResolvers = {
 			}
 		});
 		return (
-			result?.products.map((item) => ({
-				...item.product,
-				categories: [],
-				collections: [],
-				images: []
-			})) ?? []
+			result?.products.map((item) =>
+				parseProductToProductWithNotNullableLists(item.product)
+			) ?? []
 		);
 	},
 	images: async (parent, args, ctx) => {

@@ -1,0 +1,5 @@
+type Variant {
+	id: ID!
+	name: String!
+	value: String!
+}

@@ -19,6 +19,7 @@ import { collectionsConnection as Query_collectionsConnection } from './schema/r
 import { product as Query_product } from './schema/resolvers/Query/product';
 import { products as Query_products } from './schema/resolvers/Query/products';
 import { productsConnection as Query_productsConnection } from './schema/resolvers/Query/productsConnection';
+import { Variant } from './schema/resolvers/Variant';
 import { DateTimeResolver } from 'graphql-scalars';
 export const resolvers: Resolvers = {
 	Query: {
@@ -45,5 +46,6 @@ export const resolvers: Resolvers = {
 	Order: Order,
 	OrderItem: OrderItem,
 	Product: Product,
+	Variant: Variant,
 	DateTime: DateTimeResolver
 };

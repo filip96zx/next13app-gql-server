@@ -1,3 +1,4 @@
+import { parseProductToProductWithNotNullableLists } from 'graphql/schema/resolvers/shared/product.utils';
 import type { CategoryResolvers } from 'graphql/types.generated';
 
 export const Category: CategoryResolvers = {
@@ -16,12 +17,9 @@ export const Category: CategoryResolvers = {
 			}
 		});
 		return (
-			result?.products.map((item) => ({
-				...item.product,
-				categories: [],
-				collections: [],
-				images: []
-			})) ?? []
+			result?.products.map((p) =>
+				parseProductToProductWithNotNullableLists(p.product)
+			) ?? []
 		);
 	}
 };

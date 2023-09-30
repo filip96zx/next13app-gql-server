@@ -49,5 +49,17 @@ export const Product: ProductResolvers = {
 		});
 
 		return result?.images.map((i) => i.image) ?? [];
+	},
+	variants: async (parent, _args, ctx) => {
+		const result = await ctx.prisma.product.findUnique({
+			where: { id: parent.id },
+			include: {
+				variants: {
+					include: { variant: true }
+				}
+			}
+		});
+
+		return result?.variants.map((i) => i.variant) ?? [];
 	}
 };
