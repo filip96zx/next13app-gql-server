@@ -139,7 +139,9 @@ export type OrderItem = {
 	id: Scalars['ID']['output'];
 	name: Scalars['String']['output'];
 	price: Scalars['Int']['output'];
+	productId: Scalars['ID']['output'];
 	quantity: Scalars['Int']['output'];
+	variantId: Scalars['ID']['output'];
 };
 
 export type OrderProductInput = {
@@ -581,7 +583,9 @@ export type OrderItemResolvers<
 	id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
 	name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 	price?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+	productId?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
 	quantity?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+	variantId?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
 	__isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 

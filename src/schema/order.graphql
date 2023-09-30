@@ -31,6 +31,8 @@ type Order {
 
 type OrderItem {
 	id: ID!
+	productId: ID!
+	variantId: ID!
 	quantity: Int!
 	price: Int!
 	name: String!
