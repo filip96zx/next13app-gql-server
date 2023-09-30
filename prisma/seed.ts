@@ -109,11 +109,104 @@ const generateImages = async (count: number) => {
 	return images;
 };
 
+const generateVariants = async (count: number) => {
+	const variants: Array<
+		PrismaCreateResult<typeof prisma.variant.create>
+	> = [];
+	for (let i = 0; i < count; i++) {
+		const color = faker.color.human();
+
+		const variant = await prisma.variant.create({
+			data: {
+				name: color,
+				value: color
+			}
+		});
+		variants.push(variant);
+	}
+	return variants;
+};
+
+// const products = await generateProducts(100);
+
+// const collections = await generateCollections(5);
+// const categories = await generateCategories(10);
+const variants = await generateVariants(8);
+
+// products.forEach(async (product) => {
+// 	await prisma.product.update({
+// 		where: { id: product.id },
+// 		data: {
+// 			collections: {
+// 				create: [
+// 					{
+// 						collection: {
+// 							connect: {
+// 								id: collections[
+// 									Math.floor(Math.random() * collections.length-1)
+// 								].id
+// 							}
+// 						}
+// 					}
+// 				]
+// 			},
+// 			categories: {
+// 				create: [
+// 					{
+// 						category: {
+// 							connect: {
+// 								id: categories[
+// 									Math.floor(Math.random() * categories.length-1)
+// 								].id
+// 							}
+// 						}
+// 					}
+// 				]
+// 			}
+// 		}
+// 	});
+// });
+
 const allProducts = await prisma.product.findMany();
 
+const getRandomNaturalNumber = (max: number) => {
+	return Math.floor(Math.random() * max);
+};
+
+const generateRadomNumbersWithoutRepetition = (
+	count: number,
+	max: number
+) => {
+	const numbers = new Set<number>();
+	while (numbers.size < count) {
+		numbers.add(Math.floor(Math.random() * max));
+	}
+	return Array.from(numbers);
+};
+
 allProducts.forEach(async (product) => {
-	await generateRatingsForProducts(
-		Math.floor(Math.random() * 100),
-		product.id
-	);
+	await prisma.product.update({
+		where: { id: product.id },
+		data: {
+			variants: {
+				create: generateRadomNumbersWithoutRepetition(
+					getRandomNaturalNumber(variants.length - 1),
+					variants.length - 1
+				).map((i) => ({
+					variant: {
+						connect: {
+							id: variants[i].id
+						}
+					}
+				}))
+			}
+		}
+	});
 });
+
+// allProducts.forEach(async (product) => {
+// 	await generateRatingsForProducts(
+// 		Math.floor(Math.random() * 100),
+// 		product.id
+// 	);
+// });
