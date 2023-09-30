@@ -91,7 +91,8 @@ export type CollectionWhereInput = {
 };
 
 export type Connection = {
-	aggregate: Aggregate;
+	__typename?: 'Connection';
+	aggregate?: Maybe<Aggregate>;
 };
 
 export type Image = {
@@ -101,11 +102,10 @@ export type Image = {
 };
 
 export type Mutation = {
-	orderCreate?: Maybe<Order>;
-	orderItemUpdate?: Maybe<OrderItem>;
-	orderItemsUpdate?: Maybe<Order>;
-	productCalculateAndUpdateAverageRating?: Maybe<Product>;
-	productsCalculateAndUpdateAverageRating: Array<Product>;
+	__typename?: 'Mutation';
+	cartCreate?: Maybe<Order>;
+	cartIncrement?: Maybe<Order>;
+	cartUpdate?: Maybe<Order>;
 };
 
 export type MutationOrderCreateArgs = {
@@ -171,7 +171,7 @@ export type OrderWhereInput = {
 };
 
 export type Product = {
-	averageRating: Scalars['Float']['output'];
+	__typename?: 'Product';
 	categories: Array<Maybe<Category>>;
 	collections: Array<Maybe<Collection>>;
 	createdAt: Scalars['DateTime']['output'];
@@ -213,6 +213,8 @@ export type ProductWhereInput = {
 };
 
 export type Query = {
+	__typename?: 'Query';
+	cart?: Maybe<Order>;
 	categories: Array<Category>;
 	categoriesConnection: Connection;
 	category?: Maybe<Category>;
