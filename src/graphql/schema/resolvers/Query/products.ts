@@ -1,5 +1,5 @@
 import { Prisma } from '@prisma/client';
-import { parseProductToProductWithNotNullableLists } from 'graphql/schema/resolvers/shared/product.utils';
+import { parseProductToProductWithNotNullableLists } from 'graphql/schema/resolvers/Query/shared/product.utils';
 import type {
 	InputMaybe,
 	ProductWhereInput,

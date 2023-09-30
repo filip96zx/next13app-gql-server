@@ -6,6 +6,7 @@ import { Collection } from './schema/resolvers/Collection';
 import { Connection } from './schema/resolvers/Connection';
 import { Image } from './schema/resolvers/Image';
 import { cartCreate as Mutation_cartCreate } from './schema/resolvers/Mutation/cartCreate';
+import { cartIncrement as Mutation_cartIncrement } from './schema/resolvers/Mutation/cartIncrement';
 import { cartUpdate as Mutation_cartUpdate } from './schema/resolvers/Mutation/cartUpdate';
 import { Order } from './schema/resolvers/Order';
 import { OrderItem } from './schema/resolvers/OrderItem';
@@ -35,6 +36,7 @@ export const resolvers: Resolvers = {
 	},
 	Mutation: {
 		cartCreate: Mutation_cartCreate,
+		cartIncrement: Mutation_cartIncrement,
 		cartUpdate: Mutation_cartUpdate
 	},
 

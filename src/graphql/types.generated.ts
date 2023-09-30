@@ -108,10 +108,16 @@ export type Image = {
 export type Mutation = {
 	__typename?: 'Mutation';
 	cartCreate?: Maybe<Order>;
+	cartIncrement?: Maybe<Order>;
 	cartUpdate?: Maybe<Order>;
 };
 
 export type MutationCartCreateArgs = {
+	items: Array<OrderProductInput>;
+};
+
+export type MutationCartIncrementArgs = {
+	id: Scalars['ID']['input'];
 	items: Array<OrderProductInput>;
 };
 
@@ -536,6 +542,12 @@ export type MutationResolvers<
 		ParentType,
 		ContextType,
 		RequireFields<MutationCartCreateArgs, 'items'>
+	>;
+	cartIncrement?: Resolver<
+		Maybe<ResolversTypes['Order']>,
+		ParentType,
+		ContextType,
+		RequireFields<MutationCartIncrementArgs, 'id' | 'items'>
 	>;
 	cartUpdate?: Resolver<
 		Maybe<ResolversTypes['Order']>,

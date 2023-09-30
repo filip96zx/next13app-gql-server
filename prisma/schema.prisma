@@ -59,6 +59,7 @@ model OrderItem{
   updatedAt       DateTime @updatedAt
   productId       String
   variantId       String
+  @@unique([orderId, productId, variantId])
 }
 
 model Collection{

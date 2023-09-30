@@ -1,4 +1,4 @@
-import { parseProductToProductWithNotNullableLists } from 'graphql/schema/resolvers/shared/product.utils';
+import { parseProductToProductWithNotNullableLists } from 'graphql/schema/resolvers/Query/shared/product.utils';
 import type { QueryResolvers } from 'graphql/types.generated';
 export const product: NonNullable<QueryResolvers['product']> = async (
 	_parent,

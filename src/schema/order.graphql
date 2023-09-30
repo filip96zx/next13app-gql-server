@@ -7,12 +7,11 @@ input OrderProductInput {
 extend type Mutation {
 	cartCreate(items: [OrderProductInput!]!): Order
 	cartUpdate(id: ID!, items: [OrderProductInput!]!): Order
-	# updateOrder(id: ID!, status: OrderStatus!): Order!
+	cartIncrement(id: ID!, items: [OrderProductInput!]!): Order
 }
 
 extend type Query {
 	cart(id: ID!): Order
-	# order(id: ID!): Order
 }
 
 enum OrderStatus {
