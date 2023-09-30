@@ -7,11 +7,6 @@ export const product: NonNullable<QueryResolvers['product']> = async (
 	const product = await ctx.prisma.product.findUnique({
 		where: {
 			id: arg.id
-		},
-		include: {
-			categories: { include: { category: true } },
-			collections: { include: { collection: true } },
-			images: { include: { image: true } }
 		}
 	});
 	if (!product) {
@@ -20,12 +15,8 @@ export const product: NonNullable<QueryResolvers['product']> = async (
 
 	return {
 		...product,
-		categories: product.categories.map(
-			(category) => category.category
-		),
-		collections: product.collections.map(
-			(collection) => collection.collection
-		),
-		images: product.images.map((image) => image.image)
+		collections: [],
+		categories: [],
+		images: []
 	};
 };

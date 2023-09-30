@@ -7,13 +7,7 @@ export const Collection: CollectionResolvers = {
 			include: {
 				products: {
 					include: {
-						product: {
-							include: {
-								categories: { include: { category: true } },
-								collections: { include: { collection: true } },
-								images: { include: { image: true } }
-							}
-						}
+						product: true
 					},
 					skip: skip ?? undefined,
 					take: first ?? undefined
@@ -23,13 +17,9 @@ export const Collection: CollectionResolvers = {
 		return (
 			result?.products.map((item) => ({
 				...item.product,
-				categories: item.product.categories.map(
-					(item) => item.category
-				),
-				collections: item.product.collections.map(
-					(item) => item.collection
-				),
-				images: item.product.images.map((item) => item.image)
+				categories: [],
+				collections: [],
+				images: []
 			})) ?? []
 		);
 	},

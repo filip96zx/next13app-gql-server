@@ -7,6 +7,10 @@ export const collections: NonNullable<
 		skip: skip ?? undefined,
 		take: first ?? undefined
 	});
-	
-	return collections;
+
+	return collections.map((c) => ({
+		...c,
+		products: [],
+		images: []
+	}));
 };

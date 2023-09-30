@@ -42,6 +42,7 @@ model ProductCategory{
 model Order{
   id          String @id @default(cuid())
   items       OrderItem[]
+  status      OrderStatus
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
@@ -49,22 +50,24 @@ model Order{
 model OrderItem{
   id              String @id @default(cuid())
   orderId         String
-  productId       String
-  quantity        Int
   order           Order @relation(fields: [orderId], references: [id])
-  orderProducts   OrderProduct[]
+  quantity        Int
+  price           Int
+  name           String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  productId       String
 }
 
-model OrderProduct {
-  id          String @id @default(cuid())
-  orderItemId String
-  orderItem   OrderItem @relation(fields: [orderItemId], references: [id])
-  name        String
-  description String
-  price       Int
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-}
+// model OrderProduct {
+//   id          String @id @default(cuid())
+//   orderItemId String
+//   orderItem   OrderItem @relation(fields: [orderItemId], references: [id])
+//   name        String
+//   price       Int
+//   createdAt   DateTime @default(now())
+//   updatedAt   DateTime @updatedAt
+// }
 
 
 model Collection{
@@ -121,4 +124,10 @@ model CollectionImage{
   imageId        String
   collection     Collection @relation(fields: [collectionId], references: [id])
   image          Image @relation(fields: [imageId], references: [id])
+}
+
+enum OrderStatus {
+	DRAFT
+	PENDING
+	PAID
 }

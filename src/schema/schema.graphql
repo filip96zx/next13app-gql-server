@@ -1,5 +1,7 @@
 type Query
 
+type Mutation
+
 scalar DateTime
 
 type Aggregate {

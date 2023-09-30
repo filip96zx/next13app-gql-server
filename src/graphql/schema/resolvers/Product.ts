@@ -1,6 +1,5 @@
-import type { ProductResolvers } from './../../types.generated';
+import type { ProductResolvers } from 'graphql/types.generated';
 export const Product: ProductResolvers = {
-	/* Implement Product resolver logic here */
 	categories: async (parent, args, ctx) => {
 		const { first, skip } = args;
 		const result = await ctx.prisma.product.findUnique({
@@ -22,12 +21,19 @@ export const Product: ProductResolvers = {
 			include: {
 				collections: {
 					include: { collection: true },
-					skip: skip ?? undefined,
-					take: first ?? undefined
+					skip: skip || undefined,
+					take: first || undefined
 				}
 			}
 		});
-		return result?.collections.map((item) => item.collection) ?? [];
+
+		return (
+			result?.collections.map((item) => ({
+				...item.collection,
+				images: [],
+				products: []
+			})) ?? []
+		);
 	},
 	images: async (parent, args, ctx) => {
 		const { first, skip } = args;

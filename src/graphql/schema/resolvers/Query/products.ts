@@ -48,11 +48,6 @@ export const products: NonNullable<
 	const { where, skip, first } = arg;
 
 	const products = await ctx.prisma.product.findMany({
-		include: {
-			categories: { include: { category: true } },
-			collections: { include: { collection: true } },
-			images: { include: { image: true } }
-		},
 		...(where && {
 			where: getProductWhereParams(where)
 		}),
@@ -61,12 +56,8 @@ export const products: NonNullable<
 	});
 	return products.map((product) => ({
 		...product,
-		categories: product.categories.map(
-			(category) => category.category
-		),
-		collections: product.collections.map(
-			(collection) => collection.collection
-		),
-		images: product.images.map((image) => image.image)
+		categories: [],
+		collections: [],
+		images: []
 	}));
 };

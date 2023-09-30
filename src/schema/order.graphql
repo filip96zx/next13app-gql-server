@@ -1,0 +1,36 @@
+input OrderProductInput {
+	productId: ID!
+	quantity: Int!
+}
+
+extend type Mutation {
+	cartCreate(items: [OrderProductInput!]!): Order
+	cartUpdate(id: ID!, items: [OrderProductInput!]!): Order
+	# updateOrder(id: ID!, status: OrderStatus!): Order!
+}
+
+extend type Query {
+	cart(id: ID!): Order
+	# order(id: ID!): Order
+}
+
+enum OrderStatus {
+	DRAFT
+	PENDING
+	PAID
+}
+
+type Order {
+	id: ID!
+	items(skip: Int, first: Int): [OrderItem!]!
+	status: OrderStatus!
+	createdAt: DateTime
+	updatedAt: DateTime
+}
+
+type OrderItem {
+	id: ID!
+	quantity: Int!
+	price: Int!
+	name: String!
+}
