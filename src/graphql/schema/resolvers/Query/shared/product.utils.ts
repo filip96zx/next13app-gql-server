@@ -14,13 +14,8 @@ type ItemWithOptionalLists<T extends object> = {
 	[K in NonArrayKeys<T>]: T[K];
 };
 
-type ItemWithOptionalListsWithoutTypename<T extends object> = Omit<
-	ItemWithOptionalLists<T>,
-	'__typename'
->;
-
 export const parseProductToProductWithNotNullableLists = (
-	product: ItemWithOptionalListsWithoutTypename<Product>
+	product: ItemWithOptionalLists<Product>
 ): NonNullable<Product> => {
 	return {
 		...product,

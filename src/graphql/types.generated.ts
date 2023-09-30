@@ -40,12 +40,10 @@ export type Scalars = {
 };
 
 export type Aggregate = {
-	__typename?: 'Aggregate';
 	count: Scalars['Int']['output'];
 };
 
 export type Category = {
-	__typename?: 'Category';
 	id: Scalars['ID']['output'];
 	name?: Maybe<Scalars['String']['output']>;
 	products?: Maybe<Array<Maybe<Product>>>;
@@ -66,7 +64,6 @@ export type CategoryWhereInput = {
 };
 
 export type Collection = {
-	__typename?: 'Collection';
 	description: Scalars['String']['output'];
 	id: Scalars['ID']['output'];
 	images: Array<Image>;
@@ -94,19 +91,16 @@ export type CollectionWhereInput = {
 };
 
 export type Connection = {
-	__typename?: 'Connection';
 	aggregate?: Maybe<Aggregate>;
 };
 
 export type Image = {
-	__typename?: 'Image';
 	height: Scalars['Int']['output'];
 	url: Scalars['String']['output'];
 	width: Scalars['Int']['output'];
 };
 
 export type Mutation = {
-	__typename?: 'Mutation';
 	cartCreate?: Maybe<Order>;
 	cartIncrement?: Maybe<Order>;
 	cartUpdate?: Maybe<Order>;
@@ -127,7 +121,6 @@ export type MutationCartUpdateArgs = {
 };
 
 export type Order = {
-	__typename?: 'Order';
 	createdAt?: Maybe<Scalars['DateTime']['output']>;
 	id: Scalars['ID']['output'];
 	items: Array<OrderItem>;
@@ -141,7 +134,6 @@ export type OrderItemsArgs = {
 };
 
 export type OrderItem = {
-	__typename?: 'OrderItem';
 	id: Scalars['ID']['output'];
 	name: Scalars['String']['output'];
 	price: Scalars['Int']['output'];
@@ -159,7 +151,6 @@ export type OrderProductInput = {
 export type OrderStatus = 'DRAFT' | 'PAID' | 'PENDING';
 
 export type Product = {
-	__typename?: 'Product';
 	categories: Array<Maybe<Category>>;
 	collections: Array<Maybe<Collection>>;
 	description: Scalars['String']['output'];
@@ -194,7 +185,6 @@ export type ProductWhereInput = {
 };
 
 export type Query = {
-	__typename?: 'Query';
 	cart?: Maybe<Order>;
 	categories: Array<Category>;
 	categoriesConnection: Connection;
@@ -249,7 +239,6 @@ export type QueryProductsConnectionArgs = {
 };
 
 export type Variant = {
-	__typename?: 'Variant';
 	id: Scalars['ID']['output'];
 	name: Scalars['String']['output'];
 	value: Scalars['String']['output'];

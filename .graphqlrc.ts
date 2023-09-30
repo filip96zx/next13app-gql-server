@@ -9,7 +9,8 @@ const config = {
       typesPluginsConfig: {
         optionalInfoArgument: true,
         defaultMapper: '../types.js#Mapper<{T}>',
-        contextType: '../types.js#Context'
+        contextType: '../types.js#Context',
+        skipTypename: true
       },
       scalarsOverrides: {
         ID: {
