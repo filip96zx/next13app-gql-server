@@ -10,7 +10,8 @@ export const orderCreate: NonNullable<
 			status: 'DRAFT',
 			items: {
 				create: await getValidOrderItemsInput(items)
-			}
+			},
+			totalItems: items.reduce((acc, item) => acc + item.quantity, 0)
 		}
 	});
 

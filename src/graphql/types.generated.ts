@@ -68,7 +68,7 @@ export type Collection = {
 	id: Scalars['ID']['output'];
 	images: Array<Image>;
 	name: Scalars['String']['output'];
-	products: Array<Maybe<Product>>;
+	products: Array<Product>;
 	slug: Scalars['String']['output'];
 };
 
@@ -102,22 +102,23 @@ export type Image = {
 
 export type Mutation = {
 	orderCreate?: Maybe<Order>;
-	orderItemsIncrement?: Maybe<Order>;
+	orderItemUpdate?: Maybe<OrderItem>;
 	orderItemsUpdate?: Maybe<Order>;
 };
 
 export type MutationOrderCreateArgs = {
-	items: Array<OrderProductInput>;
+	items: Array<OrderItemInput>;
 };
 
-export type MutationOrderItemsIncrementArgs = {
+export type MutationOrderItemUpdateArgs = {
 	id: Scalars['ID']['input'];
-	items: Array<OrderProductInput>;
+	quantity: Scalars['Int']['input'];
 };
 
 export type MutationOrderItemsUpdateArgs = {
 	id: Scalars['ID']['input'];
-	items: Array<OrderProductInput>;
+	items: Array<OrderItemInput>;
+	updateMethod?: InputMaybe<OrderItemsUpdateMethod>;
 };
 
 export type Order = {
@@ -125,6 +126,7 @@ export type Order = {
 	id: Scalars['ID']['output'];
 	items: Array<OrderItem>;
 	status: OrderStatus;
+	totalItems: Scalars['Int']['output'];
 	updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
@@ -140,15 +142,22 @@ export type OrderItem = {
 	productId: Scalars['ID']['output'];
 	quantity: Scalars['Int']['output'];
 	variantId: Scalars['ID']['output'];
+	variantName: Scalars['String']['output'];
 };
 
-export type OrderProductInput = {
+export type OrderItemInput = {
 	productId: Scalars['ID']['input'];
 	quantity: Scalars['Int']['input'];
 	variantId: Scalars['ID']['input'];
 };
 
+export type OrderItemsUpdateMethod = 'INCREMENT' | 'SET';
+
 export type OrderStatus = 'DRAFT' | 'PAID' | 'PENDING';
+
+export type OrderWhereInput = {
+	status?: InputMaybe<OrderStatus>;
+};
 
 export type Product = {
 	categories: Array<Maybe<Category>>;
@@ -188,7 +197,7 @@ export type Query = {
 	categories: Array<Category>;
 	categoriesConnection: Connection;
 	category?: Maybe<Category>;
-	collections: Array<Maybe<Collection>>;
+	collections: Array<Collection>;
 	collectionsConnection: Connection;
 	order?: Maybe<Order>;
 	product?: Maybe<Product>;
@@ -222,6 +231,7 @@ export type QueryCollectionsConnectionArgs = {
 
 export type QueryOrderArgs = {
 	id: Scalars['ID']['input'];
+	where?: InputMaybe<OrderWhereInput>;
 };
 
 export type QueryProductArgs = {
@@ -395,8 +405,12 @@ export type ResolversTypes = {
 	Mutation: ResolverTypeWrapper<{}>;
 	Order: ResolverTypeWrapper<Mapper<Order>>;
 	OrderItem: ResolverTypeWrapper<Mapper<OrderItem>>;
-	OrderProductInput: ResolverTypeWrapper<Mapper<OrderProductInput>>;
+	OrderItemInput: ResolverTypeWrapper<Mapper<OrderItemInput>>;
+	OrderItemsUpdateMethod: ResolverTypeWrapper<
+		Mapper<OrderItemsUpdateMethod>
+	>;
 	OrderStatus: ResolverTypeWrapper<Mapper<OrderStatus>>;
+	OrderWhereInput: ResolverTypeWrapper<Mapper<OrderWhereInput>>;
 	Product: ResolverTypeWrapper<Mapper<Product>>;
 	ProductWhereInput: ResolverTypeWrapper<Mapper<ProductWhereInput>>;
 	Query: ResolverTypeWrapper<{}>;
@@ -422,7 +436,8 @@ export type ResolversParentTypes = {
 	Mutation: {};
 	Order: Mapper<Order>;
 	OrderItem: Mapper<OrderItem>;
-	OrderProductInput: Mapper<OrderProductInput>;
+	OrderItemInput: Mapper<OrderItemInput>;
+	OrderWhereInput: Mapper<OrderWhereInput>;
 	Product: Mapper<Product>;
 	ProductWhereInput: Mapper<ProductWhereInput>;
 	Query: {};
@@ -483,7 +498,7 @@ export type CollectionResolvers<
 	>;
 	name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 	products?: Resolver<
-		Array<Maybe<ResolversTypes['Product']>>,
+		Array<ResolversTypes['Product']>,
 		ParentType,
 		ContextType,
 		Partial<CollectionProductsArgs>
@@ -532,11 +547,11 @@ export type MutationResolvers<
 		ContextType,
 		RequireFields<MutationOrderCreateArgs, 'items'>
 	>;
-	orderItemsIncrement?: Resolver<
-		Maybe<ResolversTypes['Order']>,
+	orderItemUpdate?: Resolver<
+		Maybe<ResolversTypes['OrderItem']>,
 		ParentType,
 		ContextType,
-		RequireFields<MutationOrderItemsIncrementArgs, 'id' | 'items'>
+		RequireFields<MutationOrderItemUpdateArgs, 'id' | 'quantity'>
 	>;
 	orderItemsUpdate?: Resolver<
 		Maybe<ResolversTypes['Order']>,
@@ -568,6 +583,11 @@ export type OrderResolvers<
 		ParentType,
 		ContextType
 	>;
+	totalItems?: Resolver<
+		ResolversTypes['Int'],
+		ParentType,
+		ContextType
+	>;
 	updatedAt?: Resolver<
 		Maybe<ResolversTypes['DateTime']>,
 		ParentType,
@@ -587,6 +607,11 @@ export type OrderItemResolvers<
 	productId?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
 	quantity?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
 	variantId?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+	variantName?: Resolver<
+		ResolversTypes['String'],
+		ParentType,
+		ContextType
+	>;
 	__isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -654,7 +679,7 @@ export type QueryResolvers<
 		RequireFields<QueryCategoryArgs, 'id'>
 	>;
 	collections?: Resolver<
-		Array<Maybe<ResolversTypes['Collection']>>,
+		Array<ResolversTypes['Collection']>,
 		ParentType,
 		ContextType,
 		Partial<QueryCollectionsArgs>

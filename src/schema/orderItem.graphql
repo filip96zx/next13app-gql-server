@@ -1,0 +1,13 @@
+extend type Mutation {
+	orderItemUpdate(id: ID!, quantity: Int!): OrderItem
+}
+
+type OrderItem {
+	id: ID!
+	productId: ID!
+	variantId: ID!
+	quantity: Int!
+	price: Int!
+	name: String!
+	variantName: String!
+}

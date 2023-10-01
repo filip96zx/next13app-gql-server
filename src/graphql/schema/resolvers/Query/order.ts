@@ -1,8 +1,17 @@
-import type { QueryResolvers } from './../../../types.generated';
+import type { QueryResolvers } from 'graphql/types.generated';
 export const order: NonNullable<QueryResolvers['order']> = async (
 	_parent,
-	_arg,
-	_ctx
+	arg,
+	ctx
 ) => {
-	/* Implement Query.order resolver logic here */
+	const { id, where } = arg;
+	const cart = await ctx.prisma.order.findUnique({
+		where: { id, status: where?.status || undefined }
+	});
+
+	if (!cart) {
+		throw new Error('Cart not found');
+	}
+
+	return { ...cart, items: [] };
 };

@@ -6,7 +6,11 @@ export const Order: OrderResolvers = {
 		const result = await ctx.prisma.order.findUnique({
 			where: { id: parent.id },
 			include: {
-				items: { skip: skip || undefined, take: first || undefined }
+				items: {
+					skip: skip || undefined,
+					take: first || undefined,
+					orderBy: { createdAt: 'asc' }
+				}
 			}
 		});
 

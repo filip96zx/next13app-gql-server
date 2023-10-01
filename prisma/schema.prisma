@@ -43,6 +43,7 @@ model ProductCategory{
 model Order{
   id          String @id @default(cuid())
   items       OrderItem[]
+  totalItems  Int @default(0)
   status      OrderStatus
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
@@ -54,7 +55,8 @@ model OrderItem{
   order           Order @relation(fields: [orderId], references: [id])
   quantity        Int
   price           Int
-  name           String
+  name            String
+  variantName     String
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
   productId       String
@@ -127,7 +129,6 @@ enum OrderStatus {
 model Variant {
   id    String @id @default(cuid())
   name  String
-  value String
   products ProductVariant[]
 }
 
