@@ -5,13 +5,13 @@ input OrderProductInput {
 }
 
 extend type Mutation {
-	cartCreate(items: [OrderProductInput!]!): Order
-	cartUpdate(id: ID!, items: [OrderProductInput!]!): Order
-	cartIncrement(id: ID!, items: [OrderProductInput!]!): Order
+	orderCreate(items: [OrderProductInput!]!): Order
+	orderUpdate(id: ID!, items: [OrderProductInput!]!): Order
+	orderIncrement(id: ID!, items: [OrderProductInput!]!): Order
 }
 
 extend type Query {
-	cart(id: ID!): Order
+	order(id: ID!): Order
 }
 
 enum OrderStatus {

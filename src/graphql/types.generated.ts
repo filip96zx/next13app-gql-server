@@ -101,21 +101,21 @@ export type Image = {
 };
 
 export type Mutation = {
-	cartCreate?: Maybe<Order>;
-	cartIncrement?: Maybe<Order>;
-	cartUpdate?: Maybe<Order>;
+	orderCreate?: Maybe<Order>;
+	orderIncrement?: Maybe<Order>;
+	orderUpdate?: Maybe<Order>;
 };
 
-export type MutationCartCreateArgs = {
+export type MutationOrderCreateArgs = {
 	items: Array<OrderProductInput>;
 };
 
-export type MutationCartIncrementArgs = {
+export type MutationOrderIncrementArgs = {
 	id: Scalars['ID']['input'];
 	items: Array<OrderProductInput>;
 };
 
-export type MutationCartUpdateArgs = {
+export type MutationOrderUpdateArgs = {
 	id: Scalars['ID']['input'];
 	items: Array<OrderProductInput>;
 };
@@ -185,19 +185,15 @@ export type ProductWhereInput = {
 };
 
 export type Query = {
-	cart?: Maybe<Order>;
 	categories: Array<Category>;
 	categoriesConnection: Connection;
 	category?: Maybe<Category>;
 	collections: Array<Maybe<Collection>>;
 	collectionsConnection: Connection;
+	order?: Maybe<Order>;
 	product?: Maybe<Product>;
 	products: Array<Product>;
 	productsConnection: Connection;
-};
-
-export type QueryCartArgs = {
-	id: Scalars['ID']['input'];
 };
 
 export type QueryCategoriesArgs = {
@@ -222,6 +218,10 @@ export type QueryCollectionsArgs = {
 
 export type QueryCollectionsConnectionArgs = {
 	where?: InputMaybe<CollectionWhereInput>;
+};
+
+export type QueryOrderArgs = {
+	id: Scalars['ID']['input'];
 };
 
 export type QueryProductArgs = {
@@ -526,23 +526,23 @@ export type MutationResolvers<
 	ParentType extends
 		ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']
 > = {
-	cartCreate?: Resolver<
+	orderCreate?: Resolver<
 		Maybe<ResolversTypes['Order']>,
 		ParentType,
 		ContextType,
-		RequireFields<MutationCartCreateArgs, 'items'>
+		RequireFields<MutationOrderCreateArgs, 'items'>
 	>;
-	cartIncrement?: Resolver<
+	orderIncrement?: Resolver<
 		Maybe<ResolversTypes['Order']>,
 		ParentType,
 		ContextType,
-		RequireFields<MutationCartIncrementArgs, 'id' | 'items'>
+		RequireFields<MutationOrderIncrementArgs, 'id' | 'items'>
 	>;
-	cartUpdate?: Resolver<
+	orderUpdate?: Resolver<
 		Maybe<ResolversTypes['Order']>,
 		ParentType,
 		ContextType,
-		RequireFields<MutationCartUpdateArgs, 'id' | 'items'>
+		RequireFields<MutationOrderUpdateArgs, 'id' | 'items'>
 	>;
 };
 
@@ -635,12 +635,6 @@ export type QueryResolvers<
 	ParentType extends
 		ResolversParentTypes['Query'] = ResolversParentTypes['Query']
 > = {
-	cart?: Resolver<
-		Maybe<ResolversTypes['Order']>,
-		ParentType,
-		ContextType,
-		RequireFields<QueryCartArgs, 'id'>
-	>;
 	categories?: Resolver<
 		Array<ResolversTypes['Category']>,
 		ParentType,
@@ -670,6 +664,12 @@ export type QueryResolvers<
 		ParentType,
 		ContextType,
 		Partial<QueryCollectionsConnectionArgs>
+	>;
+	order?: Resolver<
+		Maybe<ResolversTypes['Order']>,
+		ParentType,
+		ContextType,
+		RequireFields<QueryOrderArgs, 'id'>
 	>;
 	product?: Resolver<
 		Maybe<ResolversTypes['Product']>,
