@@ -9,5 +9,5 @@ type Aggregate {
 }
 
 type Connection {
-	aggregate: Aggregate
+	aggregate: Aggregate!
 }

@@ -91,7 +91,7 @@ export type CollectionWhereInput = {
 };
 
 export type Connection = {
-	aggregate?: Maybe<Aggregate>;
+	aggregate: Aggregate;
 };
 
 export type Image = {
@@ -159,7 +159,7 @@ export type Product = {
 	name: Scalars['String']['output'];
 	price: Scalars['Int']['output'];
 	slug: Scalars['String']['output'];
-	variants: Array<Maybe<Variant>>;
+	variants: Array<Variant>;
 };
 
 export type ProductCategoriesArgs = {
@@ -498,7 +498,7 @@ export type ConnectionResolvers<
 		ResolversParentTypes['Connection'] = ResolversParentTypes['Connection']
 > = {
 	aggregate?: Resolver<
-		Maybe<ResolversTypes['Aggregate']>,
+		ResolversTypes['Aggregate'],
 		ParentType,
 		ContextType
 	>;
@@ -623,7 +623,7 @@ export type ProductResolvers<
 	price?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
 	slug?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 	variants?: Resolver<
-		Array<Maybe<ResolversTypes['Variant']>>,
+		Array<ResolversTypes['Variant']>,
 		ParentType,
 		ContextType
 	>;
