@@ -40,7 +40,7 @@ export const getValidOrderItemsInput = async (
 
 	return cartItems;
 };
-export const updateCart = async ({
+export const updateOrderItems = async ({
 	cartId,
 	items,
 	updateMethod = 'increment'
@@ -49,7 +49,8 @@ export const updateCart = async ({
 	items: Array<OrderProductInput>;
 	updateMethod: 'replace' | 'increment';
 }) => {
-	const isUpdateMethod = (method: UpdateMethod) => updateMethod === method;
+	const isUpdateMethod = (method: UpdateMethod) =>
+		updateMethod === method;
 	const itemsToUpdate = items.filter((item) => item.quantity > 0);
 	const itemsToDelete = isUpdateMethod('replace')
 		? items.filter((item) => item.quantity === 0)

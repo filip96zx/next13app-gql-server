@@ -102,20 +102,20 @@ export type Image = {
 
 export type Mutation = {
 	orderCreate?: Maybe<Order>;
-	orderIncrement?: Maybe<Order>;
-	orderUpdate?: Maybe<Order>;
+	orderItemsIncrement?: Maybe<Order>;
+	orderItemsUpdate?: Maybe<Order>;
 };
 
 export type MutationOrderCreateArgs = {
 	items: Array<OrderProductInput>;
 };
 
-export type MutationOrderIncrementArgs = {
+export type MutationOrderItemsIncrementArgs = {
 	id: Scalars['ID']['input'];
 	items: Array<OrderProductInput>;
 };
 
-export type MutationOrderUpdateArgs = {
+export type MutationOrderItemsUpdateArgs = {
 	id: Scalars['ID']['input'];
 	items: Array<OrderProductInput>;
 };
@@ -532,17 +532,17 @@ export type MutationResolvers<
 		ContextType,
 		RequireFields<MutationOrderCreateArgs, 'items'>
 	>;
-	orderIncrement?: Resolver<
+	orderItemsIncrement?: Resolver<
 		Maybe<ResolversTypes['Order']>,
 		ParentType,
 		ContextType,
-		RequireFields<MutationOrderIncrementArgs, 'id' | 'items'>
+		RequireFields<MutationOrderItemsIncrementArgs, 'id' | 'items'>
 	>;
-	orderUpdate?: Resolver<
+	orderItemsUpdate?: Resolver<
 		Maybe<ResolversTypes['Order']>,
 		ParentType,
 		ContextType,
-		RequireFields<MutationOrderUpdateArgs, 'id' | 'items'>
+		RequireFields<MutationOrderItemsUpdateArgs, 'id' | 'items'>
 	>;
 };
 

@@ -1,4 +1,4 @@
-import { getValidOrderItemsInput } from 'graphql/schema/resolvers/Mutation/shared/cart.utils';
+import { getValidOrderItemsInput } from 'graphql/schema/resolvers/Mutation/shared/order.utils';
 import type { MutationResolvers } from 'graphql/types.generated';
 export const orderCreate: NonNullable<
 	MutationResolvers['orderCreate']

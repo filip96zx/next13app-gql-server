@@ -6,8 +6,8 @@ import { Collection } from './schema/resolvers/Collection';
 import { Connection } from './schema/resolvers/Connection';
 import { Image } from './schema/resolvers/Image';
 import { orderCreate as Mutation_orderCreate } from './schema/resolvers/Mutation/orderCreate';
-import { orderIncrement as Mutation_orderIncrement } from './schema/resolvers/Mutation/orderIncrement';
-import { orderUpdate as Mutation_orderUpdate } from './schema/resolvers/Mutation/orderUpdate';
+import { orderItemsIncrement as Mutation_orderItemsIncrement } from './schema/resolvers/Mutation/orderItemsIncrement';
+import { orderItemsUpdate as Mutation_orderItemsUpdate } from './schema/resolvers/Mutation/orderItemsUpdate';
 import { Order } from './schema/resolvers/Order';
 import { OrderItem } from './schema/resolvers/OrderItem';
 import { Product } from './schema/resolvers/Product';
@@ -36,8 +36,8 @@ export const resolvers: Resolvers = {
 	},
 	Mutation: {
 		orderCreate: Mutation_orderCreate,
-		orderIncrement: Mutation_orderIncrement,
-		orderUpdate: Mutation_orderUpdate
+		orderItemsIncrement: Mutation_orderItemsIncrement,
+		orderItemsUpdate: Mutation_orderItemsUpdate
 	},
 
 	Aggregate: Aggregate,

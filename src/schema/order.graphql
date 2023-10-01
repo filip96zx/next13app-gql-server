@@ -6,8 +6,8 @@ input OrderProductInput {
 
 extend type Mutation {
 	orderCreate(items: [OrderProductInput!]!): Order
-	orderUpdate(id: ID!, items: [OrderProductInput!]!): Order
-	orderIncrement(id: ID!, items: [OrderProductInput!]!): Order
+	orderItemsUpdate(id: ID!, items: [OrderProductInput!]!): Order
+	orderItemsIncrement(id: ID!, items: [OrderProductInput!]!): Order
 }
 
 extend type Query {
