@@ -1,0 +1,7 @@
+type Rating {
+	id: ID!
+	comment: String!
+	rating: Int!
+	createdAt: DateTime!
+	updatedAt: DateTime!
+}

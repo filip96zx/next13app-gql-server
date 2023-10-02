@@ -20,6 +20,7 @@ import { order as Query_order } from './schema/resolvers/Query/order';
 import { product as Query_product } from './schema/resolvers/Query/product';
 import { products as Query_products } from './schema/resolvers/Query/products';
 import { productsConnection as Query_productsConnection } from './schema/resolvers/Query/productsConnection';
+import { Rating } from './schema/resolvers/Rating';
 import { Variant } from './schema/resolvers/Variant';
 import { DateTimeResolver } from 'graphql-scalars';
 export const resolvers: Resolvers = {
@@ -48,6 +49,7 @@ export const resolvers: Resolvers = {
 	Order: Order,
 	OrderItem: OrderItem,
 	Product: Product,
+	Rating: Rating,
 	Variant: Variant,
 	DateTime: DateTimeResolver
 };

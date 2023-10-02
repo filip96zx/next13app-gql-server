@@ -167,6 +167,7 @@ export type Product = {
 	images: Array<Maybe<Image>>;
 	name: Scalars['String']['output'];
 	price: Scalars['Int']['output'];
+	ratings: Array<Rating>;
 	slug: Scalars['String']['output'];
 	variants: Array<Variant>;
 };
@@ -182,6 +183,11 @@ export type ProductCollectionsArgs = {
 };
 
 export type ProductImagesArgs = {
+	first?: InputMaybe<Scalars['Int']['input']>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type ProductRatingsArgs = {
 	first?: InputMaybe<Scalars['Int']['input']>;
 	skip?: InputMaybe<Scalars['Int']['input']>;
 };
@@ -248,10 +254,17 @@ export type QueryProductsConnectionArgs = {
 	where?: InputMaybe<ProductWhereInput>;
 };
 
+export type Rating = {
+	comment: Scalars['String']['output'];
+	createdAt: Scalars['DateTime']['output'];
+	id: Scalars['ID']['output'];
+	rating: Scalars['Int']['output'];
+	updatedAt: Scalars['DateTime']['output'];
+};
+
 export type Variant = {
 	id: Scalars['ID']['output'];
 	name: Scalars['String']['output'];
-	value: Scalars['String']['output'];
 };
 
 export type ResolverTypeWrapper<T> = Promise<T> | T;
@@ -414,6 +427,7 @@ export type ResolversTypes = {
 	Product: ResolverTypeWrapper<Mapper<Product>>;
 	ProductWhereInput: ResolverTypeWrapper<Mapper<ProductWhereInput>>;
 	Query: ResolverTypeWrapper<{}>;
+	Rating: ResolverTypeWrapper<Mapper<Rating>>;
 	Variant: ResolverTypeWrapper<Mapper<Variant>>;
 	Boolean: ResolverTypeWrapper<Mapper<Scalars['Boolean']['output']>>;
 };
@@ -441,6 +455,7 @@ export type ResolversParentTypes = {
 	Product: Mapper<Product>;
 	ProductWhereInput: Mapper<ProductWhereInput>;
 	Query: {};
+	Rating: Mapper<Rating>;
 	Variant: Mapper<Variant>;
 	Boolean: Mapper<Scalars['Boolean']['output']>;
 };
@@ -646,6 +661,12 @@ export type ProductResolvers<
 	>;
 	name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 	price?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+	ratings?: Resolver<
+		Array<ResolversTypes['Rating']>,
+		ParentType,
+		ContextType,
+		Partial<ProductRatingsArgs>
+	>;
 	slug?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 	variants?: Resolver<
 		Array<ResolversTypes['Variant']>,
@@ -716,6 +737,31 @@ export type QueryResolvers<
 	>;
 };
 
+export type RatingResolvers<
+	ContextType = Context,
+	ParentType extends
+		ResolversParentTypes['Rating'] = ResolversParentTypes['Rating']
+> = {
+	comment?: Resolver<
+		ResolversTypes['String'],
+		ParentType,
+		ContextType
+	>;
+	createdAt?: Resolver<
+		ResolversTypes['DateTime'],
+		ParentType,
+		ContextType
+	>;
+	id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+	rating?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+	updatedAt?: Resolver<
+		ResolversTypes['DateTime'],
+		ParentType,
+		ContextType
+	>;
+	__isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type VariantResolvers<
 	ContextType = Context,
 	ParentType extends
@@ -723,7 +769,6 @@ export type VariantResolvers<
 > = {
 	id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
 	name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-	value?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 	__isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -739,5 +784,6 @@ export type Resolvers<ContextType = Context> = {
 	OrderItem?: OrderItemResolvers<ContextType>;
 	Product?: ProductResolvers<ContextType>;
 	Query?: QueryResolvers<ContextType>;
+	Rating?: RatingResolvers<ContextType>;
 	Variant?: VariantResolvers<ContextType>;
 };

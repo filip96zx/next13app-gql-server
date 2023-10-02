@@ -33,4 +33,5 @@ type Product {
 	collections(skip: Int, first: Int): [Collection]!
 	images(skip: Int, first: Int): [Image]!
 	variants: [Variant!]!
+	ratings(skip: Int, first: Int): [Rating!]!
 }
