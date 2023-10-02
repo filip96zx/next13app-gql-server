@@ -104,6 +104,8 @@ export type Mutation = {
 	orderCreate?: Maybe<Order>;
 	orderItemUpdate?: Maybe<OrderItem>;
 	orderItemsUpdate?: Maybe<Order>;
+	productCalculateAndUpdateAverageRating?: Maybe<Product>;
+	productsCalculateAndUpdateAverageRating: Array<Product>;
 };
 
 export type MutationOrderCreateArgs = {
@@ -121,6 +123,10 @@ export type MutationOrderItemsUpdateArgs = {
 	updateMethod?: InputMaybe<OrderItemsUpdateMethod>;
 };
 
+export type MutationProductCalculateAndUpdateAverageRatingArgs = {
+	id: Scalars['ID']['input'];
+};
+
 export type Order = {
 	createdAt?: Maybe<Scalars['DateTime']['output']>;
 	id: Scalars['ID']['output'];
@@ -133,6 +139,11 @@ export type Order = {
 export type OrderItemsArgs = {
 	first?: InputMaybe<Scalars['Int']['input']>;
 	skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type OrderByInput = {
+	field: SortableField;
+	order: SortOrder;
 };
 
 export type OrderItem = {
@@ -160,8 +171,10 @@ export type OrderWhereInput = {
 };
 
 export type Product = {
+	averageRating: Scalars['Float']['output'];
 	categories: Array<Maybe<Category>>;
 	collections: Array<Maybe<Collection>>;
+	createdAt: Scalars['DateTime']['output'];
 	description: Scalars['String']['output'];
 	id: Scalars['ID']['output'];
 	images: Array<Maybe<Image>>;
@@ -246,6 +259,7 @@ export type QueryProductArgs = {
 
 export type QueryProductsArgs = {
 	first?: InputMaybe<Scalars['Int']['input']>;
+	orderBy?: InputMaybe<OrderByInput>;
 	skip?: InputMaybe<Scalars['Int']['input']>;
 	where?: InputMaybe<ProductWhereInput>;
 };
@@ -261,6 +275,15 @@ export type Rating = {
 	rating: Scalars['Int']['output'];
 	updatedAt: Scalars['DateTime']['output'];
 };
+
+export type SortOrder = 'asc' | 'desc';
+
+export type SortableField =
+	| 'averageRating'
+	| 'createdAt'
+	| 'name'
+	| 'price'
+	| 'slug';
 
 export type Variant = {
 	id: Scalars['ID']['output'];
@@ -417,6 +440,7 @@ export type ResolversTypes = {
 	Image: ResolverTypeWrapper<Mapper<Image>>;
 	Mutation: ResolverTypeWrapper<{}>;
 	Order: ResolverTypeWrapper<Mapper<Order>>;
+	OrderByInput: ResolverTypeWrapper<Mapper<OrderByInput>>;
 	OrderItem: ResolverTypeWrapper<Mapper<OrderItem>>;
 	OrderItemInput: ResolverTypeWrapper<Mapper<OrderItemInput>>;
 	OrderItemsUpdateMethod: ResolverTypeWrapper<
@@ -425,9 +449,12 @@ export type ResolversTypes = {
 	OrderStatus: ResolverTypeWrapper<Mapper<OrderStatus>>;
 	OrderWhereInput: ResolverTypeWrapper<Mapper<OrderWhereInput>>;
 	Product: ResolverTypeWrapper<Mapper<Product>>;
+	Float: ResolverTypeWrapper<Mapper<Scalars['Float']['output']>>;
 	ProductWhereInput: ResolverTypeWrapper<Mapper<ProductWhereInput>>;
 	Query: ResolverTypeWrapper<{}>;
 	Rating: ResolverTypeWrapper<Mapper<Rating>>;
+	SortOrder: ResolverTypeWrapper<Mapper<SortOrder>>;
+	SortableField: ResolverTypeWrapper<Mapper<SortableField>>;
 	Variant: ResolverTypeWrapper<Mapper<Variant>>;
 	Boolean: ResolverTypeWrapper<Mapper<Scalars['Boolean']['output']>>;
 };
@@ -449,10 +476,12 @@ export type ResolversParentTypes = {
 	Image: Mapper<Image>;
 	Mutation: {};
 	Order: Mapper<Order>;
+	OrderByInput: Mapper<OrderByInput>;
 	OrderItem: Mapper<OrderItem>;
 	OrderItemInput: Mapper<OrderItemInput>;
 	OrderWhereInput: Mapper<OrderWhereInput>;
 	Product: Mapper<Product>;
+	Float: Mapper<Scalars['Float']['output']>;
 	ProductWhereInput: Mapper<ProductWhereInput>;
 	Query: {};
 	Rating: Mapper<Rating>;
@@ -574,6 +603,20 @@ export type MutationResolvers<
 		ContextType,
 		RequireFields<MutationOrderItemsUpdateArgs, 'id' | 'items'>
 	>;
+	productCalculateAndUpdateAverageRating?: Resolver<
+		Maybe<ResolversTypes['Product']>,
+		ParentType,
+		ContextType,
+		RequireFields<
+			MutationProductCalculateAndUpdateAverageRatingArgs,
+			'id'
+		>
+	>;
+	productsCalculateAndUpdateAverageRating?: Resolver<
+		Array<ResolversTypes['Product']>,
+		ParentType,
+		ContextType
+	>;
 };
 
 export type OrderResolvers<
@@ -635,6 +678,11 @@ export type ProductResolvers<
 	ParentType extends
 		ResolversParentTypes['Product'] = ResolversParentTypes['Product']
 > = {
+	averageRating?: Resolver<
+		ResolversTypes['Float'],
+		ParentType,
+		ContextType
+	>;
 	categories?: Resolver<
 		Array<Maybe<ResolversTypes['Category']>>,
 		ParentType,
@@ -646,6 +694,11 @@ export type ProductResolvers<
 		ParentType,
 		ContextType,
 		Partial<ProductCollectionsArgs>
+	>;
+	createdAt?: Resolver<
+		ResolversTypes['DateTime'],
+		ParentType,
+		ContextType
 	>;
 	description?: Resolver<
 		ResolversTypes['String'],

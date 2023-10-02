@@ -8,6 +8,8 @@ import { Image } from './schema/resolvers/Image';
 import { orderCreate as Mutation_orderCreate } from './schema/resolvers/Mutation/orderCreate';
 import { orderItemUpdate as Mutation_orderItemUpdate } from './schema/resolvers/Mutation/orderItemUpdate';
 import { orderItemsUpdate as Mutation_orderItemsUpdate } from './schema/resolvers/Mutation/orderItemsUpdate';
+import { productCalculateAndUpdateAverageRating as Mutation_productCalculateAndUpdateAverageRating } from './schema/resolvers/Mutation/productCalculateAndUpdateAverageRating';
+import { productsCalculateAndUpdateAverageRating as Mutation_productsCalculateAndUpdateAverageRating } from './schema/resolvers/Mutation/productsCalculateAndUpdateAverageRating';
 import { Order } from './schema/resolvers/Order';
 import { OrderItem } from './schema/resolvers/OrderItem';
 import { Product } from './schema/resolvers/Product';
@@ -38,7 +40,11 @@ export const resolvers: Resolvers = {
 	Mutation: {
 		orderCreate: Mutation_orderCreate,
 		orderItemUpdate: Mutation_orderItemUpdate,
-		orderItemsUpdate: Mutation_orderItemsUpdate
+		orderItemsUpdate: Mutation_orderItemsUpdate,
+		productCalculateAndUpdateAverageRating:
+			Mutation_productCalculateAndUpdateAverageRating,
+		productsCalculateAndUpdateAverageRating:
+			Mutation_productsCalculateAndUpdateAverageRating
 	},
 
 	Aggregate: Aggregate,

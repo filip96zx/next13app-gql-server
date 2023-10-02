@@ -1,5 +1,5 @@
 import { Prisma } from '@prisma/client';
-import { parseProductToProductWithNotNullableLists } from 'graphql/schema/resolvers/Query/shared/product.utils';
+import { parseProductToProductWithNotNullableLists } from 'graphql/schema/resolvers/shared/product.utils';
 import type {
 	InputMaybe,
 	ProductWhereInput,
@@ -46,11 +46,15 @@ export const getProductWhereParams = (
 export const products: NonNullable<
 	QueryResolvers['products']
 > = async (_parent, arg, ctx) => {
-	const { where, skip, first } = arg;
-
+	const { where, skip, first, orderBy } = arg;
 	const products = await ctx.prisma.product.findMany({
 		...(where && {
 			where: getProductWhereParams(where)
+		}),
+		...(orderBy?.field && {
+			orderBy: {
+				[orderBy.field]: orderBy.order
+			}
 		}),
 		skip: skip ?? undefined,
 		take: first ?? undefined
