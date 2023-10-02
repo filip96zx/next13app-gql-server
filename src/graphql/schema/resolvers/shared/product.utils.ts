@@ -1,3 +1,4 @@
+import { prisma } from 'db';
 import { Product } from 'graphql/types.generated';
 
 type ArrayKeys<T extends object> = {
@@ -14,19 +15,31 @@ type ItemWithOptionalLists<T extends object> = {
 	[K in NonArrayKeys<T>]: T[K];
 };
 
-type ItemWithOptionalListsWithoutTypename<T extends object> = Omit<
-	ItemWithOptionalLists<T>,
-	'__typename'
->;
-
 export const parseProductToProductWithNotNullableLists = (
-	product: ItemWithOptionalListsWithoutTypename<Product>
+	product: ItemWithOptionalLists<Product>
 ): NonNullable<Product> => {
 	return {
 		...product,
 		categories: [],
 		collections: [],
 		images: [],
-		variants: []
+		variants: [],
+		ratings: []
 	};
 };
+
+export async function updateProductAverageRating(productId: string) {
+	const product = await prisma.product.findUnique({
+		where: { id: productId },
+		include: { ratings: true }
+	});
+	const ratings = product?.ratings ?? [];
+	const averageRating =
+		ratings.reduce((acc, rating) => acc + rating.rating, 0) /
+		ratings.length;
+		
+	return await prisma.product.update({
+		where: { id: productId },
+		data: { averageRating }
+	});
+}

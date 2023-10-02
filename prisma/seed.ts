@@ -119,7 +119,6 @@ const generateVariants = async (count: number) => {
 		const variant = await prisma.variant.create({
 			data: {
 				name: color,
-				value: color
 			}
 		});
 		variants.push(variant);

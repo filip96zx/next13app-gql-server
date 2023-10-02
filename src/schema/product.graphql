@@ -13,14 +13,37 @@ input ProductWhereInput {
 	excludedIds: [ID!]
 }
 
+enum SortOrder {
+	asc
+	desc
+}
+
+enum SortableField {
+	name
+	slug
+	price
+	averageRating
+	createdAt
+}
+input OrderByInput {
+	field: SortableField!
+	order: SortOrder!
+}
+
 extend type Query {
 	product(id: ID!): Product
 	products(
 		where: ProductWhereInput
 		skip: Int
+		orderBy: OrderByInput
 		first: Int
 	): [Product!]!
 	productsConnection(where: ProductWhereInput): Connection!
+}
+
+extend type Mutation {
+	productCalculateAndUpdateAverageRating(id: ID!): Product
+	productsCalculateAndUpdateAverageRating: [Product!]!
 }
 
 type Product {
@@ -29,8 +52,11 @@ type Product {
 	slug: String!
 	description: String!
 	price: Int!
+	averageRating: Float!
+	createdAt: DateTime!
 	categories(skip: Int, first: Int): [Category]!
 	collections(skip: Int, first: Int): [Collection]!
 	images(skip: Int, first: Int): [Image]!
-	variants: [Variant]!
+	variants: [Variant!]!
+	ratings(skip: Int, first: Int): [Rating!]!
 }

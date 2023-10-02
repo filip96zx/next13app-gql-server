@@ -59,7 +59,16 @@ export const Product: ProductResolvers = {
 				}
 			}
 		});
-
 		return result?.variants.map((i) => i.variant) ?? [];
+	},
+	ratings: async (parent, args, ctx) => {
+		const { first, skip } = args;
+		const result = await ctx.prisma.product.findUnique({
+			where: { id: parent.id },
+			include: {
+				ratings: { skip: skip ?? undefined, take: first ?? undefined }
+			}
+		});
+		return result?.ratings ?? [];
 	}
 };

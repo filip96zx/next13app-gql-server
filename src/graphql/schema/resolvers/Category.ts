@@ -1,4 +1,4 @@
-import { parseProductToProductWithNotNullableLists } from 'graphql/schema/resolvers/Query/shared/product.utils';
+import { parseProductToProductWithNotNullableLists } from 'graphql/schema/resolvers/shared/product.utils';
 import type { CategoryResolvers } from 'graphql/types.generated';
 
 export const Category: CategoryResolvers = {

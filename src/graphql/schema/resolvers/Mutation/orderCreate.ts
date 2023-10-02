@@ -1,7 +1,7 @@
-import { getValidOrderItemsInput } from 'graphql/schema/resolvers/Mutation/shared/cart.utils';
+import { getValidOrderItemsInput } from 'graphql/schema/resolvers/Mutation/shared/order.utils';
 import type { MutationResolvers } from 'graphql/types.generated';
-export const cartCreate: NonNullable<
-	MutationResolvers['cartCreate']
+export const orderCreate: NonNullable<
+	MutationResolvers['orderCreate']
 > = async (_parent, arg, ctx) => {
 	const { items } = arg;
 
@@ -10,7 +10,8 @@ export const cartCreate: NonNullable<
 			status: 'DRAFT',
 			items: {
 				create: await getValidOrderItemsInput(items)
-			}
+			},
+			totalItems: items.reduce((acc, item) => acc + item.quantity, 0)
 		}
 	});
 

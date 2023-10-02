@@ -7,7 +7,7 @@ extend type Query {
 		skip: Int
 		first: Int
 		where: CollectionWhereInput
-	): [Collection]!
+	): [Collection!]!
 	collectionsConnection(where: CollectionWhereInput): Connection!
 }
 
@@ -16,6 +16,6 @@ type Collection {
 	name: String!
 	slug: String!
 	description: String!
-	products(skip: Int, first: Int): [Product]!
+	products(skip: Int, first: Int): [Product!]!
 	images(skip: Int, first: Int): [Image!]!
 }

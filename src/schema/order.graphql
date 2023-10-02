@@ -1,17 +1,24 @@
-input OrderProductInput {
+input OrderItemInput {
 	productId: ID!
 	variantId: ID!
 	quantity: Int!
 }
 
+input OrderWhereInput {
+	status: OrderStatus
+}
+
 extend type Mutation {
-	cartCreate(items: [OrderProductInput!]!): Order
-	cartUpdate(id: ID!, items: [OrderProductInput!]!): Order
-	cartIncrement(id: ID!, items: [OrderProductInput!]!): Order
+	orderCreate(items: [OrderItemInput!]!): Order
+	orderItemsUpdate(
+		id: ID!
+		items: [OrderItemInput!]!
+		updateMethod: OrderItemsUpdateMethod
+	): Order
 }
 
 extend type Query {
-	cart(id: ID!): Order
+	order(id: ID!, where: OrderWhereInput): Order
 }
 
 enum OrderStatus {
@@ -20,19 +27,15 @@ enum OrderStatus {
 	PAID
 }
 
+enum OrderItemsUpdateMethod {
+	SET
+	INCREMENT
+}
 type Order {
 	id: ID!
 	items(skip: Int, first: Int): [OrderItem!]!
+	totalItems: Int!
 	status: OrderStatus!
 	createdAt: DateTime
 	updatedAt: DateTime
-}
-
-type OrderItem {
-	id: ID!
-	productId: ID!
-	variantId: ID!
-	quantity: Int!
-	price: Int!
-	name: String!
 }
