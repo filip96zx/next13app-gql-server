@@ -118,55 +118,13 @@ const generateVariants = async (count: number) => {
 
 		const variant = await prisma.variant.create({
 			data: {
-				name: color,
+				name: color
 			}
 		});
 		variants.push(variant);
 	}
 	return variants;
 };
-
-// const products = await generateProducts(100);
-
-// const collections = await generateCollections(5);
-// const categories = await generateCategories(10);
-const variants = await generateVariants(8);
-
-// products.forEach(async (product) => {
-// 	await prisma.product.update({
-// 		where: { id: product.id },
-// 		data: {
-// 			collections: {
-// 				create: [
-// 					{
-// 						collection: {
-// 							connect: {
-// 								id: collections[
-// 									Math.floor(Math.random() * collections.length-1)
-// 								].id
-// 							}
-// 						}
-// 					}
-// 				]
-// 			},
-// 			categories: {
-// 				create: [
-// 					{
-// 						category: {
-// 							connect: {
-// 								id: categories[
-// 									Math.floor(Math.random() * categories.length-1)
-// 								].id
-// 							}
-// 						}
-// 					}
-// 				]
-// 			}
-// 		}
-// 	});
-// });
-
-const allProducts = await prisma.product.findMany();
 
 const getRandomNaturalNumber = (max: number) => {
 	return Math.floor(Math.random() * max);
@@ -182,14 +140,76 @@ const generateRadomNumbersWithoutRepetition = (
 	}
 	return Array.from(numbers);
 };
+const products = await generateProducts(100);
 
-allProducts.forEach(async (product) => {
+const collections = await generateCollections(15);
+const categories = await generateCategories(10);
+const variants = await generateVariants(10);
+
+const images = await generateImages(20);
+collections.forEach(async (collection) => {
+	await prisma.collection.update({
+		where: { id: collection.id },
+		data: {
+			images: {
+				create: generateRadomNumbersWithoutRepetition(
+					1,
+					images.length - 1
+				).map((i) => ({
+					image: {
+						connect: {
+							id: images[i].id
+						}
+					}
+				}))
+			}
+		}
+	});
+});
+
+products.forEach(async (product) => {
 	await prisma.product.update({
 		where: { id: product.id },
 		data: {
+			collections: {
+				create: generateRadomNumbersWithoutRepetition(
+					getRandomNaturalNumber(collections.length - 6),
+					collections.length - 1
+				).map((i) => ({
+					collection: {
+						connect: {
+							id: collections[i].id
+						}
+					}
+				}))
+			},
+			images: {
+				create: generateRadomNumbersWithoutRepetition(
+					getRandomNaturalNumber(5),
+					images.length - 1
+				).map((i) => ({
+					image: {
+						connect: {
+							id: images[i].id
+						}
+					}
+				}))
+			},
+			categories: {
+				create: generateRadomNumbersWithoutRepetition(
+					6,
+					categories.length - 1
+				).map((i) => ({
+					category: {
+						connect: {
+							id: categories[i].id
+						}
+					}
+				}))
+			},
 			variants: {
 				create: generateRadomNumbersWithoutRepetition(
-					getRandomNaturalNumber(variants.length - 1),
+					getRandomNaturalNumber(variants.length - 4),
 					variants.length - 1
 				).map((i) => ({
 					variant: {
@@ -203,9 +223,9 @@ allProducts.forEach(async (product) => {
 	});
 });
 
-// allProducts.forEach(async (product) => {
-// 	await generateRatingsForProducts(
-// 		Math.floor(Math.random() * 100),
-// 		product.id
-// 	);
-// });
+products.forEach(async (product) => {
+	await generateRatingsForProducts(
+		Math.floor(Math.random() * 150),
+		product.id
+	);
+});
