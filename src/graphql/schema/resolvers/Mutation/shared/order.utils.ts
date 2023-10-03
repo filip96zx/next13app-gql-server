@@ -1,12 +1,12 @@
 import { prisma } from 'db';
 import { Prisma } from '@prisma/client';
 import {
-	OrderItemsUpdateMethod,
-	OrderProductInput
+	OrderItemInput,
+	OrderItemsUpdateMethod
 } from 'graphql/types.generated';
 
 export const getValidOrderItemsInput = async (
-	items: Array<OrderProductInput>
+	items: Array<OrderItemInput>
 ) => {
 	const products = await prisma.product.findMany({
 		where: {

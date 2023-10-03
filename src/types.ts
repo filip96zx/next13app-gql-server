@@ -8,6 +8,7 @@ type OptionalKeys<T> = {
 
 type MakeNestedRelationsOptional<T extends object> = {
 	[K in keyof Pick<T, OptionalKeys<T>>]?: MakeNestedRelationsOptional<
+		//@ts-ignore
 		T[K]
 	>;
 } & {
