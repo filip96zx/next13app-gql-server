@@ -89,6 +89,9 @@ model Rating{
   productId   String
   product     Product @relation(fields: [productId], references: [id])
   rating      Int
+  title       String
+  userName    String
+  email       String
   comment     String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
