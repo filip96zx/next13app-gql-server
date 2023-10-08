@@ -15,6 +15,7 @@ extend type Mutation {
 		items: [OrderItemInput!]!
 		updateMethod: OrderItemsUpdateMethod
 	): Order
+	orderUpdateStatus(id: ID!, status: OrderStatus!): Order
 }
 
 extend type Query {
