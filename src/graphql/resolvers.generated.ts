@@ -11,6 +11,7 @@ import { orderItemsUpdate as Mutation_orderItemsUpdate } from './schema/resolver
 import { orderUpdateStatus as Mutation_orderUpdateStatus } from './schema/resolvers/Mutation/orderUpdateStatus';
 import { productCalculateAndUpdateAverageRating as Mutation_productCalculateAndUpdateAverageRating } from './schema/resolvers/Mutation/productCalculateAndUpdateAverageRating';
 import { productsCalculateAndUpdateAverageRating as Mutation_productsCalculateAndUpdateAverageRating } from './schema/resolvers/Mutation/productsCalculateAndUpdateAverageRating';
+import { ratingCreate as Mutation_ratingCreate } from './schema/resolvers/Mutation/ratingCreate';
 import { Order } from './schema/resolvers/Order';
 import { OrderItem } from './schema/resolvers/OrderItem';
 import { Product } from './schema/resolvers/Product';
@@ -23,6 +24,8 @@ import { order as Query_order } from './schema/resolvers/Query/order';
 import { product as Query_product } from './schema/resolvers/Query/product';
 import { products as Query_products } from './schema/resolvers/Query/products';
 import { productsConnection as Query_productsConnection } from './schema/resolvers/Query/productsConnection';
+import { ratingConnection as Query_ratingConnection } from './schema/resolvers/Query/ratingConnection';
+import { ratings as Query_ratings } from './schema/resolvers/Query/ratings';
 import { Rating } from './schema/resolvers/Rating';
 import { Variant } from './schema/resolvers/Variant';
 import { DateTimeResolver } from 'graphql-scalars';
@@ -36,7 +39,9 @@ export const resolvers: Resolvers = {
 		order: Query_order,
 		product: Query_product,
 		products: Query_products,
-		productsConnection: Query_productsConnection
+		productsConnection: Query_productsConnection,
+		ratingConnection: Query_ratingConnection,
+		ratings: Query_ratings
 	},
 	Mutation: {
 		orderCreate: Mutation_orderCreate,
@@ -46,7 +51,8 @@ export const resolvers: Resolvers = {
 		productCalculateAndUpdateAverageRating:
 			Mutation_productCalculateAndUpdateAverageRating,
 		productsCalculateAndUpdateAverageRating:
-			Mutation_productsCalculateAndUpdateAverageRating
+			Mutation_productsCalculateAndUpdateAverageRating,
+		ratingCreate: Mutation_ratingCreate
 	},
 
 	Aggregate: Aggregate,

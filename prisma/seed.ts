@@ -61,6 +61,9 @@ const generateRatingsForProducts = async (
 			data: {
 				rating: rating,
 				comment: faker.lorem.sentence(),
+				email: faker.internet.email(),
+				title: faker.word.words({ count: 5 }),
+				userName: faker.internet.userName(),
 				product: {
 					connect: {
 						id: ProductId

@@ -107,6 +107,7 @@ export type Mutation = {
 	orderUpdateStatus?: Maybe<Order>;
 	productCalculateAndUpdateAverageRating?: Maybe<Product>;
 	productsCalculateAndUpdateAverageRating: Array<Product>;
+	ratingCreate: Rating;
 };
 
 export type MutationorderCreateArgs = {
@@ -131,6 +132,11 @@ export type MutationorderUpdateStatusArgs = {
 
 export type MutationproductCalculateAndUpdateAverageRatingArgs = {
 	id: Scalars['ID']['input'];
+};
+
+export type MutationratingCreateArgs = {
+	productId: Scalars['ID']['input'];
+	ratingInput: RatingInput;
 };
 
 export type Order = {
@@ -228,6 +234,8 @@ export type Query = {
 	product?: Maybe<Product>;
 	products: Array<Product>;
 	productsConnection: Connection;
+	ratingConnection: Connection;
+	ratings: Array<Rating>;
 };
 
 export type QuerycategoriesArgs = {
@@ -274,12 +282,37 @@ export type QueryproductsConnectionArgs = {
 	where?: InputMaybe<ProductWhereInput>;
 };
 
+export type QueryratingConnectionArgs = {
+	where?: InputMaybe<RatingWhereInput>;
+};
+
+export type QueryratingsArgs = {
+	first?: InputMaybe<Scalars['Int']['input']>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
+	where?: InputMaybe<RatingWhereInput>;
+};
+
 export type Rating = {
 	comment: Scalars['String']['output'];
 	createdAt: Scalars['DateTime']['output'];
+	email: Scalars['String']['output'];
 	id: Scalars['ID']['output'];
 	rating: Scalars['Int']['output'];
+	title: Scalars['String']['output'];
 	updatedAt: Scalars['DateTime']['output'];
+	userName: Scalars['String']['output'];
+};
+
+export type RatingInput = {
+	comment: Scalars['String']['input'];
+	email: Scalars['String']['input'];
+	rating: Scalars['Int']['input'];
+	title: Scalars['String']['input'];
+	userName: Scalars['String']['input'];
+};
+
+export type RatingWhereInput = {
+	productId?: InputMaybe<Scalars['ID']['input']>;
 };
 
 export type SortOrder = 'asc' | 'desc';
@@ -459,6 +492,8 @@ export type ResolversTypes = {
 	ProductWhereInput: ResolverTypeWrapper<Mapper<ProductWhereInput>>;
 	Query: ResolverTypeWrapper<{}>;
 	Rating: ResolverTypeWrapper<Mapper<Rating>>;
+	RatingInput: ResolverTypeWrapper<Mapper<RatingInput>>;
+	RatingWhereInput: ResolverTypeWrapper<Mapper<RatingWhereInput>>;
 	SortOrder: ResolverTypeWrapper<Mapper<SortOrder>>;
 	SortableField: ResolverTypeWrapper<Mapper<SortableField>>;
 	Variant: ResolverTypeWrapper<Mapper<Variant>>;
@@ -491,6 +526,8 @@ export type ResolversParentTypes = {
 	ProductWhereInput: Mapper<ProductWhereInput>;
 	Query: {};
 	Rating: Mapper<Rating>;
+	RatingInput: Mapper<RatingInput>;
+	RatingWhereInput: Mapper<RatingWhereInput>;
 	Variant: Mapper<Variant>;
 	Boolean: Mapper<Scalars['Boolean']['output']>;
 };
@@ -628,6 +665,15 @@ export type MutationResolvers<
 		Array<ResolversTypes['Product']>,
 		ParentType,
 		ContextType
+	>;
+	ratingCreate?: Resolver<
+		ResolversTypes['Rating'],
+		ParentType,
+		ContextType,
+		RequireFields<
+			MutationratingCreateArgs,
+			'productId' | 'ratingInput'
+		>
 	>;
 };
 
@@ -800,6 +846,18 @@ export type QueryResolvers<
 		ContextType,
 		Partial<QueryproductsConnectionArgs>
 	>;
+	ratingConnection?: Resolver<
+		ResolversTypes['Connection'],
+		ParentType,
+		ContextType,
+		Partial<QueryratingConnectionArgs>
+	>;
+	ratings?: Resolver<
+		Array<ResolversTypes['Rating']>,
+		ParentType,
+		ContextType,
+		Partial<QueryratingsArgs>
+	>;
 };
 
 export type RatingResolvers<
@@ -817,10 +875,17 @@ export type RatingResolvers<
 		ParentType,
 		ContextType
 	>;
+	email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 	id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
 	rating?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+	title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 	updatedAt?: Resolver<
 		ResolversTypes['DateTime'],
+		ParentType,
+		ContextType
+	>;
+	userName?: Resolver<
+		ResolversTypes['String'],
 		ParentType,
 		ContextType
 	>;
