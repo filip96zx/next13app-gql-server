@@ -1,6 +1,29 @@
+input RatingInput {
+	comment: String!
+	rating: Int!
+	userName: String!
+	title: String!
+	email: String!
+}
+extend type Mutation {
+	ratingCreate(productId: ID!, ratingInput: RatingInput!): Rating!
+}
+
+input RatingWhereInput {
+	productId: ID
+}
+
+extend type Query {
+	ratingConnection(where: RatingWhereInput): Connection!
+	ratings(first: Int, skip: Int, where: RatingWhereInput): [Rating!]!
+}
+
 type Rating {
 	id: ID!
 	comment: String!
+	email: String!
+	userName: String!
+	title: String!
 	rating: Int!
 	createdAt: DateTime!
 	updatedAt: DateTime!
