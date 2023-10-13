@@ -234,6 +234,7 @@ export type Query = {
 	product?: Maybe<Product>;
 	products: Array<Product>;
 	productsConnection: Connection;
+	productsRelated: Array<Product>;
 	ratingConnection: Connection;
 	ratings: Array<Rating>;
 };
@@ -279,6 +280,13 @@ export type QueryproductsArgs = {
 };
 
 export type QueryproductsConnectionArgs = {
+	where?: InputMaybe<ProductWhereInput>;
+};
+
+export type QueryproductsRelatedArgs = {
+	first?: InputMaybe<Scalars['Int']['input']>;
+	orderBy?: InputMaybe<OrderByInput>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
 	where?: InputMaybe<ProductWhereInput>;
 };
 
@@ -845,6 +853,12 @@ export type QueryResolvers<
 		ParentType,
 		ContextType,
 		Partial<QueryproductsConnectionArgs>
+	>;
+	productsRelated?: Resolver<
+		Array<ResolversTypes['Product']>,
+		ParentType,
+		ContextType,
+		Partial<QueryproductsRelatedArgs>
 	>;
 	ratingConnection?: Resolver<
 		ResolversTypes['Connection'],

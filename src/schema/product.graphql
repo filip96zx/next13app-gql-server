@@ -38,6 +38,12 @@ extend type Query {
 		orderBy: OrderByInput
 		first: Int
 	): [Product!]!
+	productsRelated(
+		where: ProductWhereInput
+		skip: Int
+		orderBy: OrderByInput
+		first: Int
+	): [Product!]!
 	productsConnection(where: ProductWhereInput): Connection!
 }
 

@@ -24,6 +24,7 @@ import { order as Query_order } from './schema/resolvers/Query/order';
 import { product as Query_product } from './schema/resolvers/Query/product';
 import { products as Query_products } from './schema/resolvers/Query/products';
 import { productsConnection as Query_productsConnection } from './schema/resolvers/Query/productsConnection';
+import { productsRelated as Query_productsRelated } from './schema/resolvers/Query/productsRelated';
 import { ratingConnection as Query_ratingConnection } from './schema/resolvers/Query/ratingConnection';
 import { ratings as Query_ratings } from './schema/resolvers/Query/ratings';
 import { Rating } from './schema/resolvers/Rating';
@@ -40,6 +41,7 @@ export const resolvers: Resolvers = {
 		product: Query_product,
 		products: Query_products,
 		productsConnection: Query_productsConnection,
+		productsRelated: Query_productsRelated,
 		ratingConnection: Query_ratingConnection,
 		ratings: Query_ratings
 	},
