@@ -27,7 +27,7 @@ client.collections().create({
 			name: 'embedding',
 			type: 'float[]',
 			embed: {
-				from: ['name'],
+				from: ['name', 'collectionsSlugs'],
 				model_config: {
 					model_name: 'ts/all-MiniLM-L12-v2'
 				}
