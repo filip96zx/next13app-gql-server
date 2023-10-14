@@ -1,4 +1,4 @@
-export const summer = {
+export const summerImage = {
 	'summer-earrings1': 'summer-earrings1.jpg',
 	'summer-sneakers1': 'summer-sneakers1.jpg',
 	'summer-sunglasses3': 'summer-sunglasses3.jpg',
@@ -37,7 +37,7 @@ export const summer = {
 	'summer-t-shirt9': 'summer-t-shirt9.jpg'
 };
 
-const winter = {
+export const winterImage = {
 	'winter-boots-women1': 'winter-boots-women1.jpg',
 	'winter-leather-elegant-boots1':
 		'winter-leather-elegant-boots1.jpg',

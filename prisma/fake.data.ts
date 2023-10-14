@@ -1,768 +1,526 @@
+import { summerImage, winterImage } from './images';
 export const winter = {
 	tshirts: [
 		{
-			name: 'Winter Wonderland T-Shirt',
-			slug: 'winter-wonderland-t-shirt',
+			name: 'Cozy Snowflake Tee',
+			slug: 'cozy-snowflake-tee',
 			description:
-				'Embrace the winter wonderland with this cozy and stylish t-shirt. Perfect for cold days and snowy nights.',
-			price: 2800
+				'Stay warm and stylish with our Cozy Snowflake Tee from the Winter Collection. This comfortable t-shirt features a beautiful snowflake design, perfect for embracing the winter spirit. Pair it with your favorite jeans for a casual winter look.',
+			price: 6200,
+			image: winterImage['winter-t-shirt1']
 		},
 		{
-			name: 'Frosty Mountains Tee',
-			slug: 'frosty-mountains-tee',
+			name: 'Frosty Forest T-Shirt',
+			slug: 'frosty-forest-t-shirt',
 			description:
-				'Capture the essence of frosty mountains with this comfortable t-shirt. Stay warm and stylish.',
-			price: 2500
+				'Explore the Frosty Forest in style with our Frosty Forest T-Shirt. Designed for winter adventures, this tee is both cozy and durable. Get ready to enjoy the great outdoors with this essential winter wardrobe piece.',
+			price: 5500,
+			image: winterImage['winter-t-shirt2']
 		},
 		{
-			name: 'Cozy Cabin Tee',
-			slug: 'cozy-cabin-tee',
+			name: 'Winter Wonderland Tee',
+			slug: 'winter-wonderland-tee',
 			description:
-				'Feel at home in the woods with our cozy cabin-themed t-shirt. Ideal for the winter season and beyond.',
-			price: 3000
+				'Step into a Winter Wonderland with our charming Winter Wonderland Tee. This t-shirt features a whimsical design that captures the magic of the season. Embrace the holiday spirit and make a fashion statement.',
+			price: 6700,
+			image: winterImage['winter-t-shirt3']
 		},
 		{
-			name: 'Warmth of Winter Shirt',
-			slug: 'warmth-of-winter-shirt',
+			name: 'Penguin Pal T-Shirt',
+			slug: 'penguin-pal-t-shirt',
 			description:
-				'Experience the warmth of winter with this soft and snug t-shirt. Designed for comfort and style.',
-			price: 2700
+				"Make a new penguin friend with our Penguin Pal T-Shirt from the Winter Collection. This playful tee is perfect for spreading cheer during the cold months. It's an excellent gift for penguin enthusiasts!",
+			price: 6200,
+			image: winterImage['winter-t-shirt4']
 		},
 		{
-			name: 'Mountain Adventures Tee',
-			slug: 'mountain-adventures-tee',
+			name: 'Snowy Mountains T-Shirt',
+			slug: 'snowy-mountains-t-shirt',
 			description:
-				'Embark on mountain adventures with this rugged and durable t-shirt. Perfect for winter escapades.',
-			price: 3200
+				"Conquer the snowy mountains in our Snowy Mountains T-Shirt. Whether you're hitting the slopes or simply enjoying the winter landscape, this tee will keep you comfortable and stylish.",
+			price: 5800,
+			image: winterImage['winter-t-shirt5']
 		},
 		{
-			name: 'Frosted Forest T-Shirt',
-			slug: 'frosted-forest-t-shirt',
+			name: 'Northern Lights Tee',
+			slug: 'northern-lights-tee',
 			description:
-				'Explore the beauty of the frosted forest while staying warm in this charming t-shirt.',
-			price: 2900
-		},
-		{
-			name: 'Arctic Chill Tee',
-			slug: 'arctic-chill-tee',
-			description:
-				'Brave the arctic chill with this heavy-duty t-shirt. Your best companion for extreme winter conditions.',
-			price: 3500
-		},
-		{
-			name: 'Snowy Wilderness Shirt',
-			slug: 'snowy-wilderness-shirt',
-			description:
-				'Venture into the snowy wilderness with confidence wearing this durable t-shirt. Ready for winter exploration.',
-			price: 3300
-		},
-		{
-			name: 'Icy Peaks T-Shirt',
-			slug: 'icy-peaks-t-shirt',
-			description:
-				'Conquer icy peaks in style with this specially crafted t-shirt. Designed to withstand the coldest winter adventures.',
-			price: 3400
+				"Admire the Northern Lights from the comfort of your home with our Northern Lights Tee. This shirt features a mesmerizing depiction of this natural wonder. It's a must-have for those who appreciate the beauty of the night sky.",
+			price: 6700,
+			image: winterImage['winter-t-shirt6']
 		}
 	],
 	hoodies: [
 		{
-			name: 'Cozy Snowfall Hoodie',
-			slug: 'cozy-snowfall-hoodie',
+			name: 'Arctic Expedition Hoodie',
+			slug: 'arctic-expedition-hoodie',
 			description:
-				'Embrace the magic of winter with our Cozy Snowfall Hoodie. Crafted with warmth in mind, this hoodie features a soft, fleece-lined interior to keep you toasty during chilly days. The elegant snowflake design adds a touch of winter wonder to your wardrobe.',
-			price: 3999
+				"Embrace the winter chill with our Arctic Expedition Hoodie. Designed for the coldest days, this ultra-comfortable hoodie will keep you warm and cozy. With a stylish design and soft interior, it's perfect for your winter adventures.",
+			price: 17500,
+			image: winterImage['winter-hoodie1']
 		},
 		{
-			name: 'Arctic Frost Hoodie',
-			slug: 'arctic-frost-hoodie',
+			name: 'FrostGuard Fleece Hoodie',
+			slug: 'frostguard-fleece-hoodie',
 			description:
-				'Brave the coldest days of winter with our Arctic Frost Hoodie. Designed to withstand extreme temperatures, this hoodie is your ultimate cold-weather companion. Its insulated fabric and fur-lined hood provide maximum comfort.',
-			price: 4999
+				"Stay protected from the frosty winds with our FrostGuard Fleece Hoodie. This premium fleece hoodie offers the perfect combination of warmth and style. It's your go-to choice for keeping snug during the winter season.",
+			price: 16000,
+			image: winterImage['winter-hoodie2']
 		},
 		{
-			name: 'Fireside Comfort Hoodie',
-			slug: 'fireside-comfort-hoodie',
+			name: 'Polar Vortex Pullover',
+			slug: 'polar-vortex-pullover',
 			description:
-				"Enjoy the warmth of a fireside gathering with our Fireside Comfort Hoodie. This hoodie's plush lining and roomy design make it perfect for indoor and outdoor activities. It's an invitation to savor winter's cozy moments.",
-			price: 4499
+				'Defeat the polar vortex in style with our Polar Vortex Pullover. Crafted with insulated fabric, this hoodie is built to handle the harshest winter conditions. Be prepared for icy temperatures without sacrificing fashion.',
+			price: 18000,
+			image: winterImage['winter-hoodie3']
 		},
 		{
-			name: 'Snowy Wilderness Hoodie',
-			slug: 'snowy-wilderness-hoodie',
+			name: 'Snowfall Dream Hoodie',
+			slug: 'snowfall-dream-hoodie',
 			description:
-				"Conquer the snowy wilderness in style with our Snowy Wilderness Hoodie. Whether you're skiing, snowshoeing, or simply taking a winter hike, this hoodie's insulation and durable design keep you protected. Explore the beauty of winter with confidence.",
-			price: 4699
+				'Experience the enchanting Snowfall Dream Hoodie from our Winter Collection. This hoodie blends cozy warmth with a magical design inspired by falling snowflakes. Stay snug and trendy this winter season.',
+			price: 18500,
+			image: winterImage['winter-hoodie4']
 		},
 		{
-			name: 'Frosty Adventure Hoodie',
-			slug: 'frosty-adventure-hoodie',
+			name: 'Arctic Frost Pullover',
+			slug: 'arctic-frost-pullover',
 			description:
-				'Embark on a frosty adventure with our versatile hoodie. Ideal for winter travel, this hoodie offers both comfort and style. Its multi-pocket design keeps your essentials close, and the cold far away.',
-			price: 4399
+				'The Arctic Frost Pullover is your trusted companion in the chilliest of winters. Its thick fabric and unique frosty pattern make it a must-have for frosty days. Enjoy maximum comfort and style this winter.',
+			price: 17000,
+			image: winterImage['winter-hoodie5']
 		},
 		{
-			name: 'Snowy Night Hoodie',
-			slug: 'snowy-night-hoodie',
+			name: 'Winter Wonderland Hoodie',
+			slug: 'winter-wonderland-hoodie',
 			description:
-				"Dress up for a magical snowy night with our Snowy Night Hoodie. This hoodie features a celestial design that captures the beauty of winter nights. Its warm and snug fit lets you enjoy winter's charm.",
-			price: 3899
-		},
-		{
-			name: 'Frosty Elegance Hoodie',
-			slug: 'frosty-elegance-hoodie',
-			description:
-				"Step out in frosty elegance with our stylish hoodie. It's perfect for winter evenings, adding a touch of sophistication to your look. Its tailored fit and luxurious materials make it a true winter fashion statement.",
-			price: 4799
-		},
-		{
-			name: 'Winter Explorer Hoodie',
-			slug: 'winter-explorer-hoodie',
-			description:
-				"Become a winter explorer with our dependable hoodie. This all-terrain hoodie is designed to handle the harshest winter conditions. It's your partner in discovering the beauty of the season.",
-			price: 5199
+				'Step into a winter wonderland with our Winter Wonderland Hoodie. This hoodie captures the essence of a snowy paradise, keeping you warm and cheerful. Get ready to make a statement this winter season.',
+			price: 19000,
+			image: winterImage['winter-hoodie6']
 		}
 	],
-	jeans: [
+	pants: [
 		{
-			name: 'Winter Denim Jeans',
-			slug: 'winter-denim-jeans',
+			name: 'Arctic Adventure Pants',
+			slug: 'arctic-adventure-pants',
 			description:
-				'Stay cozy and stylish during winter with these denim jeans. Perfect for cold days and chilly nights.',
-			price: 4499
+				'Embrace the chill with our Arctic Adventure Pants from the Winter Collection. Designed for outdoor enthusiasts, these pants are perfect for winter sports and adventures. Stay warm, comfortable, and ready for any cold-weather activity.',
+			price: 5900,
+			image: winterImage['winter-pants-sport1']
 		},
 		{
-			name: 'Frost-Proof Jeans',
-			slug: 'frost-proof-jeans',
+			name: 'Snowy Summit Sport Pants',
+			slug: 'snowy-summit-sport-pants',
 			description:
-				'Defy the frost with these frost-proof jeans. Designed to keep you warm and fashionable.',
-			price: 5399
+				"Conquer the snowy summits in style with our Snowy Summit Sport Pants. These pants are both functional and fashionable, making them ideal for winter athletes. Whether you're skiing, snowboarding, or simply enjoying the snow, these pants have got you covered.",
+			price: 6600,
+			image: winterImage['winter-pants-sport2']
 		},
 		{
-			name: 'Arctic Blue Denim',
-			slug: 'arctic-blue-denim',
+			name: 'Frosty Denim Jeans',
+			slug: 'frosty-denim-jeans',
 			description:
-				'Embrace the Arctic cold in style with these arctic blue denim jeans. Stay snug in the harshest winter conditions.',
-			price: 4999
-		},
-		{
-			name: 'Cozy Comfort Jeans',
-			slug: 'cozy-comfort-jeans',
-			description:
-				'Experience the ultimate cozy comfort with these stylish jeans. Designed to keep you warm during the winter season.',
-			price: 5699
-		},
-		{
-			name: 'Snowy Wilderness Denims',
-			slug: 'snowy-wilderness-denims',
-			description:
-				'Venture into the snowy wilderness with these durable denim jeans. Ready for winter exploration.',
-			price: 5899
-		},
-		{
-			name: 'Frosty Forest Jeans',
-			slug: 'frosty-forest-jeans',
-			description:
-				'Explore the beauty of the frosty forest while staying warm in these charming jeans.',
-			price: 4999
-		},
-		{
-			name: 'Icy Peaks Denim',
-			slug: 'icy-peaks-denim',
-			description:
-				'Conquer icy peaks in style with these specially crafted denim jeans. Designed to withstand the coldest winter adventures.',
-			price: 5599
-		},
-		{
-			name: 'Winter Wanderlust Jeans',
-			slug: 'winter-wanderlust-jeans',
-			description:
-				'Satisfy your winter wanderlust with these versatile jeans. Your best companion for winter escapades.',
-			price: 5499
-		},
-		{
-			name: 'Snowflake Dreams Denim',
-			slug: 'snowflake-dreams-denim',
-			description:
-				'Indulge in snowflake dreams with these exquisite denim jeans. Designed to keep you snug and fashionable during winter.',
-			price: 4799
-		},
-		{
-			name: 'Arctic Chill Denims',
-			slug: 'arctic-chill-denims',
-			description:
-				'Brave the arctic chill with these heavy-duty denim jeans. Your best companion for extreme winter conditions.',
-			price: 5999
+				"Introducing our Frosty Denim Jeans from the Winter Collection. These jeans are designed to keep you warm and stylish during the coldest months. Made with high-quality denim, they provide both comfort and durability. Whether you're out for a winter stroll or by the fireplace, these jeans are the perfect choice.",
+			price: 4800,
+			image: winterImage['winter-pants-jeans1']
 		}
 	],
 	accesories: [
 		{
-			name: 'Warm Woolen Scarf',
-			slug: 'warm-woolen-scarf',
+			name: 'Arctic Chill Gloves',
+			slug: 'arctic-chill-gloves',
 			description:
-				'Stay cozy and stylish with this warm woolen scarf. Perfect for adding a touch of warmth to your winter attire.',
-			price: 1999
+				'Stay warm and cozy during the harshest winter days with our Arctic Chill Gloves. These gloves are designed to keep your hands toasty even in extreme cold. With a sleek and comfortable fit, you can conquer the chill in style.',
+			price: 4000,
+			image: winterImage['winter-gloves1']
 		},
 		{
-			name: 'Frost-Proof Mittens',
-			slug: 'frost-proof-mittens',
+			name: 'Snowflake Delight Gloves',
+			slug: 'snowflake-delight-gloves',
 			description:
-				'Defy the frost with these frost-proof mittens. Designed to keep your hands warm and fashionable in the coldest winters.',
-			price: 2499
+				'Embrace the enchantment of winter with our Snowflake Delight Gloves. Featuring a beautiful snowflake design, these gloves are as fashionable as they are functional. With a soft lining, your hands will be in pure comfort.',
+			price: 3500,
+			image: winterImage['winter-gloves2']
 		},
 		{
-			name: 'Snowflake Beanie',
-			slug: 'snowflake-beanie',
+			name: 'FrostGuard Pro Gloves',
+			slug: 'frostguard-pro-gloves',
 			description:
-				'Embrace the beauty of snowflakes with this snowflake beanie. Keep your head cozy during winter strolls.',
-			price: 1499
+				"Defeat the winter frost with our FrostGuard Pro Gloves. These gloves are engineered to provide ultimate warmth and protection. Whether you're skiing or just out for a walk, these gloves will be your best winter companion.",
+			price: 4200,
+			image: winterImage['winter-gloves3']
 		},
 		{
-			name: 'Winter Wonderland Socks',
-			slug: 'winter-wonderland-socks',
+			name: 'Polar Expedition Mittens',
+			slug: 'polar-expedition-mittens',
 			description:
-				'Experience the magic of a winter wonderland with these comfortable socks. Perfect for chilly days and nights.',
-			price: 999
+				'Embark on a polar expedition without worrying about the cold with our Polar Expedition Mittens. These mittens are designed for extreme cold and feature a unique snowflake pattern. Stay warm and stylish in the heart of winter.',
+			price: 4500,
+			image: winterImage['winter-gloves4']
 		},
 		{
-			name: 'Faux Fur Earmuffs',
-			slug: 'faux-fur-earmuffs',
+			name: 'Arctic Blast Earmuffs',
+			slug: 'arctic-blast-earmuffs',
 			description:
-				'Stay stylishly warm with these faux fur earmuffs. A perfect winter accessory for fashion-forward individuals.',
-			price: 1699
+				"Introducing our Arctic Blast Earmuffs, your best friend for braving the winter chill. These earmuffs are designed to keep your ears warm and cozy during the coldest days. With a soft and plush interior, you'll forget how cold it is outside.",
+			price: 4000,
+			image: winterImage['winter-earmuffs1']
 		},
 		{
-			name: 'Cozy Knit Gloves',
-			slug: 'cozy-knit-gloves',
+			name: 'Snowfall Serenity Earmuffs',
+			slug: 'snowfall-serenity-earmuffs',
 			description:
-				'Stay cozy with these warm knit gloves. Keep your fingers toasty during the coldest winter months.',
-			price: 1399
+				'Experience the serenity of a snowy day with our Snowfall Serenity Earmuffs. These earmuffs are not only functional but also a fashion statement. Designed for comfort and warmth, they will make you enjoy winter to the fullest.',
+			price: 3500,
+			image: winterImage['winter-earmuffs2']
+		}
+	],
+	shoes: [
+		{
+			name: 'Elegance Supreme Loafers',
+			slug: 'elegance-supreme-loafers',
+			description:
+				'Step up your winter style with our Elegance Supreme Loafers. These handcrafted leather shoes offer both sophistication and comfort. Their timeless design is perfect for any formal occasion, keeping your feet warm and stylish all season.',
+			price: 17000,
+			image: winterImage['winter-leather-elegant-boots1']
 		},
 		{
-			name: 'Winter Wonderland Scarf',
-			slug: 'winter-wonderland-scarf',
+			name: 'Winter Charm Oxford Shoes',
+			slug: 'winter-charm-oxford-shoes',
 			description:
-				'Experience the enchantment of a winter wonderland with this stylish scarf. A perfect accessory for snowy adventures.',
-			price: 1999
+				"Discover the Winter Charm Oxford Shoes from our Winter Collection. These elegant leather shoes provide the perfect blend of style and warmth. Whether you're dressing up for a special event or enhancing your everyday look, these shoes will make a statement.",
+			price: 16000,
+			image: winterImage['winter-leather-elegant-boots2']
 		},
 		{
-			name: 'Snowy Days Mittens',
-			slug: 'snowy-days-mittens',
+			name: 'Frosty Elegance Derby Shoes',
+			slug: 'frosty-elegance-derby-shoes',
 			description:
-				'Stay cozy on snowy days with these mittens. Designed to keep your hands warm in the harshest winter conditions.',
-			price: 2499
+				'Stay classy and cozy with our Frosty Elegance Derby Shoes. Made with premium leather, these shoes are designed to withstand the cold while adding a touch of sophistication to your outfits. Elevate your winter wardrobe with these stylish Derby shoes.',
+			price: 18500,
+			image: winterImage['winter-leather-elegant-boots3']
 		},
 		{
-			name: 'Icy Blue Beanie',
-			slug: 'icy-blue-beanie',
+			name: 'Classic Leather Brogue Boots',
+			slug: 'classic-leather-brogue-boots',
 			description:
-				'Conquer the winter chill with this icy blue beanie. Keep your head snug and fashionable during the coldest days.',
-			price: 1599
+				'Introducing our Classic Leather Brogue Boots for the Winter Collection. These boots are the epitome of elegance and warmth. Crafted from high-quality leather, they ensure both comfort and style. Step confidently through the winter season with these classic brogue boots.',
+			price: 19000,
+			image: winterImage['winter-leather-elegant-boots4']
 		},
 		{
-			name: 'Chic Faux Fur Collar',
-			slug: 'chic-faux-fur-collar',
+			name: "Snow Queen Women's Boots",
+			slug: 'snow-queen-womens-boots',
 			description:
-				'Elevate your winter style with this chic faux fur collar. A must-have accessory for cold-weather fashion enthusiasts.',
-			price: 1999
+				"Step out in style this winter with our Snow Queen Women's Boots. These elegant boots are designed to keep you warm and fashionable during the chilly season. With a plush interior and a trendy design, you'll be the queen of winter fashion.",
+			price: 15000,
+			image: winterImage['winter-boots-women1']
+		},
+		{
+			name: "Frosty Elegance Women's Boots",
+			slug: 'frosty-elegance-womens-boots',
+			description:
+				"Experience the frosty elegance of our women's boots. These boots are perfect for the winter months, providing both comfort and style. Whether you're heading to work or going for a winter stroll, these boots are the ideal choice.",
+			price: 14000,
+			image: winterImage['winter-boots-women2']
 		}
 	]
 };
 export const summer: typeof winter = {
 	tshirts: [
 		{
-			name: 'Sunset Beach T-Shirt',
-			slug: 'sunset-beach-t-shirt',
+			name: 'Cool Summer Vibes T-shirt',
+			slug: 'cool-summer-vibes-tshirt',
 			description:
-				'Get the summer vibes with our Sunset Beach T-Shirt. Perfect for those warm beach days and breathtaking sunsets.',
-			price: 2499
+				'Stay trendy and comfortable with our Cool Summer Vibes T-shirt. Made from high-quality cotton, this t-shirt is perfect for your summer adventures.',
+			price: 4500,
+			image: summerImage['summer-t-shirt1']
 		},
 		{
-			name: 'Palm Tree Paradise Tee',
-			slug: 'palm-tree-paradise-tee',
+			name: 'Ocean Breeze Graphic Tee',
+			slug: 'ocean-breeze-graphic-tee',
 			description:
-				'Escape to a palm tree paradise with this comfy tee. Embrace the summer breeze and enjoy the swaying palm trees.',
-			price: 2299
+				'Capture the essence of the ocean with our Ocean Breeze Graphic Tee. Its unique design and soft fabric make it a must-have for the season.',
+			price: 5200,
+			image: summerImage['summer-t-shirt2']
 		},
 		{
-			name: "Surf's Up Graphic Tee",
-			slug: 'surfs-up-graphic-tee',
+			name: 'Sun-Kissed Paradise Shirt',
+			slug: 'sun-kissed-paradise-shirt',
 			description:
-				"Catch the waves with our Surf's Up Graphic Tee. A must-have for surf enthusiasts and lovers of ocean adventures.",
-			price: 1999
+				"Experience the warmth of a sun-kissed paradise with our Sun-Kissed Paradise Shirt. It's lightweight and stylish, perfect for those sunny days.",
+			price: 4800,
+			image: summerImage['summer-t-shirt3']
 		},
 		{
-			name: 'Beach Life Vintage Shirt',
-			slug: 'beach-life-vintage-shirt',
+			name: 'Retro Surfing Tee',
+			slug: 'retro-surfing-tee',
 			description:
-				'Live the beach life with this vintage-style shirt. Ideal for those who seek the easygoing beach lifestyle.',
-			price: 1799
+				'Relive the nostalgia of surfing with our Retro Surfing Tee. Its vintage design and comfortable fit make it a timeless choice for summer.',
+			price: 5500,
+			image: summerImage['summer-t-shirt4']
 		},
 		{
-			name: 'Tropical Island Vibes Tee',
-			slug: 'tropical-island-vibes-tee',
+			name: 'Tropical Palms Print T-shirt',
+			slug: 'tropical-palms-print-tshirt',
 			description:
-				'Experience the tropical island vibes with this comfortable tee. Perfect for sunny getaways and beach explorations.',
-			price: 2399
+				'Get into the tropical spirit with our Tropical Palms Print T-shirt. The vibrant print and soft material create a summer vibe.',
+			price: 4800,
+			image: summerImage['summer-t-shirt5']
 		},
 		{
-			name: 'Cool Breeze Ocean Tee',
-			slug: 'cool-breeze-ocean-tee',
+			name: 'Sunny Side Up Tee',
+			slug: 'sunny-side-up-tee',
 			description:
-				'Feel the cool ocean breeze with our Ocean Tee. Ideal for sea lovers and those who enjoy coastal adventures.',
-			price: 2099
+				'Embrace the sunny side of life with our Sunny Side Up Tee. Its cheerful design and breathable fabric make it a great choice for the season.',
+			price: 4200,
+			image: summerImage['summer-t-shirt6']
 		},
 		{
-			name: 'Beach Bonfire Bonanza Tee',
-			slug: 'beach-bonfire-bonanza-tee',
+			name: 'Beach Sunset Graphic Shirt',
+			slug: 'beach-sunset-graphic-shirt',
 			description:
-				'Join the beach bonfire bonanza with this stylish tee. Perfect for beach parties and memorable nights by the fire.',
-			price: 2199
+				"Capture the beauty of a beach sunset with our Beach Sunset Graphic Shirt. It's a piece of art you can wear.",
+			price: 6200,
+			image: summerImage['summer-t-shirt7']
 		},
 		{
-			name: 'Sandy Toes Graphic Shirt',
-			slug: 'sandy-toes-graphic-shirt',
+			name: 'Island Adventure Tee',
+			slug: 'island-adventure-tee',
 			description:
-				'Get sandy toes and carefree vibes with our Sandy Toes Graphic Shirt. Perfect for long walks on sandy shores.',
-			price: 1899
+				'Embark on an island adventure with our Island Adventure Tee. Its comfortable fit is perfect for exploring new places.',
+			price: 5500,
+			image: summerImage['summer-t-shirt8']
+		},
+		{
+			name: 'Summer Chill V-Neck Top',
+			slug: 'summer-chill-vneck-top',
+			description:
+				'Keep your cool with our Summer Chill V-Neck Top. Its relaxed style and soft texture are ideal for hot summer days.',
+			price: 3800,
+			image: summerImage['summer-t-shirt9']
+		},
+		{
+			name: "Surf's Up Graphic T-shirt",
+			slug: 'surfs-up-graphic-tshirt',
+			description:
+				"Catch the waves with our Surf's Up Graphic T-shirt. The surfboard design adds a fun and sporty touch to your summer look.",
+			price: 5900,
+			image: summerImage['summer-t-shirt10']
 		}
 	],
 	accesories: [
 		{
-			name: 'Sunset Beach Sunglasses',
-			slug: 'sunset-beach-sunglasses',
+			name: 'Sunset Sparkle Earrings',
+			slug: 'sunset-sparkle-earrings',
 			description:
-				'Protect your eyes from the summer sun with our Sunset Beach Sunglasses. Stay stylish and UV-protected.',
-			price: 2999
+				'Add a touch of elegance to your summer look with our Sunset Sparkle Earrings. These exquisite earrings feature dazzling gems that catch the sunlight, creating a stunning visual effect. Perfect for summer parties and special occasions.',
+			price: 1500,
+			image: summerImage['summer-earrings1']
 		},
 		{
-			name: 'Summer Breeze Hat',
-			slug: 'summer-breeze-hat',
+			name: 'Beach Bliss Hoop Earrings',
+			slug: 'beach-bliss-hoop-earrings',
 			description:
-				'Stay cool and shaded with our Summer Breeze Hat. Ideal for long summer days and outdoor adventures.',
-			price: 1999
+				'Channel beachy vibes with our Beach Bliss Hoop Earrings. These lightweight and stylish hoops complement your summer attire. Embrace the carefree spirit of summer with these beautiful accessories.',
+			price: 1200,
+			image: summerImage['summer-earrings2']
 		},
 		{
-			name: 'Beachcomber Straw Bag',
-			slug: 'beachcomber-straw-bag',
+			name: 'Beach Breeze Aviator Sunglasses',
+			slug: 'beach-breeze-aviator-sunglasses',
 			description:
-				'Embrace the beachcomber spirit with our Straw Bag. Perfect for collecting seashells and beach treasures.',
-			price: 2599
+				'Shield your eyes from the sun in style with our Beach Breeze Aviator Sunglasses. These timeless aviators offer both UV protection and a fashionable look. Perfect for those beach days.',
+			price: 3000,
+			image: summerImage['summer-sunglasses1']
 		},
 		{
-			name: 'Tropical Paradise Headband',
-			slug: 'tropical-paradise-headband',
+			name: 'Sunset Horizon Gradient Shades',
+			slug: 'sunset-horizon-gradient-shades',
 			description:
-				'Add a touch of tropical paradise to your look with our headband. Perfect for beachy and floral styles.',
-			price: 1699
+				'Experience stunning sunsets through our Sunset Horizon Gradient Shades. The gradient lenses create a beautiful ombre effect, while the lightweight frame provides comfort for long summer days.',
+			price: 2200,
+			image: summerImage['summer-sunglasses2']
 		},
 		{
-			name: 'Seaside Charm Necklace',
-			slug: 'seaside-charm-necklace',
+			name: 'Classic Summer Wayfarer Shades',
+			slug: 'classic-summer-wayfarer-shades',
 			description:
-				'Capture the charm of the seaside with our necklace. Ideal for beach lovers and ocean enthusiasts.',
-			price: 2199
+				'Embrace a classic look with our Classic Summer Wayfarer Shades. These iconic shades are perfect for casual beach outings and come with full UV protection.',
+			price: 2800,
+			image: summerImage['summer-sunglasses3']
 		},
 		{
-			name: 'Summer Breeze Bracelet',
-			slug: 'summer-breeze-bracelet',
+			name: 'Palm Leaf Cat-Eye Sunglasses',
+			slug: 'palm-leaf-cat-eye-sunglasses',
 			description:
-				'Feel the summer breeze with our elegant bracelet. Perfect for warm evenings and beachside dinners.',
-			price: 1899
+				'Get a bit of glamour with our Palm Leaf Cat-Eye Sunglasses. The cat-eye style, accented with palm leaf details, offers both elegance and UV defense for your eyes.',
+			price: 3200,
+			image: summerImage['summer-sunglasses4']
 		},
 		{
-			name: 'Sunset Horizon Earrings',
-			slug: 'sunset-horizon-earrings',
+			name: 'Sandy Shores Straw Hat',
+			slug: 'sandy-shores-straw-hat',
 			description:
-				'Admire the sunset horizon with our beautiful earrings. Ideal for capturing the colors of the setting sun.',
-			price: 2299
+				"Enjoy the summer sun while staying cool with our Sandy Shores Straw Hat. This classic straw hat provides shade and a touch of beachy style. It's the perfect accessory for your seaside adventures.",
+			price: 2500,
+			image: summerImage['summer-straw-hat1']
 		},
 		{
-			name: 'Beach Bonfire Anklet',
-			slug: 'beach-bonfire-anklet',
+			name: 'Tropical Breeze Wide-Brim Hat',
+			slug: 'tropical-breeze-wide-brim-hat',
 			description:
-				'Join the beach bonfire fun with our anklet. Perfect for those memorable nights by the fire.',
-			price: 1799
+				"Get ready for a tropical escape with our Tropical Breeze Wide-Brim Hat. This wide-brimmed straw hat is designed to keep you comfortably shaded, whether you're by the pool or exploring the island. Add a touch of summer elegance to your outfit.",
+			price: 2800,
+			image: summerImage['summer-straw-hat2']
 		}
 	],
 	hoodies: [
 		{
-			name: 'Sunset Beach Hoodie',
-			slug: 'sunset-beach-hoodie',
+			name: 'Sunset Breeze Hoodie',
+			slug: 'sunset-breeze-hoodie',
 			description:
-				"Stay cozy during summer evenings with our Sunset Beach Hoodie. Made from lightweight and breathable fabric, this hoodie is perfect for beach bonfires and stargazing. Featuring a tropical palm tree design, it's a must-have for your summer wardrobe.",
-			price: 2999
+				"Stay cozy and stylish with our Sunset Breeze Hoodie. This lightweight hoodie is perfect for cool summer evenings. Made from breathable material, it's a must-have for your summer wardrobe.",
+			price: 12000,
+			image: summerImage['summer-hoodie1']
 		},
 		{
-			name: 'Summer Breeze Hoodie',
-			slug: 'summer-breeze-hoodie',
+			name: 'Beachcomber Pullover Hoodie',
+			slug: 'beachcomber-pullover-hoodie',
 			description:
-				'Enjoy the gentle summer breeze in our Summer Breeze Hoodie. This versatile hoodie is ideal for cool mornings and late-night gatherings. Its stylish design and comfortable fit make it an essential addition to your summer collection.',
-			price: 3499
+				'Get that beachy vibe with our Beachcomber Pullover Hoodie. With its relaxed fit and beach-inspired design, this hoodie is ideal for beach bonfires and summer get-togethers. Embrace the summer spirit in style.',
+			price: 13000,
+			image: summerImage['summer-hoodie2']
 		},
 		{
-			name: 'Ocean Waves Hoodie',
-			slug: 'ocean-waves-hoodie',
+			name: 'Adventure Seeker Hooded Sweatshirt',
+			slug: 'adventure-seeker-hooded-sweatshirt',
 			description:
-				"Embrace the tranquility of the ocean waves with our Ocean Waves Hoodie. Crafted with soft, high-quality fabric, it's perfect for beachcombing and seaside adventures. This hoodie is a true reflection of summer vibes.",
-			price: 3999
+				"Embark on your summer adventures with our Adventure Seeker Hooded Sweatshirt. Whether you're camping or simply relaxing, this versatile sweatshirt provides comfort and warmth. Get ready for summer exploration!",
+			price: 14500,
+			image: summerImage['summer-hoodie3']
 		},
 		{
-			name: 'Tropical Paradise Hoodie',
-			slug: 'tropical-paradise-hoodie',
+			name: 'Cool Breeze Lightweight Hoodie',
+			slug: 'cool-breeze-lightweight-hoodie',
 			description:
-				"Step into a tropical paradise with our vibrant Tropical Paradise Hoodie. Its eye-catching colors and unique patterns capture the essence of summer. Wear it to the beach or while exploring the city – you'll stand out wherever you go.",
-			price: 3799
+				'Experience coolness and comfort with our Cool Breeze Lightweight Hoodie. Perfect for outdoor activities and evening strolls, this hoodie keeps you relaxed and in style throughout the summer season.',
+			price: 10000,
+			image: summerImage['summer-hoodie4']
 		},
 		{
-			name: 'Sun-Kissed Hoodie',
-			slug: 'sun-kissed-hoodie',
+			name: 'Tropical Sunset Hoodie',
+			slug: 'tropical-sunset-hoodie',
 			description:
-				"Get that sun-kissed look with our Sun-Kissed Hoodie. Whether you're lounging by the pool or going for a summer hike, this hoodie offers style and protection. It's an ideal choice for those sunny days.",
-			price: 3299
+				'Enjoy the tropical vibes with our Tropical Sunset Hoodie. This vibrant and soft hoodie is perfect for adding a touch of summer paradise to your wardrobe. Get ready for sunny days and warm nights!',
+			price: 14000,
+			image: summerImage['summer-hoodie5']
 		},
 		{
-			name: 'Palm Tree Paradise Hoodie',
-			slug: 'palm-tree-paradise-hoodie',
+			name: 'Summer Chillout Pullover',
+			slug: 'summer-chillout-pullover',
 			description:
-				'Escape to a palm tree paradise with our cozy hoodie. It features a serene palm tree landscape on the front and back, allowing you to carry the spirit of summer wherever you go. Made with premium materials for your comfort.',
-			price: 3999
-		},
-		{
-			name: 'Cool Breeze Hoodie',
-			slug: 'cool-breeze-hoodie',
-			description:
-				"Feel the cool summer breeze with our stylish Cool Breeze Hoodie. It's perfect for those laid-back summer days when you want to stay comfortable and relaxed. Its unique design complements your summer look.",
-			price: 3599
-		},
-		{
-			name: "Surf's Up Hoodie",
-			slug: 'surfs-up-hoodie',
-			description:
-				"Get ready to hit the waves with our Surf's Up Hoodie. Designed for surf enthusiasts, this hoodie provides warmth and style. Catch the waves and ride the summer vibes with confidence.",
-			price: 4199
+				'Chill out this summer with our Summer Chillout Pullover. This lightweight and relaxed hoodie is your go-to for casual gatherings and relaxation. Stay cool and comfortable in the summer heat.',
+			price: 12500,
+			image: summerImage['summer-hoodie6']
 		}
 	],
-	jeans: [
+	pants: [
 		{
-			name: 'Summer Adventure Shorts',
-			slug: 'summer-adventure-shorts',
+			name: 'Performance Running Shorts',
+			slug: 'performance-running-shorts',
 			description:
-				'Get ready for a summer adventure with these comfortable shorts. Perfect for hiking and exploring.',
-			price: 3299
+				'Achieve your personal best with our Performance Running Shorts. These lightweight shorts are designed for comfort and enhanced performance. Stay cool and comfortable during your summer runs.',
+			price: 5500,
+			image: summerImage['summer-shorts-sm1']
 		},
 		{
-			name: 'Beachside Relaxation Shorts',
-			slug: 'beachside-relaxation-shorts',
+			name: 'Active Lifestyle Joggers',
+			slug: 'active-lifestyle-joggers',
 			description:
-				'Experience beachside relaxation with these stylish shorts. Ideal for casual days by the shore.',
-			price: 2799
+				"Experience the perfect blend of style and comfort with our Active Lifestyle Joggers. These versatile pants are ideal for your active summer adventures. Whether you're hitting the gym or going for a casual stroll, these joggers have you covered.",
+			price: 8700,
+			image: summerImage['summer-shorts-sm2']
 		},
 		{
-			name: 'Sunset Serenity Shorts',
-			slug: 'sunset-serenity-shorts',
+			name: 'Beach Volleyball Shorts',
+			slug: 'beach-volleyball-shorts',
 			description:
-				'Enjoy the serenity of sunsets with these comfortable shorts. Perfect for evening strolls.',
-			price: 2399
+				'Make a splash on the beach with our Beach Volleyball Shorts. These stylish and functional shorts are designed for beach sports enthusiasts. Enjoy the sun and sand in style.',
+			price: 7200,
+			image: summerImage['summer-shorts-sm3']
 		},
 		{
-			name: 'Tropical Getaway Shorts',
-			slug: 'tropical-getaway-shorts',
+			name: 'Outdoor Adventure Cargo Pants',
+			slug: 'outdoor-adventure-cargo-pants',
 			description:
-				'Plan a tropical getaway with these stylish shorts. Ideal for vacations and beach resorts.',
-			price: 2999
+				'Gear up for outdoor exploration with our Outdoor Adventure Cargo Pants. These rugged and versatile pants are perfect for hiking, camping, and more. Experience the freedom to move in the great outdoors.',
+			price: 7900,
+			image: summerImage['summer-sport-pants1']
 		},
 		{
-			name: 'Coastal Breeze Shorts',
-			slug: 'coastal-breeze-shorts',
+			name: 'Cool Breeze Summer Pants',
+			slug: 'cool-breeze-summer-pants',
 			description:
-				'Feel the coastal breeze with these comfortable shorts. Perfect for beachside picnics.',
-			price: 2699
+				"Stay comfortable and stylish in our Cool Breeze Summer Shorts. These lightweight shorts are perfect for beach days or picnics in the park. With their breathable fabric, they'll keep you cool all summer long.",
+			price: 7000,
+			image: summerImage['summer-sport-pants2']
 		},
 		{
-			name: 'Sunny Day Shorts',
-			slug: 'sunny-day-shorts',
+			name: 'Beachcomber Denim Pants',
+			slug: 'beachcomber-denim-pants',
 			description:
-				'Make the most of sunny days with these stylish shorts. Ideal for outdoor fun and play.',
-			price: 2199
+				'Get that casual beach look with our Beachcomber Denim Shorts. These shorts are designed for a relaxed fit and are ideal for seaside vacations or backyard barbecues. Embrace the summer vibes with these versatile shorts.',
+			price: 8000,
+			image: summerImage['summer-sport-pants3']
 		},
 		{
-			name: 'Paradise Escape Shorts',
-			slug: 'paradise-escape-shorts',
+			name: 'Sunset Adventure Cargo Pants',
+			slug: 'sunset-adventure-cargo-pants',
 			description:
-				'Escape to paradise with these comfortable shorts. Perfect for island adventures.',
-			price: 3499
+				'Embark on your summer adventures with our Sunset Adventure Cargo Shorts. These multi-pocket shorts are perfect for hiking, biking, or any outdoor activity. Stay organized and ready for action with these comfortable cargo shorts.',
+			price: 9500,
+			image: summerImage['summer-sport-pants4']
+		}
+	],
+	shoes: [
+		{
+			name: 'AirWave Summer Sneakers',
+			slug: 'airwave-summer-sneakers',
+			description:
+				"Elevate your style with our AirWave Summer Sneakers. These lightweight sneakers are designed for maximum comfort and breathability. Whether you're strolling the boardwalk or hitting the gym, they'll keep you cool.",
+			price: 12000,
+			image: summerImage['summer-sneakers1']
 		},
 		{
-			name: 'Seaside Dream Shorts',
-			slug: 'seaside-dream-shorts',
+			name: 'Beachcomber Canvas Sneakers',
+			slug: 'beachcomber-canvas-sneakers',
 			description:
-				'Live the seaside dream with these stylish shorts. Ideal for beachfront dining and relaxation.',
-			price: 3099
+				'Enjoy the ultimate beach vibes with our Beachcomber Canvas Sneakers. These stylish and durable sneakers are perfect for seaside adventures. Get ready to explore the sandy shores in style.',
+			price: 9000,
+			image: summerImage['summer-sneakers2']
+		},
+		{
+			name: 'Sunshine Runner Sneakers',
+			slug: 'sunshine-runner-sneakers',
+			description:
+				"Experience the warmth of the sun with our Sunshine Runner Sneakers. These vibrant sneakers are designed to brighten up your summer days. Whether you're out for a run or simply enjoying the outdoors, these sneakers will put a spring in your step.",
+			price: 11000,
+			image: summerImage['summer-sneakers3']
+		},
+		{
+			name: 'Summer Breeze Slip-Ons',
+			slug: 'summer-breeze-slip-ons',
+			description:
+				'Slip into pure comfort with our Summer Breeze Slip-Ons. These casual yet stylish sneakers are perfect for a leisurely summer walk or running errands. Feel the summer breeze with every step you take.',
+			price: 8000,
+			image: summerImage['summer-sneakers4']
 		}
 	]
 };
 
-export const reviews = [
-	{
-		review: 'Great product!'
-	},
-	{
-		review: 'This is exactly what I needed.'
-	},
-	{
-		review: 'Not bad, but it could be better.'
-	},
-	{
-		review: 'I love it! Highly recommended.'
-	},
-	{
-		review: "It's okay, not the best I've seen."
-	},
-	{
-		review: 'Impressive quality for the price.'
-	},
-	{
-		review: 'Very satisfied with my purchase.'
-	},
-	{
-		review: 'Could use some improvements.'
-	},
-	{
-		review: 'This product exceeded my expectations.'
-	},
-	{
-		review: 'Not worth the money, in my opinion.'
-	},
-	{
-		review: 'Exactly as described, no surprises.'
-	},
-	{
-		review: 'Wish it came in more colors.'
-	},
-	{
-		review: "The best product I've bought this year!"
-	},
-	{
-		review: 'Decent quality for the price.'
-	},
-	{
-		review: 'Works like a charm.'
-	},
-	{
-		review: 'Product arrived in good condition.'
-	},
-	{
-		review: 'I expected better quality for the price.'
-	},
-	{
-		review: 'This was a disappointment.'
-	},
-	{
-		review: "It's just perfect!"
-	},
-	{
-		review: "I'm considering buying another one."
-	},
-	{
-		review: "Don't waste your money on this."
-	},
-	{
-		review: 'Quality could be improved.'
-	},
-	{
-		review: 'Excellent product for the price.'
-	},
-	{
-		review: "I'm very happy with my purchase."
-	},
-	{
-		review: 'Not bad, but not the best either.'
-	},
-	{
-		review: "I'm quite satisfied with it."
-	},
-	{
-		review: 'Just what I needed. Good job!'
-	},
-	{
-		review: 'This is a must-buy.'
-	},
-	{
-		review: "Product didn't meet my expectations."
-	},
-	{
-		review: "It's worth every penny."
-	},
-	{
-		review: 'Impressed by the quality.'
-	},
-	{
-		review: 'A good product at a good price.'
-	},
-	{
-		review: "I've had better, but it's okay."
-	},
-	{
-		review: 'Wish it came with more accessories.'
-	},
-	{
-		review: "I'm not entirely happy with it."
-	},
-	{
-		review: 'The best in its category.'
-	},
-	{
-		review: 'It does the job, but nothing more.'
-	},
-	{
-		review: 'I expected it to be better.'
-	},
-	{
-		review: 'Not my favorite purchase.'
-	},
-	{
-		review: 'You get what you pay for.'
-	},
-	{
-		review: "I'm happy with my choice."
-	},
-	{
-		review: 'This is a game-changer.'
-	},
-	{
-		review: 'Not impressed by the quality.'
-	},
-	{
-		review: 'This product is a gem!'
-	},
-	{
-		review: 'Just what I was looking for.'
-	},
-	{
-		review: "Doesn't live up to the hype."
-	},
-	{
-		review: 'Excellent value for money.'
-	},
-	{
-		review: 'This is a must-have.'
-	},
-	{
-		review: 'Product fell short of expectations.'
-	},
-	{
-		review: 'A great buy for the price.'
-	},
-	{
-		review: "I wouldn't recommend it."
-	},
-	{
-		review: "It's better than I expected."
-	},
-	{
-		review: "Not the best purchase I've made."
-	},
-	{
-		review: 'It works perfectly!'
-	},
-	{
-		review: 'Product arrived on time.'
-	},
-	{
-		review: 'I expected better quality.'
-	},
-	{
-		review: 'This was a big letdown.'
-	},
-	{
-		review: "I'm thrilled with my purchase."
-	},
-	{
-		review: 'Not worth the money.'
-	},
-	{
-		review: 'Exactly as described.'
-	},
-	{
-		review: 'Wish it had more features.'
-	},
-	{
-		review: 'Outstanding product!'
-	},
-	{
-		review: 'This product is outstanding.'
-	},
-	{
-		review: 'Not worth the price.'
-	},
-	{
-		review: "I love it! Highly recommended. It's worth every penny."
-	},
-	{
-		review:
-			"It's okay, not the best I've seen. Don't waste your money on this."
-	},
-	{
-		review:
-			'Impressive quality for the price. A great buy for the price.'
-	},
-	{
-		review:
-			"Very satisfied with my purchase. I'm considering buying another one."
-	},
-	{
-		review:
-			"Could use some improvements. Not the best purchase I've made."
-	},
-	{
-		review:
-			'This product exceeded my expectations. Just what I was looking for.'
-	},
-	{
-		review:
-			'Not worth the money, in my opinion. I expected better quality.'
-	},
-	{
-		review:
-			"I recently purchased this product and I must say, it has exceeded my expectations. The quality is top-notch, and it's incredibly durable. It's also very stylish and goes well with my other accessories. I've received numerous compliments on it, and I couldn't be happier with my purchase. The price is reasonable for the quality you get. I highly recommend it to anyone looking for a reliable product."
-	},
-	{
-		review:
-			"I was a bit skeptical about buying this product, but I'm so glad I did. It has completely transformed my daily routine. The ease of use and functionality are impressive. The product is well-designed, and the build quality is outstanding. It's definitely worth the investment. I've recommended it to my friends, and they love it too."
-	},
-	{
-		review:
-			"I've been using this product for a few weeks now, and it has made a noticeable difference in my life. The features are well-thought-out, and it's user-friendly. The customer support is also excellent, providing prompt responses to any inquiries. I'm thoroughly satisfied with my purchase and would buy it again without hesitation."
-	},
-	{
-		review:
-			"I had high expectations for this product, and I'm pleased to say it lived up to them. The craftsmanship is evident in every detail. It's not just a product; it's a work of art. The performance is outstanding, and it has simplified many aspects of my daily tasks. The price is competitive for what you get. I can't recommend it enough."
-	},
-	{
-		review:
-			"I've used many similar products in the past, but this one stands out. The build quality is superb, and it's clear that the manufacturer has paid attention to even the smallest details. The product has a sleek and modern design that I adore. It's also quite versatile and has made my life easier in various ways. Overall, a fantastic purchase."
-	},
-	{
-		review:
-			"This product is a game-changer. It's incredibly reliable and has become an essential part of my daily routine. The durability is impressive, and it can handle heavy use. I appreciate the attention to quality and detail. It's an investment that's definitely worth it. I've been recommending it to all my friends, and they're equally impressed."
-	},
-	{
-		review:
-			"I was initially hesitant to buy this product, but I'm thrilled that I did. It's been a fantastic addition to my life. The product's design is elegant and practical. The functionality is superb, and it has made many tasks much simpler. I've received numerous compliments on it, and I couldn't be happier. A great purchase overall."
-	},
-	{
-		review:
-			"This product has exceeded my expectations. The features and performance are remarkable. It's reliable and user-friendly. The manufacturer has clearly put thought into its design. It's worth every penny, and I've recommended it to my family and friends. I'm very satisfied with my purchase."
-	},
-	{
-		review:
-			"I'm impressed by the quality of this product. It's well-constructed and built to last. The sleek design is a bonus, and it complements my style perfectly. The product's functionality has simplified my daily tasks. I can confidently say it's one of the best purchases I've made. Highly recommended."
-	},
-	{
-		review:
-			"I have no regrets about purchasing this product. It has improved my daily routine significantly. The build quality is exceptional, and it's evident that the manufacturer cares about the user experience. The competitive price for the quality makes it an excellent choice. I've already convinced several of my friends to buy one, and they're delighted with it."
-	}
-];
+export const reviews = [];
 
 export const collections = [
 	{
