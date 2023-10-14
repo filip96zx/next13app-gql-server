@@ -30,6 +30,8 @@ model Category{
   id          String @id @default(cuid())
   name        String
   slug        String
+  imageId     String?
+  image       Image? @relation(fields: [imageId], references: [id]) 
   products    ProductCategory[]
 }
 
@@ -106,6 +108,7 @@ model Image{
   updatedAt   DateTime @updatedAt
   products    ProductImage[] 
   collections CollectionImage[]
+  categories  Category[]
 }
 
 model ProductImage{

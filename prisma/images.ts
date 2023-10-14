@@ -34,7 +34,8 @@ export const summerImage = {
 	'summer-t-shirt8': 'summer-t-shirt8.jpg',
 	'summer-shorts-sm4': 'summer-shorts-sm4.jpg',
 	'summer-sunglasses2': 'summer-sunglasses2.jpg',
-	'summer-t-shirt9': 'summer-t-shirt9.jpg'
+	'summer-t-shirt9': 'summer-t-shirt9.jpg',
+	'summer-collection': 'summer-collection.jpg'
 };
 
 export const winterImage = {
@@ -68,5 +69,10 @@ export const winterImage = {
 	'winter-t-shirt5': 'winter-t-shirt5.jpg',
 	'winter-hoodie5': 'winter-hoodie5.jpg',
 	'winter-t-shirt6': 'winter-t-shirt6.jpg',
-	'winter-hoodie6': 'winter-hoodie6.jpg'
+	'winter-hoodie6': 'winter-hoodie6.jpg',
+	'winter-trekking-boots1': 'winter-trekking-boots1.jpg',
+	'winter-trekking-boots2': 'winter-trekking-boots2.jpg',
+	'winter-trekking-boots3': 'winter-trekking-boots3.jpg',
+	'winter-trekking-boots4': 'winter-trekking-boots4.jpg',
+	'winter-collection': 'winter-collection.jpg'
 };

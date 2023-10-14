@@ -1,6 +1,6 @@
 import { summerImage, winterImage } from './images';
 export const winter = {
-	tshirts: [
+	't-shirts': [
 		{
 			name: 'Cozy Snowflake Tee',
 			slug: 'cozy-snowflake-tee',
@@ -178,6 +178,38 @@ export const winter = {
 	],
 	shoes: [
 		{
+			name: 'Arctic Explorer Trekking Shoes',
+			slug: 'arctic-explorer-trekking-shoes',
+			description:
+				"Prepare for your winter adventures with our Arctic Explorer Trekking Shoes. These shoes are built for extreme conditions, providing insulation, traction, and comfort. Whether you're hiking through snow-covered trails or exploring icy landscapes, these trekking shoes will keep you warm and steady.",
+			price: 15500,
+			image: winterImage['winter-trekking-boots1']
+		},
+		{
+			name: 'Snowfall Trekking Boots',
+			slug: 'snowfall-trekking-boots',
+			description:
+				'Conquer the snowy terrains with our Snowfall Trekking Boots. Designed for the winter explorer, these boots offer superior grip and protection against the cold. Stay dry and comfortable on your treks through winter wonderlands.',
+			price: 14500,
+			image: winterImage['winter-trekking-boots2']
+		},
+		{
+			name: 'Frostbite-Proof Hiking Shoes',
+			slug: 'frostbite-proof-hiking-shoes',
+			description:
+				"Don't let frostbite slow you down. Our Frostbite-Proof Hiking Shoes are equipped with cutting-edge technology to keep your feet warm and frost-free. Tackle the harshest winter conditions with confidence.",
+			price: 16000,
+			image: winterImage['winter-trekking-boots3']
+		},
+		{
+			name: 'Polar Trail Trekking Boots',
+			slug: 'polar-trail-trekking-boots',
+			description:
+				"Venture into the polar trails with our Polar Trail Trekking Boots. These boots are specially crafted for extreme cold, featuring insulated lining and rugged soles. Whether you're an experienced trekker or a winter explorer, these boots are a must-have.",
+			price: 15000,
+			image: winterImage['winter-trekking-boots4']
+		},
+		{
 			name: 'Elegance Supreme Loafers',
 			slug: 'elegance-supreme-loafers',
 			description:
@@ -228,7 +260,7 @@ export const winter = {
 	]
 };
 export const summer: typeof winter = {
-	tshirts: [
+	't-shirts': [
 		{
 			name: 'Cool Summer Vibes T-shirt',
 			slug: 'cool-summer-vibes-tshirt',
@@ -520,19 +552,499 @@ export const summer: typeof winter = {
 	]
 };
 
-export const reviews = [];
+export const reviews = [
+	{
+		title: 'Great Purchase',
+		comment:
+			"I recently bought this item, and I'm extremely satisfied with my purchase. The quality is top-notch, and it fits perfectly. I would highly recommend it."
+	},
+	{
+		title: 'Fantastic Product',
+		comment:
+			"This product exceeded my expectations. It's comfortable, stylish, and worth every penny. I can't wait to order more items from this shop."
+	},
+	{
+		title: 'Very Impressed',
+		comment:
+			"I was initially skeptical, but this product is amazing. The material is durable, and it arrived quickly. I'm very impressed."
+	},
+	{
+		title: 'Excellent Quality',
+		comment:
+			"The quality of this product is exceptional. It's well-crafted and looks elegant. I'm extremely happy with my purchase."
+	},
+	{
+		title: 'Highly Recommend',
+		comment:
+			"I would highly recommend this product. It's versatile and comfortable to wear. I've received compliments from my friends."
+	},
+	{
+		title: 'Perfect Fit',
+		comment:
+			"The product fits perfectly, and the color is exactly as shown. It's become one of my favorite pieces in my wardrobe."
+	},
+	{
+		title: 'Great Value',
+		comment:
+			"For the price, this product is a great value. It's stylish and comfortable to wear daily. I'll be buying more from this shop."
+	},
+	{
+		title: 'Impressive Quality',
+		comment:
+			"The quality of this product is impressive. It's well-stitched and doesn't show signs of wear even after multiple uses."
+	},
+	{
+		title: 'Amazing Service',
+		comment:
+			'Besides the fantastic product, the customer service was great. They answered my questions promptly and helped me make the right choice.'
+	},
+	{
+		title: 'Stylish and Comfortable',
+		comment:
+			"I love how stylish and comfortable this product is. It's perfect for both casual and formal occasions."
+	},
+	{
+		title: 'Satisfied Customer',
+		comment:
+			"As a satisfied customer, I can say that this product is a must-have. I'll be shopping here again in the future."
+	},
+	{
+		title: 'Great Customer Experience',
+		comment:
+			'I had a great customer experience with this shop. The product is as described and arrived on time. 5 stars!'
+	},
+	{
+		title: 'Fashionable and Trendy',
+		comment:
+			"If you want something fashionable and trendy, this product is the way to go. It's the perfect addition to your wardrobe."
+	},
+	{
+		title: 'Absolutely Delighted',
+		comment:
+			"I am absolutely delighted with this purchase. The quality and design are impressive. I can't wait to show it off."
+	},
+	{
+		title: 'Love This Product',
+		comment:
+			"I can't express how much I love this product. It's my go-to choice for various occasions."
+	},
+	{
+		title: 'Superb Quality',
+		comment:
+			"The superb quality of this product stands out. It's durable, comfortable, and stylish."
+	},
+	{
+		title: 'Excellent Fit',
+		comment:
+			"The product provides an excellent fit, and I'm thrilled with how it looks and feels. Highly recommended."
+	},
+	{
+		title: 'Impressive Craftsmanship',
+		comment:
+			"The craftsmanship of this product is impressive. It's evident in the details and the overall design."
+	},
+	{
+		title: 'Amazing Product',
+		comment:
+			"This product is amazing! It met all my expectations, and I'm a satisfied customer."
+	},
+	{
+		title: 'High-Quality Fabric',
+		comment:
+			"The high-quality fabric used in this product makes it comfortable to wear all day long. I'm very pleased with my purchase."
+	},
+	{
+		title: 'Awesome Purchase',
+		comment:
+			"I made an awesome purchase with this product. It's stylish, comfortable, and worth every penny."
+	},
+	{
+		title: 'Sleek and Stylish',
+		comment:
+			"I love how sleek and stylish this product is. It's the perfect addition to my wardrobe."
+	},
+	{
+		title: 'Excellent Service',
+		comment:
+			'In addition to the excellent product, the service was exceptional. I will be a returning customer.'
+	},
+	{
+		title: 'Amazing Quality',
+		comment:
+			"The quality of this product is amazing. It's clear that attention to detail was a priority in its creation."
+	},
+	{
+		title: 'Great Investment',
+		comment:
+			"This product is a great investment. It's versatile and of high quality. I'm very happy with my choice."
+	},
+	{
+		title: 'Elegant Design',
+		comment:
+			"The elegant design of this product is truly eye-catching. It's become a favorite in my collection."
+	},
+	{
+		title: 'Perfect Wardrobe Addition',
+		comment:
+			"This product is the perfect addition to my wardrobe. It's stylish, comfortable, and versatile."
+	},
+	{
+		title: 'Impressed with Delivery',
+		comment:
+			'I was also impressed with the prompt delivery of this product. It arrived well before the expected date.'
+	},
+	{
+		title: 'Quality Meets Style',
+		comment:
+			"This product seamlessly combines quality and style. It's perfect for those who value both."
+	},
+	{
+		title: 'Extremely Happy',
+		comment:
+			"I am extremely happy with this product. It's even better than I imagined. Five stars!"
+	},
+	{
+		title: 'Classy Choice',
+		comment:
+			"For a classy choice, this product is the way to go. It's elegant, comfortable, and stylish."
+	},
+	{
+		title: 'Sensational Buy',
+		comment:
+			"This product is a sensational buy. It's worth every penny, and I've received many compliments."
+	},
+	{
+		title: 'Top-Notch Quality',
+		comment:
+			"This product's top-notch quality is noticeable. It's a fantastic addition to any wardrobe."
+	},
+	{
+		title: 'Highly Impressed',
+		comment:
+			"I'm highly impressed with this product. It's stylish, comfortable, and affordable."
+	},
+	{
+		title: 'Great Investment',
+		comment:
+			"I believe this product is a great investment. It's versatile and made to last."
+	},
+	{
+		title: 'Stylish and Durable',
+		comment:
+			'I appreciate how stylish and durable this product is. It has quickly become a favorite in my collection.'
+	},
+	{
+		title: 'Love the Fit',
+		comment:
+			"I love the fit of this product. It's comfortable, and the size was just right."
+	},
+	{
+		title: 'Perfect Gift',
+		comment:
+			"I received this product as a gift, and I couldn't be happier. It's a perfect addition to my wardrobe."
+	},
+	{
+		title: 'Stunning Design',
+		comment:
+			"The stunning design of this product is captivating. It's a head-turner wherever I go."
+	},
+	{
+		title: 'Pleasant Surprise',
+		comment:
+			"This product was a pleasant surprise. The quality is remarkable, and it's perfect for daily wear."
+	},
+	{
+		title: 'Great for Casual Wear',
+		comment:
+			"This product is great for casual wear. It's comfortable and easy to style."
+	},
+	{
+		title: 'Impressed with Details',
+		comment:
+			"I'm impressed with the attention to detail in this product. It's clear that it was crafted with care."
+	},
+	{
+		title: 'Fashionable Choice',
+		comment:
+			"For a fashionable choice, this product is ideal. It's trendy and versatile."
+	},
+	{
+		title: 'Worth Every Penny',
+		comment:
+			"This product is worth every penny. I'm a satisfied customer who appreciates quality."
+	},
+	{
+		title: 'Comfortable Fit',
+		comment:
+			"The comfortable fit of this product makes it a go-to choice. It's great for long hours of wear."
+	},
+	{
+		title: 'Fantastic Service',
+		comment:
+			'The service I received while purchasing this product was fantastic. It made the entire experience enjoyable.'
+	},
+	{
+		title: 'Excellent Addition',
+		comment:
+			"This product is an excellent addition to any wardrobe. It's elegant and versatile."
+	},
+	{
+		title: 'High-Quality Material',
+		comment:
+			"The high-quality material used in this product is evident. It's comfortable and well-crafted."
+	},
+	{
+		title: 'Great Value',
+		comment:
+			"For the price, this product offers great value. It's stylish and long-lasting."
+	},
+	{
+		title: 'Durable Choice',
+		comment:
+			'This product is a durable choice. It can withstand regular use and still look great.'
+	},
+	{
+		title: 'Impressive Purchase',
+		comment:
+			"I'm impressed with my purchase. This product has exceeded my expectations."
+	},
+	{
+		title: 'Outstanding Comfort',
+		comment:
+			'The outstanding comfort of this product sets it apart. I wear it for long hours with no discomfort.'
+	},
+	{
+		title: 'A Must-Have',
+		comment:
+			'This product is a must-have for anyone looking for quality and style.'
+	},
+	{
+		title: 'Five-Star Rating',
+		comment:
+			"I would give this product a five-star rating. It's perfect in every way."
+	},
+	{
+		title: 'Sleek Choice',
+		comment:
+			"For a sleek choice, this product is the answer. It's fashionable and easy to wear."
+	},
+	{
+		title: 'Satisfying Purchase',
+		comment:
+			"I'm extremely satisfied with my purchase. This product is exactly what I was looking for."
+	},
+	{
+		title: 'Excellent Craftsmanship',
+		comment:
+			"The excellent craftsmanship of this product is clear. It's a piece that's built to last."
+	},
+	{
+		title: 'Elegant Look',
+		comment:
+			"I appreciate the elegant look of this product. It's perfect for special occasions."
+	},
+	{
+		title: 'Premium Quality',
+		comment:
+			"The premium quality of this product is visible in its details. It's an outstanding piece."
+	},
+	{
+		title: 'Impressive Fit',
+		comment:
+			"I'm impressed with how well this product fits. It's comfortable, and I wear it often."
+	},
+	{
+		title: 'Amazing Choice',
+		comment:
+			"This product is an amazing choice for those who value style and quality. It's a great investment."
+	},
+	{
+		title: 'Versatile and Stylish',
+		comment:
+			"I love how versatile and stylish this product is. It's a perfect addition to my wardrobe."
+	},
+	{
+		title: 'Flawless Purchase',
+		comment:
+			'My purchase of this product was flawless. It met all my expectations and more.'
+	},
+	{
+		title: 'Worth the Money',
+		comment:
+			'This product is worth every penny. The quality and style make it a valuable addition.'
+	},
+	{
+		title: 'Classic Choice',
+		comment:
+			"For a classic choice, this product is the way to go. It's timeless and stylish."
+	},
+	{
+		title: 'Elegant and Refined',
+		comment:
+			'The elegance and refinement of this product make it a standout piece in my wardrobe.'
+	},
+	{
+		title: 'Great Customer Support',
+		comment:
+			'I want to thank the customer support team for their assistance during my purchase of this product. They were extremely helpful.'
+	},
+	{
+		title: 'Top-Notch Design',
+		comment:
+			"The top-notch design of this product is evident. It's a head-turner in every sense."
+	},
+	{
+		title: 'Stylish Elegance',
+		comment:
+			"The stylish elegance of this product is unmatched. It's a standout piece in my collection."
+	},
+	{
+		title: 'Exceptional Value',
+		comment:
+			"The exceptional value this product offers is unmatched. It's a great investment for quality and style."
+	},
+	{
+		title: 'Comfortable and Durable',
+		comment:
+			"I appreciate how comfortable and durable this product is. It's ideal for daily wear."
+	},
+	{
+		title: 'Prompt Delivery',
+		comment:
+			'The prompt delivery of this product was appreciated. It arrived earlier than expected.'
+	},
+	{
+		title: 'Quality Meets Style',
+		comment:
+			"This product perfectly combines quality and style. It's a winning choice."
+	},
+	{
+		title: 'Highly Pleased',
+		comment:
+			"I am highly pleased with my purchase of this product. It's stylish and fits well."
+	},
+	{
+		title: 'Versatile Wardrobe Addition',
+		comment:
+			"This product is a versatile addition to my wardrobe. It's perfect for multiple occasions."
+	},
+	{
+		title: 'Pleasant Shopping Experience',
+		comment:
+			'I had a pleasant shopping experience with this shop. The product exceeded my expectations.'
+	},
+	{
+		title: 'Durable and Stylish',
+		comment:
+			"This product is both durable and stylish. It's clear that quality was a priority in its design."
+	},
+	{
+		title: 'Amazingly Comfortable',
+		comment:
+			'This product is amazingly comfortable to wear. I have no complaints and would buy it again.'
+	},
+	{
+		title: 'Excellent Choice',
+		comment:
+			"I made an excellent choice with this product. It's perfect for my daily wear."
+	},
+	{
+		title: 'Love the Design',
+		comment:
+			"I absolutely love the design of this product. It's unique and stylish."
+	},
+	{
+		title: 'Outstanding Service',
+		comment:
+			'The service provided while purchasing this product was outstanding. It made the process easy.'
+	},
+	{
+		title: 'Fantastic Fit',
+		comment:
+			"I'm thrilled with the fantastic fit of this product. It's comfortable and looks great."
+	},
+	{
+		title: 'Quality Beyond Compare',
+		comment:
+			"The quality of this product is beyond compare. It's the best addition to my wardrobe."
+	},
+	{
+		title: 'Elegant Addition',
+		comment:
+			'This product is an elegant addition to my collection. I receive compliments every time I wear it.'
+	},
+	{
+		title: 'Impressed with Craftsmanship',
+		comment:
+			"I'm thoroughly impressed with the craftsmanship of this product. It's well-made and stylish."
+	},
+	{
+		title: 'Fashionable Delight',
+		comment:
+			"This product is a fashionable delight. It's trendy and versatile for different occasions."
+	},
+	{
+		title: 'Affordable Luxury',
+		comment:
+			"I believe this product is affordable luxury. It's well-priced for the quality it offers."
+	},
+	{
+		title: 'Comfortable All Day',
+		comment:
+			"I can wear this product comfortably all day long. It's perfect for my active lifestyle."
+	},
+	{
+		title: 'Five-Star Rating',
+		comment:
+			"This product deserves a five-star rating. It's exceptional in every way."
+	}
+];
 
 export const collections = [
 	{
 		name: 'Winter Magic',
 		slug: 'winter-magic',
 		description:
-			"Experience the enchantment of winter with our 'Winter Magic' collection. As the snow blankets the world in its pristine beauty, our collection offers clothing that combines style and warmth. From elegant coats that make a statement to cozy scarves and accessories, we have everything you need to stay chic during the colder months. Embrace the allure of winter with garments that not only keep you snug but also make you feel like you're in a winter fairy tale."
+			"Experience the enchantment of winter with our 'Winter Magic' collection. As the snow blankets the world in its pristine beauty, our collection offers clothing that combines style and warmth. From elegant coats that make a statement to cozy scarves and accessories, we have everything you need to stay chic during the colder months. Embrace the allure of winter with garments that not only keep you snug but also make you feel like you're in a winter fairy tale.",
+		image: winterImage['winter-collection']
 	},
 	{
 		name: 'Sunny Vibes Collection',
 		slug: 'sunny-vibes-collection',
 		description:
-			"Introducing our vibrant and stylish Summer Collection! Embrace the warmth of the sun with our range of trendy outfits, perfect for the sunny days ahead. Dive into a world of comfort and fashion with breathable fabrics and chic designs. From lightweight dresses to cool beachwear, our Summer Collection has it all. Let your style shine with these fabulous pieces that capture the essence of summer. Don't miss out on the season's must-have fashion. Shop now and stay fabulous all summer long!"
+			"Introducing our vibrant and stylish Summer Collection! Embrace the warmth of the sun with our range of trendy outfits, perfect for the sunny days ahead. Dive into a world of comfort and fashion with breathable fabrics and chic designs. From lightweight dresses to cool beachwear, our Summer Collection has it all. Let your style shine with these fabulous pieces that capture the essence of summer. Don't miss out on the season's must-have fashion. Shop now and stay fabulous all summer long!",
+		image: summerImage['summer-collection']
+	}
+];
+
+export const categories: Array<{
+	name: string;
+	slug: keyof typeof winter;
+	image: string;
+}> = [
+	{
+		name: 'T-Shirts',
+		slug: 't-shirts',
+		image: winterImage['winter-t-shirt1']
+	},
+	{
+		name: 'Hoodies',
+		slug: 'hoodies',
+		image: winterImage['winter-hoodie1']
+	},
+	{
+		name: 'Pants',
+		slug: 'pants',
+		image: winterImage['winter-pants-sport1']
+	},
+	{
+		name: 'Accesories',
+		slug: 'accesories',
+		image: winterImage['winter-gloves1']
+	},
+	{
+		name: 'Shoes',
+		slug: 'shoes',
+		image: winterImage['winter-trekking-boots1']
 	}
 ];
