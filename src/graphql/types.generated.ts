@@ -45,6 +45,7 @@ export type Aggregate = {
 
 export type Category = {
 	id: Scalars['ID']['output'];
+	image: Image;
 	name?: Maybe<Scalars['String']['output']>;
 	products?: Maybe<Array<Maybe<Product>>>;
 	slug?: Maybe<Scalars['String']['output']>;
@@ -193,6 +194,7 @@ export type Product = {
 	name: Scalars['String']['output'];
 	price: Scalars['Int']['output'];
 	ratings: Array<Rating>;
+	ratingsCount: Scalars['Int']['output'];
 	slug: Scalars['String']['output'];
 	variants: Array<Variant>;
 };
@@ -217,10 +219,15 @@ export type ProductratingsArgs = {
 	skip?: InputMaybe<Scalars['Int']['input']>;
 };
 
+export type ProductRelatedWhereInput = {
+	id?: InputMaybe<Scalars['ID']['input']>;
+};
+
 export type ProductWhereInput = {
 	categories_some?: InputMaybe<CategorySomeInput>;
 	collections_some?: InputMaybe<CollectionSomeInput>;
 	excludedIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+	id?: InputMaybe<Scalars['ID']['input']>;
 	nameContains?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -287,7 +294,7 @@ export type QueryproductsRelatedArgs = {
 	first?: InputMaybe<Scalars['Int']['input']>;
 	orderBy?: InputMaybe<OrderByInput>;
 	skip?: InputMaybe<Scalars['Int']['input']>;
-	where?: InputMaybe<ProductWhereInput>;
+	where?: InputMaybe<ProductRelatedWhereInput>;
 };
 
 export type QueryratingConnectionArgs = {
@@ -497,6 +504,9 @@ export type ResolversTypes = {
 	OrderWhereInput: ResolverTypeWrapper<Mapper<OrderWhereInput>>;
 	Product: ResolverTypeWrapper<Mapper<Product>>;
 	Float: ResolverTypeWrapper<Mapper<Scalars['Float']['output']>>;
+	ProductRelatedWhereInput: ResolverTypeWrapper<
+		Mapper<ProductRelatedWhereInput>
+	>;
 	ProductWhereInput: ResolverTypeWrapper<Mapper<ProductWhereInput>>;
 	Query: ResolverTypeWrapper<{}>;
 	Rating: ResolverTypeWrapper<Mapper<Rating>>;
@@ -531,6 +541,7 @@ export type ResolversParentTypes = {
 	OrderWhereInput: Mapper<OrderWhereInput>;
 	Product: Mapper<Product>;
 	Float: Mapper<Scalars['Float']['output']>;
+	ProductRelatedWhereInput: Mapper<ProductRelatedWhereInput>;
 	ProductWhereInput: Mapper<ProductWhereInput>;
 	Query: {};
 	Rating: Mapper<Rating>;
@@ -555,6 +566,7 @@ export type CategoryResolvers<
 		ResolversParentTypes['Category'] = ResolversParentTypes['Category']
 > = {
 	id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+	image?: Resolver<ResolversTypes['Image'], ParentType, ContextType>;
 	name?: Resolver<
 		Maybe<ResolversTypes['String']>,
 		ParentType,
@@ -785,6 +797,11 @@ export type ProductResolvers<
 		ParentType,
 		ContextType,
 		Partial<ProductratingsArgs>
+	>;
+	ratingsCount?: Resolver<
+		ResolversTypes['Int'],
+		ParentType,
+		ContextType
 	>;
 	slug?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 	variants?: Resolver<

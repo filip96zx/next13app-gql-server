@@ -17,4 +17,5 @@ type Category {
 	name: String
 	slug: String
 	products(skip: Int, first: Int): [Product]
+	image: Image!
 }

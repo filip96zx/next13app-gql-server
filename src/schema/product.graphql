@@ -11,6 +11,10 @@ input ProductWhereInput {
 	categories_some: CategorySomeInput
 	collections_some: CollectionSomeInput
 	excludedIds: [ID!]
+	id: ID
+}
+input ProductRelatedWhereInput {
+	id: ID
 }
 
 enum SortOrder {
@@ -39,7 +43,7 @@ extend type Query {
 		first: Int
 	): [Product!]!
 	productsRelated(
-		where: ProductWhereInput
+		where: ProductRelatedWhereInput
 		skip: Int
 		orderBy: OrderByInput
 		first: Int
@@ -60,6 +64,7 @@ type Product {
 	price: Int!
 	averageRating: Float!
 	createdAt: DateTime!
+	ratingsCount: Int!
 	categories(skip: Int, first: Int): [Category]!
 	collections(skip: Int, first: Int): [Collection]!
 	images(skip: Int, first: Int): [Image]!

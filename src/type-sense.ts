@@ -16,23 +16,12 @@ let client = new Typesense.Client({
 	connectionTimeoutSeconds: 2
 });
 
-// client.collections().create({
-// 	name: 'books',
-// 	fields: [
-// 		{ name: 'title', type: 'string' },
-// 		{ name: 'authors', type: 'string[]', facet: true },
-
-// 		{ name: 'publication_year', type: 'int32', facet: true },
-// 		{ name: 'ratings_count', type: 'int32' },
-// 		{ name: 'average_rating', type: 'float' }
-// 	],
-// 	default_sorting_field: 'ratings_count'
-// });
 client.collections('products').delete();
 client.collections().create({
 	name: 'products',
 	fields: [
 		{ name: 'name', type: 'string' },
+		{ name: 'collectionsSlugs', type: 'string[]', facet: true },
 		{ name: 'averageRating', type: 'float' },
 		{
 			name: 'embedding',
@@ -56,22 +45,19 @@ export async function getData({
 	products: any;
 	query: string;
 }) {
-	// console.log({ products });
 	if (!productCache) {
 		productCache = products;
 		await client.collections('products').documents().import(products);
 	}
-	let searchParameters = {
-		q: query,
-		query_by: 'embedding'
-		// sort_by: 'ratings_count:desc'
-	};
-
-	await client
+	return await client
 		.collections('products')
 		.documents()
-		.search(searchParameters)
+		.search({
+			q: query,
+			query_by: 'embedding',
+			sort_by: 'averageRating:desc'
+		})
 		.then(function (searchResults) {
-			console.dir(searchResults, { depth: 5 });
+			return searchResults.hits;
 		});
 }

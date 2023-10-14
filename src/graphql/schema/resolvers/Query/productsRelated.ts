@@ -48,8 +48,23 @@ export const productsRelated: NonNullable<
 	QueryResolvers['productsRelated']
 > = async (_parent, arg, ctx) => {
 	const { where, skip, first, orderBy } = arg;
-	const products = await ctx.prisma.product.findMany();
+	const product = await ctx.prisma.product.findUnique({
+		where: { id: where?.id! }
+	});
+	if (!product) return [];
 
-	getData({ products, query: where?.nameContains! });
-	return products.map(parseProductToProductWithNotNullableLists);
+	const products = await ctx.prisma.product.findMany({
+		include: { collections: { include: { collection: true } } }
+	});
+	const data = (await getData({
+		products: products.map((p) => ({
+			...p,
+			collectionsSlugs: p.collections.map((c) => c.collection.slug)
+		})),
+		query: product?.name!
+	})) as unknown as Array<{ document: typeof product }>;
+
+	return data!.map(({ document }) => ({
+		...parseProductToProductWithNotNullableLists(document)
+	}));
 };

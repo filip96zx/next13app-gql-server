@@ -8,6 +8,9 @@ export const categories: NonNullable<
 		take: first ?? undefined,
 		where: {
 			slug: where?.slug || undefined
+		},
+		include: {
+			image: true
 		}
 	});
 

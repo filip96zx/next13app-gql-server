@@ -34,12 +34,15 @@ export async function updateProductAverageRating(productId: string) {
 		include: { ratings: true }
 	});
 	const ratings = product?.ratings ?? [];
+	console.log(product?.ratings, product);
 	const averageRating =
-		ratings.reduce((acc, rating) => acc + rating.rating, 0) /
-		ratings.length;
-		
+		ratings.length === 0
+			? 0
+			: ratings.reduce((acc, rating) => acc + rating.rating, 0) /
+			  ratings.length;
+
 	return await prisma.product.update({
 		where: { id: productId },
-		data: { averageRating }
+		data: { averageRating, ratingsCount: ratings.length }
 	});
 }
