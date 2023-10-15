@@ -135,11 +135,11 @@ const initDb = async (assetsUrl?: string) => {
 	[...summerCollectionProducts, ...winterCollectionProducts].forEach(
 		async (product) => {
 			generateRandomRatingValuesWithOffset({
-				offset: Math.random() * 8 - 4
+				offset: Math.random() * 6 - 2
 			});
 			const commentRatingOffset = Math.random() * 8 - 4;
 			const commentsIndexes = generateRadomNumbersWithoutRepetition(
-				getRandomNaturalNumber(50),
+				getRandomNaturalNumber(50) + 10,
 				reviews.length - 1
 			);
 			await Promise.all(
