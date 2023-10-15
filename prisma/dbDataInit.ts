@@ -149,8 +149,8 @@ const initDb = async (assetsUrl?: string) => {
 						rating: generateRandomRatingValuesWithOffset({
 							offset: commentRatingOffset
 						}),
-						comment: reviews[index].title,
-						title: reviews[index].comment
+						comment: reviews[index].comment,
+						title: reviews[index].title
 					})
 				)
 			);

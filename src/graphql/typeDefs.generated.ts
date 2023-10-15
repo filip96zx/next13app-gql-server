@@ -2037,30 +2037,30 @@ export const typeDefs = {
 					kind: 'InputValueDefinition',
 					name: {
 						kind: 'Name',
-						value: 'id',
-						loc: { start: 1990, end: 1992 }
+						value: 'productName',
+						loc: { start: 1990, end: 2001 }
 					},
 					type: {
 						kind: 'NamedType',
 						name: {
 							kind: 'Name',
-							value: 'ID',
-							loc: { start: 1994, end: 1996 }
+							value: 'String',
+							loc: { start: 2003, end: 2009 }
 						},
-						loc: { start: 1994, end: 1996 }
+						loc: { start: 2003, end: 2009 }
 					},
 					directives: [],
-					loc: { start: 1990, end: 1996 }
+					loc: { start: 1990, end: 2009 }
 				}
 			],
-			loc: { start: 1955, end: 1998 }
+			loc: { start: 1955, end: 2011 }
 		},
 		{
 			kind: 'EnumTypeDefinition',
 			name: {
 				kind: 'Name',
 				value: 'SortOrder',
-				loc: { start: 2005, end: 2014 }
+				loc: { start: 2018, end: 2027 }
 			},
 			directives: [],
 			values: [
@@ -2069,30 +2069,30 @@ export const typeDefs = {
 					name: {
 						kind: 'Name',
 						value: 'asc',
-						loc: { start: 2019, end: 2022 }
+						loc: { start: 2032, end: 2035 }
 					},
 					directives: [],
-					loc: { start: 2019, end: 2022 }
+					loc: { start: 2032, end: 2035 }
 				},
 				{
 					kind: 'EnumValueDefinition',
 					name: {
 						kind: 'Name',
 						value: 'desc',
-						loc: { start: 2025, end: 2029 }
+						loc: { start: 2038, end: 2042 }
 					},
 					directives: [],
-					loc: { start: 2025, end: 2029 }
+					loc: { start: 2038, end: 2042 }
 				}
 			],
-			loc: { start: 2000, end: 2031 }
+			loc: { start: 2013, end: 2044 }
 		},
 		{
 			kind: 'EnumTypeDefinition',
 			name: {
 				kind: 'Name',
 				value: 'SortableField',
-				loc: { start: 2038, end: 2051 }
+				loc: { start: 2051, end: 2064 }
 			},
 			directives: [],
 			values: [
@@ -2101,60 +2101,60 @@ export const typeDefs = {
 					name: {
 						kind: 'Name',
 						value: 'name',
-						loc: { start: 2056, end: 2060 }
+						loc: { start: 2069, end: 2073 }
 					},
 					directives: [],
-					loc: { start: 2056, end: 2060 }
+					loc: { start: 2069, end: 2073 }
 				},
 				{
 					kind: 'EnumValueDefinition',
 					name: {
 						kind: 'Name',
 						value: 'slug',
-						loc: { start: 2063, end: 2067 }
+						loc: { start: 2076, end: 2080 }
 					},
 					directives: [],
-					loc: { start: 2063, end: 2067 }
+					loc: { start: 2076, end: 2080 }
 				},
 				{
 					kind: 'EnumValueDefinition',
 					name: {
 						kind: 'Name',
 						value: 'price',
-						loc: { start: 2070, end: 2075 }
+						loc: { start: 2083, end: 2088 }
 					},
 					directives: [],
-					loc: { start: 2070, end: 2075 }
+					loc: { start: 2083, end: 2088 }
 				},
 				{
 					kind: 'EnumValueDefinition',
 					name: {
 						kind: 'Name',
 						value: 'averageRating',
-						loc: { start: 2078, end: 2091 }
+						loc: { start: 2091, end: 2104 }
 					},
 					directives: [],
-					loc: { start: 2078, end: 2091 }
+					loc: { start: 2091, end: 2104 }
 				},
 				{
 					kind: 'EnumValueDefinition',
 					name: {
 						kind: 'Name',
 						value: 'createdAt',
-						loc: { start: 2094, end: 2103 }
+						loc: { start: 2107, end: 2116 }
 					},
 					directives: [],
-					loc: { start: 2094, end: 2103 }
+					loc: { start: 2107, end: 2116 }
 				}
 			],
-			loc: { start: 2033, end: 2105 }
+			loc: { start: 2046, end: 2118 }
 		},
 		{
 			kind: 'InputObjectTypeDefinition',
 			name: {
 				kind: 'Name',
 				value: 'OrderByInput',
-				loc: { start: 2113, end: 2125 }
+				loc: { start: 2126, end: 2138 }
 			},
 			directives: [],
 			fields: [
@@ -2163,7 +2163,7 @@ export const typeDefs = {
 					name: {
 						kind: 'Name',
 						value: 'field',
-						loc: { start: 2130, end: 2135 }
+						loc: { start: 2143, end: 2148 }
 					},
 					type: {
 						kind: 'NonNullType',
@@ -2172,21 +2172,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'SortableField',
-								loc: { start: 2137, end: 2150 }
+								loc: { start: 2150, end: 2163 }
 							},
-							loc: { start: 2137, end: 2150 }
+							loc: { start: 2150, end: 2163 }
 						},
-						loc: { start: 2137, end: 2151 }
+						loc: { start: 2150, end: 2164 }
 					},
 					directives: [],
-					loc: { start: 2130, end: 2151 }
+					loc: { start: 2143, end: 2164 }
 				},
 				{
 					kind: 'InputValueDefinition',
 					name: {
 						kind: 'Name',
 						value: 'order',
-						loc: { start: 2154, end: 2159 }
+						loc: { start: 2167, end: 2172 }
 					},
 					type: {
 						kind: 'NonNullType',
@@ -2195,24 +2195,24 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'SortOrder',
-								loc: { start: 2161, end: 2170 }
+								loc: { start: 2174, end: 2183 }
 							},
-							loc: { start: 2161, end: 2170 }
+							loc: { start: 2174, end: 2183 }
 						},
-						loc: { start: 2161, end: 2171 }
+						loc: { start: 2174, end: 2184 }
 					},
 					directives: [],
-					loc: { start: 2154, end: 2171 }
+					loc: { start: 2167, end: 2184 }
 				}
 			],
-			loc: { start: 2107, end: 2173 }
+			loc: { start: 2120, end: 2186 }
 		},
 		{
 			kind: 'ObjectTypeExtension',
 			name: {
 				kind: 'Name',
 				value: 'Query',
-				loc: { start: 2187, end: 2192 }
+				loc: { start: 2200, end: 2205 }
 			},
 			interfaces: [],
 			directives: [],
@@ -2222,7 +2222,7 @@ export const typeDefs = {
 					name: {
 						kind: 'Name',
 						value: 'product',
-						loc: { start: 2197, end: 2204 }
+						loc: { start: 2210, end: 2217 }
 					},
 					arguments: [
 						{
@@ -2230,7 +2230,7 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'id',
-								loc: { start: 2205, end: 2207 }
+								loc: { start: 2218, end: 2220 }
 							},
 							type: {
 								kind: 'NonNullType',
@@ -2239,14 +2239,14 @@ export const typeDefs = {
 									name: {
 										kind: 'Name',
 										value: 'ID',
-										loc: { start: 2209, end: 2211 }
+										loc: { start: 2222, end: 2224 }
 									},
-									loc: { start: 2209, end: 2211 }
+									loc: { start: 2222, end: 2224 }
 								},
-								loc: { start: 2209, end: 2212 }
+								loc: { start: 2222, end: 2225 }
 							},
 							directives: [],
-							loc: { start: 2205, end: 2212 }
+							loc: { start: 2218, end: 2225 }
 						}
 					],
 					type: {
@@ -2254,19 +2254,19 @@ export const typeDefs = {
 						name: {
 							kind: 'Name',
 							value: 'Product',
-							loc: { start: 2215, end: 2222 }
+							loc: { start: 2228, end: 2235 }
 						},
-						loc: { start: 2215, end: 2222 }
+						loc: { start: 2228, end: 2235 }
 					},
 					directives: [],
-					loc: { start: 2197, end: 2222 }
+					loc: { start: 2210, end: 2235 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'products',
-						loc: { start: 2225, end: 2233 }
+						loc: { start: 2238, end: 2246 }
 					},
 					arguments: [
 						{
@@ -2274,76 +2274,76 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'where',
-								loc: { start: 2234, end: 2239 }
+								loc: { start: 2247, end: 2252 }
 							},
 							type: {
 								kind: 'NamedType',
 								name: {
 									kind: 'Name',
 									value: 'ProductWhereInput',
-									loc: { start: 2241, end: 2258 }
+									loc: { start: 2254, end: 2271 }
 								},
-								loc: { start: 2241, end: 2258 }
+								loc: { start: 2254, end: 2271 }
 							},
 							directives: [],
-							loc: { start: 2234, end: 2258 }
+							loc: { start: 2247, end: 2271 }
 						},
 						{
 							kind: 'InputValueDefinition',
 							name: {
 								kind: 'Name',
 								value: 'skip',
-								loc: { start: 2260, end: 2264 }
+								loc: { start: 2273, end: 2277 }
 							},
 							type: {
 								kind: 'NamedType',
 								name: {
 									kind: 'Name',
 									value: 'Int',
-									loc: { start: 2266, end: 2269 }
+									loc: { start: 2279, end: 2282 }
 								},
-								loc: { start: 2266, end: 2269 }
+								loc: { start: 2279, end: 2282 }
 							},
 							directives: [],
-							loc: { start: 2260, end: 2269 }
+							loc: { start: 2273, end: 2282 }
 						},
 						{
 							kind: 'InputValueDefinition',
 							name: {
 								kind: 'Name',
 								value: 'orderBy',
-								loc: { start: 2271, end: 2278 }
+								loc: { start: 2284, end: 2291 }
 							},
 							type: {
 								kind: 'NamedType',
 								name: {
 									kind: 'Name',
 									value: 'OrderByInput',
-									loc: { start: 2280, end: 2292 }
+									loc: { start: 2293, end: 2305 }
 								},
-								loc: { start: 2280, end: 2292 }
+								loc: { start: 2293, end: 2305 }
 							},
 							directives: [],
-							loc: { start: 2271, end: 2292 }
+							loc: { start: 2284, end: 2305 }
 						},
 						{
 							kind: 'InputValueDefinition',
 							name: {
 								kind: 'Name',
 								value: 'first',
-								loc: { start: 2294, end: 2299 }
+								loc: { start: 2307, end: 2312 }
 							},
 							type: {
 								kind: 'NamedType',
 								name: {
 									kind: 'Name',
 									value: 'Int',
-									loc: { start: 2301, end: 2304 }
+									loc: { start: 2314, end: 2317 }
 								},
-								loc: { start: 2301, end: 2304 }
+								loc: { start: 2314, end: 2317 }
 							},
 							directives: [],
-							loc: { start: 2294, end: 2304 }
+							loc: { start: 2307, end: 2317 }
 						}
 					],
 					type: {
@@ -2357,25 +2357,25 @@ export const typeDefs = {
 									name: {
 										kind: 'Name',
 										value: 'Product',
-										loc: { start: 2308, end: 2315 }
+										loc: { start: 2321, end: 2328 }
 									},
-									loc: { start: 2308, end: 2315 }
+									loc: { start: 2321, end: 2328 }
 								},
-								loc: { start: 2308, end: 2316 }
+								loc: { start: 2321, end: 2329 }
 							},
-							loc: { start: 2307, end: 2317 }
+							loc: { start: 2320, end: 2330 }
 						},
-						loc: { start: 2307, end: 2318 }
+						loc: { start: 2320, end: 2331 }
 					},
 					directives: [],
-					loc: { start: 2225, end: 2318 }
+					loc: { start: 2238, end: 2331 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'productsRelated',
-						loc: { start: 2321, end: 2336 }
+						loc: { start: 2334, end: 2349 }
 					},
 					arguments: [
 						{
@@ -2383,76 +2383,57 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'where',
-								loc: { start: 2337, end: 2342 }
+								loc: { start: 2350, end: 2355 }
 							},
 							type: {
 								kind: 'NamedType',
 								name: {
 									kind: 'Name',
 									value: 'ProductRelatedWhereInput',
-									loc: { start: 2344, end: 2368 }
+									loc: { start: 2357, end: 2381 }
 								},
-								loc: { start: 2344, end: 2368 }
+								loc: { start: 2357, end: 2381 }
 							},
 							directives: [],
-							loc: { start: 2337, end: 2368 }
+							loc: { start: 2350, end: 2381 }
 						},
 						{
 							kind: 'InputValueDefinition',
 							name: {
 								kind: 'Name',
 								value: 'skip',
-								loc: { start: 2370, end: 2374 }
+								loc: { start: 2383, end: 2387 }
 							},
 							type: {
 								kind: 'NamedType',
 								name: {
 									kind: 'Name',
 									value: 'Int',
-									loc: { start: 2376, end: 2379 }
+									loc: { start: 2389, end: 2392 }
 								},
-								loc: { start: 2376, end: 2379 }
+								loc: { start: 2389, end: 2392 }
 							},
 							directives: [],
-							loc: { start: 2370, end: 2379 }
-						},
-						{
-							kind: 'InputValueDefinition',
-							name: {
-								kind: 'Name',
-								value: 'orderBy',
-								loc: { start: 2381, end: 2388 }
-							},
-							type: {
-								kind: 'NamedType',
-								name: {
-									kind: 'Name',
-									value: 'OrderByInput',
-									loc: { start: 2390, end: 2402 }
-								},
-								loc: { start: 2390, end: 2402 }
-							},
-							directives: [],
-							loc: { start: 2381, end: 2402 }
+							loc: { start: 2383, end: 2392 }
 						},
 						{
 							kind: 'InputValueDefinition',
 							name: {
 								kind: 'Name',
 								value: 'first',
-								loc: { start: 2404, end: 2409 }
+								loc: { start: 2394, end: 2399 }
 							},
 							type: {
 								kind: 'NamedType',
 								name: {
 									kind: 'Name',
 									value: 'Int',
-									loc: { start: 2411, end: 2414 }
+									loc: { start: 2401, end: 2404 }
 								},
-								loc: { start: 2411, end: 2414 }
+								loc: { start: 2401, end: 2404 }
 							},
 							directives: [],
-							loc: { start: 2404, end: 2414 }
+							loc: { start: 2394, end: 2404 }
 						}
 					],
 					type: {
@@ -2466,25 +2447,25 @@ export const typeDefs = {
 									name: {
 										kind: 'Name',
 										value: 'Product',
-										loc: { start: 2418, end: 2425 }
+										loc: { start: 2408, end: 2415 }
 									},
-									loc: { start: 2418, end: 2425 }
+									loc: { start: 2408, end: 2415 }
 								},
-								loc: { start: 2418, end: 2426 }
+								loc: { start: 2408, end: 2416 }
 							},
-							loc: { start: 2417, end: 2427 }
+							loc: { start: 2407, end: 2417 }
 						},
-						loc: { start: 2417, end: 2428 }
+						loc: { start: 2407, end: 2418 }
 					},
 					directives: [],
-					loc: { start: 2321, end: 2428 }
+					loc: { start: 2334, end: 2418 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'productsConnection',
-						loc: { start: 2431, end: 2449 }
+						loc: { start: 2421, end: 2439 }
 					},
 					arguments: [
 						{
@@ -2492,19 +2473,19 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'where',
-								loc: { start: 2450, end: 2455 }
+								loc: { start: 2440, end: 2445 }
 							},
 							type: {
 								kind: 'NamedType',
 								name: {
 									kind: 'Name',
 									value: 'ProductWhereInput',
-									loc: { start: 2457, end: 2474 }
+									loc: { start: 2447, end: 2464 }
 								},
-								loc: { start: 2457, end: 2474 }
+								loc: { start: 2447, end: 2464 }
 							},
 							directives: [],
-							loc: { start: 2450, end: 2474 }
+							loc: { start: 2440, end: 2464 }
 						}
 					],
 					type: {
@@ -2514,24 +2495,24 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'Connection',
-								loc: { start: 2477, end: 2487 }
+								loc: { start: 2467, end: 2477 }
 							},
-							loc: { start: 2477, end: 2487 }
+							loc: { start: 2467, end: 2477 }
 						},
-						loc: { start: 2477, end: 2488 }
+						loc: { start: 2467, end: 2478 }
 					},
 					directives: [],
-					loc: { start: 2431, end: 2488 }
+					loc: { start: 2421, end: 2478 }
 				}
 			],
-			loc: { start: 2175, end: 2490 }
+			loc: { start: 2188, end: 2480 }
 		},
 		{
 			kind: 'ObjectTypeExtension',
 			name: {
 				kind: 'Name',
 				value: 'Mutation',
-				loc: { start: 2504, end: 2512 }
+				loc: { start: 2494, end: 2502 }
 			},
 			interfaces: [],
 			directives: [],
@@ -2541,7 +2522,7 @@ export const typeDefs = {
 					name: {
 						kind: 'Name',
 						value: 'productCalculateAndUpdateAverageRating',
-						loc: { start: 2517, end: 2555 }
+						loc: { start: 2507, end: 2545 }
 					},
 					arguments: [
 						{
@@ -2549,7 +2530,7 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'id',
-								loc: { start: 2556, end: 2558 }
+								loc: { start: 2546, end: 2548 }
 							},
 							type: {
 								kind: 'NonNullType',
@@ -2558,14 +2539,14 @@ export const typeDefs = {
 									name: {
 										kind: 'Name',
 										value: 'ID',
-										loc: { start: 2560, end: 2562 }
+										loc: { start: 2550, end: 2552 }
 									},
-									loc: { start: 2560, end: 2562 }
+									loc: { start: 2550, end: 2552 }
 								},
-								loc: { start: 2560, end: 2563 }
+								loc: { start: 2550, end: 2553 }
 							},
 							directives: [],
-							loc: { start: 2556, end: 2563 }
+							loc: { start: 2546, end: 2553 }
 						}
 					],
 					type: {
@@ -2573,19 +2554,19 @@ export const typeDefs = {
 						name: {
 							kind: 'Name',
 							value: 'Product',
-							loc: { start: 2566, end: 2573 }
+							loc: { start: 2556, end: 2563 }
 						},
-						loc: { start: 2566, end: 2573 }
+						loc: { start: 2556, end: 2563 }
 					},
 					directives: [],
-					loc: { start: 2517, end: 2573 }
+					loc: { start: 2507, end: 2563 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'productsCalculateAndUpdateAverageRating',
-						loc: { start: 2576, end: 2615 }
+						loc: { start: 2566, end: 2605 }
 					},
 					arguments: [],
 					type: {
@@ -2599,28 +2580,28 @@ export const typeDefs = {
 									name: {
 										kind: 'Name',
 										value: 'Product',
-										loc: { start: 2618, end: 2625 }
+										loc: { start: 2608, end: 2615 }
 									},
-									loc: { start: 2618, end: 2625 }
+									loc: { start: 2608, end: 2615 }
 								},
-								loc: { start: 2618, end: 2626 }
+								loc: { start: 2608, end: 2616 }
 							},
-							loc: { start: 2617, end: 2627 }
+							loc: { start: 2607, end: 2617 }
 						},
-						loc: { start: 2617, end: 2628 }
+						loc: { start: 2607, end: 2618 }
 					},
 					directives: [],
-					loc: { start: 2576, end: 2628 }
+					loc: { start: 2566, end: 2618 }
 				}
 			],
-			loc: { start: 2492, end: 2630 }
+			loc: { start: 2482, end: 2620 }
 		},
 		{
 			kind: 'ObjectTypeDefinition',
 			name: {
 				kind: 'Name',
 				value: 'Product',
-				loc: { start: 2637, end: 2644 }
+				loc: { start: 2627, end: 2634 }
 			},
 			interfaces: [],
 			directives: [],
@@ -2630,7 +2611,7 @@ export const typeDefs = {
 					name: {
 						kind: 'Name',
 						value: 'id',
-						loc: { start: 2649, end: 2651 }
+						loc: { start: 2639, end: 2641 }
 					},
 					arguments: [],
 					type: {
@@ -2640,21 +2621,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'ID',
-								loc: { start: 2653, end: 2655 }
+								loc: { start: 2643, end: 2645 }
 							},
-							loc: { start: 2653, end: 2655 }
+							loc: { start: 2643, end: 2645 }
 						},
-						loc: { start: 2653, end: 2656 }
+						loc: { start: 2643, end: 2646 }
 					},
 					directives: [],
-					loc: { start: 2649, end: 2656 }
+					loc: { start: 2639, end: 2646 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'name',
-						loc: { start: 2659, end: 2663 }
+						loc: { start: 2649, end: 2653 }
 					},
 					arguments: [],
 					type: {
@@ -2664,21 +2645,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'String',
-								loc: { start: 2665, end: 2671 }
+								loc: { start: 2655, end: 2661 }
 							},
-							loc: { start: 2665, end: 2671 }
+							loc: { start: 2655, end: 2661 }
 						},
-						loc: { start: 2665, end: 2672 }
+						loc: { start: 2655, end: 2662 }
 					},
 					directives: [],
-					loc: { start: 2659, end: 2672 }
+					loc: { start: 2649, end: 2662 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'slug',
-						loc: { start: 2675, end: 2679 }
+						loc: { start: 2665, end: 2669 }
 					},
 					arguments: [],
 					type: {
@@ -2688,21 +2669,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'String',
-								loc: { start: 2681, end: 2687 }
+								loc: { start: 2671, end: 2677 }
 							},
-							loc: { start: 2681, end: 2687 }
+							loc: { start: 2671, end: 2677 }
 						},
-						loc: { start: 2681, end: 2688 }
+						loc: { start: 2671, end: 2678 }
 					},
 					directives: [],
-					loc: { start: 2675, end: 2688 }
+					loc: { start: 2665, end: 2678 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'description',
-						loc: { start: 2691, end: 2702 }
+						loc: { start: 2681, end: 2692 }
 					},
 					arguments: [],
 					type: {
@@ -2712,21 +2693,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'String',
-								loc: { start: 2704, end: 2710 }
+								loc: { start: 2694, end: 2700 }
 							},
-							loc: { start: 2704, end: 2710 }
+							loc: { start: 2694, end: 2700 }
 						},
-						loc: { start: 2704, end: 2711 }
+						loc: { start: 2694, end: 2701 }
 					},
 					directives: [],
-					loc: { start: 2691, end: 2711 }
+					loc: { start: 2681, end: 2701 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'price',
-						loc: { start: 2714, end: 2719 }
+						loc: { start: 2704, end: 2709 }
 					},
 					arguments: [],
 					type: {
@@ -2736,21 +2717,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'Int',
-								loc: { start: 2721, end: 2724 }
+								loc: { start: 2711, end: 2714 }
 							},
-							loc: { start: 2721, end: 2724 }
+							loc: { start: 2711, end: 2714 }
 						},
-						loc: { start: 2721, end: 2725 }
+						loc: { start: 2711, end: 2715 }
 					},
 					directives: [],
-					loc: { start: 2714, end: 2725 }
+					loc: { start: 2704, end: 2715 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'averageRating',
-						loc: { start: 2728, end: 2741 }
+						loc: { start: 2718, end: 2731 }
 					},
 					arguments: [],
 					type: {
@@ -2760,21 +2741,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'Float',
-								loc: { start: 2743, end: 2748 }
+								loc: { start: 2733, end: 2738 }
 							},
-							loc: { start: 2743, end: 2748 }
+							loc: { start: 2733, end: 2738 }
 						},
-						loc: { start: 2743, end: 2749 }
+						loc: { start: 2733, end: 2739 }
 					},
 					directives: [],
-					loc: { start: 2728, end: 2749 }
+					loc: { start: 2718, end: 2739 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'createdAt',
-						loc: { start: 2752, end: 2761 }
+						loc: { start: 2742, end: 2751 }
 					},
 					arguments: [],
 					type: {
@@ -2784,21 +2765,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'DateTime',
-								loc: { start: 2763, end: 2771 }
+								loc: { start: 2753, end: 2761 }
 							},
-							loc: { start: 2763, end: 2771 }
+							loc: { start: 2753, end: 2761 }
 						},
-						loc: { start: 2763, end: 2772 }
+						loc: { start: 2753, end: 2762 }
 					},
 					directives: [],
-					loc: { start: 2752, end: 2772 }
+					loc: { start: 2742, end: 2762 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'ratingsCount',
-						loc: { start: 2775, end: 2787 }
+						loc: { start: 2765, end: 2777 }
 					},
 					arguments: [],
 					type: {
@@ -2808,21 +2789,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'Int',
-								loc: { start: 2789, end: 2792 }
+								loc: { start: 2779, end: 2782 }
 							},
-							loc: { start: 2789, end: 2792 }
+							loc: { start: 2779, end: 2782 }
 						},
-						loc: { start: 2789, end: 2793 }
+						loc: { start: 2779, end: 2783 }
 					},
 					directives: [],
-					loc: { start: 2775, end: 2793 }
+					loc: { start: 2765, end: 2783 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'categories',
-						loc: { start: 2796, end: 2806 }
+						loc: { start: 2786, end: 2796 }
 					},
 					arguments: [
 						{
@@ -2830,38 +2811,38 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'skip',
-								loc: { start: 2807, end: 2811 }
+								loc: { start: 2797, end: 2801 }
 							},
 							type: {
 								kind: 'NamedType',
 								name: {
 									kind: 'Name',
 									value: 'Int',
-									loc: { start: 2813, end: 2816 }
+									loc: { start: 2803, end: 2806 }
 								},
-								loc: { start: 2813, end: 2816 }
+								loc: { start: 2803, end: 2806 }
 							},
 							directives: [],
-							loc: { start: 2807, end: 2816 }
+							loc: { start: 2797, end: 2806 }
 						},
 						{
 							kind: 'InputValueDefinition',
 							name: {
 								kind: 'Name',
 								value: 'first',
-								loc: { start: 2818, end: 2823 }
+								loc: { start: 2808, end: 2813 }
 							},
 							type: {
 								kind: 'NamedType',
 								name: {
 									kind: 'Name',
 									value: 'Int',
-									loc: { start: 2825, end: 2828 }
+									loc: { start: 2815, end: 2818 }
 								},
-								loc: { start: 2825, end: 2828 }
+								loc: { start: 2815, end: 2818 }
 							},
 							directives: [],
-							loc: { start: 2818, end: 2828 }
+							loc: { start: 2808, end: 2818 }
 						}
 					],
 					type: {
@@ -2873,23 +2854,23 @@ export const typeDefs = {
 								name: {
 									kind: 'Name',
 									value: 'Category',
-									loc: { start: 2832, end: 2840 }
+									loc: { start: 2822, end: 2830 }
 								},
-								loc: { start: 2832, end: 2840 }
+								loc: { start: 2822, end: 2830 }
 							},
-							loc: { start: 2831, end: 2841 }
+							loc: { start: 2821, end: 2831 }
 						},
-						loc: { start: 2831, end: 2842 }
+						loc: { start: 2821, end: 2832 }
 					},
 					directives: [],
-					loc: { start: 2796, end: 2842 }
+					loc: { start: 2786, end: 2832 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'collections',
-						loc: { start: 2845, end: 2856 }
+						loc: { start: 2835, end: 2846 }
 					},
 					arguments: [
 						{
@@ -2897,38 +2878,38 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'skip',
-								loc: { start: 2857, end: 2861 }
+								loc: { start: 2847, end: 2851 }
 							},
 							type: {
 								kind: 'NamedType',
 								name: {
 									kind: 'Name',
 									value: 'Int',
-									loc: { start: 2863, end: 2866 }
+									loc: { start: 2853, end: 2856 }
 								},
-								loc: { start: 2863, end: 2866 }
+								loc: { start: 2853, end: 2856 }
 							},
 							directives: [],
-							loc: { start: 2857, end: 2866 }
+							loc: { start: 2847, end: 2856 }
 						},
 						{
 							kind: 'InputValueDefinition',
 							name: {
 								kind: 'Name',
 								value: 'first',
-								loc: { start: 2868, end: 2873 }
+								loc: { start: 2858, end: 2863 }
 							},
 							type: {
 								kind: 'NamedType',
 								name: {
 									kind: 'Name',
 									value: 'Int',
-									loc: { start: 2875, end: 2878 }
+									loc: { start: 2865, end: 2868 }
 								},
-								loc: { start: 2875, end: 2878 }
+								loc: { start: 2865, end: 2868 }
 							},
 							directives: [],
-							loc: { start: 2868, end: 2878 }
+							loc: { start: 2858, end: 2868 }
 						}
 					],
 					type: {
@@ -2940,23 +2921,23 @@ export const typeDefs = {
 								name: {
 									kind: 'Name',
 									value: 'Collection',
-									loc: { start: 2882, end: 2892 }
+									loc: { start: 2872, end: 2882 }
 								},
-								loc: { start: 2882, end: 2892 }
+								loc: { start: 2872, end: 2882 }
 							},
-							loc: { start: 2881, end: 2893 }
+							loc: { start: 2871, end: 2883 }
 						},
-						loc: { start: 2881, end: 2894 }
+						loc: { start: 2871, end: 2884 }
 					},
 					directives: [],
-					loc: { start: 2845, end: 2894 }
+					loc: { start: 2835, end: 2884 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'images',
-						loc: { start: 2897, end: 2903 }
+						loc: { start: 2887, end: 2893 }
 					},
 					arguments: [
 						{
@@ -2964,38 +2945,38 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'skip',
-								loc: { start: 2904, end: 2908 }
+								loc: { start: 2894, end: 2898 }
 							},
 							type: {
 								kind: 'NamedType',
 								name: {
 									kind: 'Name',
 									value: 'Int',
-									loc: { start: 2910, end: 2913 }
+									loc: { start: 2900, end: 2903 }
 								},
-								loc: { start: 2910, end: 2913 }
+								loc: { start: 2900, end: 2903 }
 							},
 							directives: [],
-							loc: { start: 2904, end: 2913 }
+							loc: { start: 2894, end: 2903 }
 						},
 						{
 							kind: 'InputValueDefinition',
 							name: {
 								kind: 'Name',
 								value: 'first',
-								loc: { start: 2915, end: 2920 }
+								loc: { start: 2905, end: 2910 }
 							},
 							type: {
 								kind: 'NamedType',
 								name: {
 									kind: 'Name',
 									value: 'Int',
-									loc: { start: 2922, end: 2925 }
+									loc: { start: 2912, end: 2915 }
 								},
-								loc: { start: 2922, end: 2925 }
+								loc: { start: 2912, end: 2915 }
 							},
 							directives: [],
-							loc: { start: 2915, end: 2925 }
+							loc: { start: 2905, end: 2915 }
 						}
 					],
 					type: {
@@ -3007,23 +2988,23 @@ export const typeDefs = {
 								name: {
 									kind: 'Name',
 									value: 'Image',
-									loc: { start: 2929, end: 2934 }
+									loc: { start: 2919, end: 2924 }
 								},
-								loc: { start: 2929, end: 2934 }
+								loc: { start: 2919, end: 2924 }
 							},
-							loc: { start: 2928, end: 2935 }
+							loc: { start: 2918, end: 2925 }
 						},
-						loc: { start: 2928, end: 2936 }
+						loc: { start: 2918, end: 2926 }
 					},
 					directives: [],
-					loc: { start: 2897, end: 2936 }
+					loc: { start: 2887, end: 2926 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'variants',
-						loc: { start: 2939, end: 2947 }
+						loc: { start: 2929, end: 2937 }
 					},
 					arguments: [],
 					type: {
@@ -3037,25 +3018,25 @@ export const typeDefs = {
 									name: {
 										kind: 'Name',
 										value: 'Variant',
-										loc: { start: 2950, end: 2957 }
+										loc: { start: 2940, end: 2947 }
 									},
-									loc: { start: 2950, end: 2957 }
+									loc: { start: 2940, end: 2947 }
 								},
-								loc: { start: 2950, end: 2958 }
+								loc: { start: 2940, end: 2948 }
 							},
-							loc: { start: 2949, end: 2959 }
+							loc: { start: 2939, end: 2949 }
 						},
-						loc: { start: 2949, end: 2960 }
+						loc: { start: 2939, end: 2950 }
 					},
 					directives: [],
-					loc: { start: 2939, end: 2960 }
+					loc: { start: 2929, end: 2950 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'ratings',
-						loc: { start: 2963, end: 2970 }
+						loc: { start: 2953, end: 2960 }
 					},
 					arguments: [
 						{
@@ -3063,38 +3044,38 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'skip',
-								loc: { start: 2971, end: 2975 }
+								loc: { start: 2961, end: 2965 }
 							},
 							type: {
 								kind: 'NamedType',
 								name: {
 									kind: 'Name',
 									value: 'Int',
-									loc: { start: 2977, end: 2980 }
+									loc: { start: 2967, end: 2970 }
 								},
-								loc: { start: 2977, end: 2980 }
+								loc: { start: 2967, end: 2970 }
 							},
 							directives: [],
-							loc: { start: 2971, end: 2980 }
+							loc: { start: 2961, end: 2970 }
 						},
 						{
 							kind: 'InputValueDefinition',
 							name: {
 								kind: 'Name',
 								value: 'first',
-								loc: { start: 2982, end: 2987 }
+								loc: { start: 2972, end: 2977 }
 							},
 							type: {
 								kind: 'NamedType',
 								name: {
 									kind: 'Name',
 									value: 'Int',
-									loc: { start: 2989, end: 2992 }
+									loc: { start: 2979, end: 2982 }
 								},
-								loc: { start: 2989, end: 2992 }
+								loc: { start: 2979, end: 2982 }
 							},
 							directives: [],
-							loc: { start: 2982, end: 2992 }
+							loc: { start: 2972, end: 2982 }
 						}
 					],
 					type: {
@@ -3108,28 +3089,28 @@ export const typeDefs = {
 									name: {
 										kind: 'Name',
 										value: 'Rating',
-										loc: { start: 2996, end: 3002 }
+										loc: { start: 2986, end: 2992 }
 									},
-									loc: { start: 2996, end: 3002 }
+									loc: { start: 2986, end: 2992 }
 								},
-								loc: { start: 2996, end: 3003 }
+								loc: { start: 2986, end: 2993 }
 							},
-							loc: { start: 2995, end: 3004 }
+							loc: { start: 2985, end: 2994 }
 						},
-						loc: { start: 2995, end: 3005 }
+						loc: { start: 2985, end: 2995 }
 					},
 					directives: [],
-					loc: { start: 2963, end: 3005 }
+					loc: { start: 2953, end: 2995 }
 				}
 			],
-			loc: { start: 2632, end: 3007 }
+			loc: { start: 2622, end: 2997 }
 		},
 		{
 			kind: 'InputObjectTypeDefinition',
 			name: {
 				kind: 'Name',
 				value: 'RatingInput',
-				loc: { start: 3014, end: 3025 }
+				loc: { start: 3004, end: 3015 }
 			},
 			directives: [],
 			fields: [
@@ -3138,7 +3119,7 @@ export const typeDefs = {
 					name: {
 						kind: 'Name',
 						value: 'comment',
-						loc: { start: 3030, end: 3037 }
+						loc: { start: 3020, end: 3027 }
 					},
 					type: {
 						kind: 'NonNullType',
@@ -3147,21 +3128,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'String',
-								loc: { start: 3039, end: 3045 }
+								loc: { start: 3029, end: 3035 }
 							},
-							loc: { start: 3039, end: 3045 }
+							loc: { start: 3029, end: 3035 }
 						},
-						loc: { start: 3039, end: 3046 }
+						loc: { start: 3029, end: 3036 }
 					},
 					directives: [],
-					loc: { start: 3030, end: 3046 }
+					loc: { start: 3020, end: 3036 }
 				},
 				{
 					kind: 'InputValueDefinition',
 					name: {
 						kind: 'Name',
 						value: 'rating',
-						loc: { start: 3049, end: 3055 }
+						loc: { start: 3039, end: 3045 }
 					},
 					type: {
 						kind: 'NonNullType',
@@ -3170,21 +3151,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'Int',
-								loc: { start: 3057, end: 3060 }
+								loc: { start: 3047, end: 3050 }
 							},
-							loc: { start: 3057, end: 3060 }
+							loc: { start: 3047, end: 3050 }
 						},
-						loc: { start: 3057, end: 3061 }
+						loc: { start: 3047, end: 3051 }
 					},
 					directives: [],
-					loc: { start: 3049, end: 3061 }
+					loc: { start: 3039, end: 3051 }
 				},
 				{
 					kind: 'InputValueDefinition',
 					name: {
 						kind: 'Name',
 						value: 'userName',
-						loc: { start: 3064, end: 3072 }
+						loc: { start: 3054, end: 3062 }
 					},
 					type: {
 						kind: 'NonNullType',
@@ -3193,21 +3174,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'String',
-								loc: { start: 3074, end: 3080 }
+								loc: { start: 3064, end: 3070 }
 							},
-							loc: { start: 3074, end: 3080 }
+							loc: { start: 3064, end: 3070 }
 						},
-						loc: { start: 3074, end: 3081 }
+						loc: { start: 3064, end: 3071 }
 					},
 					directives: [],
-					loc: { start: 3064, end: 3081 }
+					loc: { start: 3054, end: 3071 }
 				},
 				{
 					kind: 'InputValueDefinition',
 					name: {
 						kind: 'Name',
 						value: 'title',
-						loc: { start: 3084, end: 3089 }
+						loc: { start: 3074, end: 3079 }
 					},
 					type: {
 						kind: 'NonNullType',
@@ -3216,21 +3197,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'String',
-								loc: { start: 3091, end: 3097 }
+								loc: { start: 3081, end: 3087 }
 							},
-							loc: { start: 3091, end: 3097 }
+							loc: { start: 3081, end: 3087 }
 						},
-						loc: { start: 3091, end: 3098 }
+						loc: { start: 3081, end: 3088 }
 					},
 					directives: [],
-					loc: { start: 3084, end: 3098 }
+					loc: { start: 3074, end: 3088 }
 				},
 				{
 					kind: 'InputValueDefinition',
 					name: {
 						kind: 'Name',
 						value: 'email',
-						loc: { start: 3101, end: 3106 }
+						loc: { start: 3091, end: 3096 }
 					},
 					type: {
 						kind: 'NonNullType',
@@ -3239,24 +3220,24 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'String',
-								loc: { start: 3108, end: 3114 }
+								loc: { start: 3098, end: 3104 }
 							},
-							loc: { start: 3108, end: 3114 }
+							loc: { start: 3098, end: 3104 }
 						},
-						loc: { start: 3108, end: 3115 }
+						loc: { start: 3098, end: 3105 }
 					},
 					directives: [],
-					loc: { start: 3101, end: 3115 }
+					loc: { start: 3091, end: 3105 }
 				}
 			],
-			loc: { start: 3008, end: 3117 }
+			loc: { start: 2998, end: 3107 }
 		},
 		{
 			kind: 'ObjectTypeExtension',
 			name: {
 				kind: 'Name',
 				value: 'Mutation',
-				loc: { start: 3131, end: 3139 }
+				loc: { start: 3121, end: 3129 }
 			},
 			interfaces: [],
 			directives: [],
@@ -3266,7 +3247,7 @@ export const typeDefs = {
 					name: {
 						kind: 'Name',
 						value: 'ratingCreate',
-						loc: { start: 3144, end: 3156 }
+						loc: { start: 3134, end: 3146 }
 					},
 					arguments: [
 						{
@@ -3274,7 +3255,7 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'productId',
-								loc: { start: 3157, end: 3166 }
+								loc: { start: 3147, end: 3156 }
 							},
 							type: {
 								kind: 'NonNullType',
@@ -3283,21 +3264,21 @@ export const typeDefs = {
 									name: {
 										kind: 'Name',
 										value: 'ID',
-										loc: { start: 3168, end: 3170 }
+										loc: { start: 3158, end: 3160 }
 									},
-									loc: { start: 3168, end: 3170 }
+									loc: { start: 3158, end: 3160 }
 								},
-								loc: { start: 3168, end: 3171 }
+								loc: { start: 3158, end: 3161 }
 							},
 							directives: [],
-							loc: { start: 3157, end: 3171 }
+							loc: { start: 3147, end: 3161 }
 						},
 						{
 							kind: 'InputValueDefinition',
 							name: {
 								kind: 'Name',
 								value: 'ratingInput',
-								loc: { start: 3173, end: 3184 }
+								loc: { start: 3163, end: 3174 }
 							},
 							type: {
 								kind: 'NonNullType',
@@ -3306,14 +3287,14 @@ export const typeDefs = {
 									name: {
 										kind: 'Name',
 										value: 'RatingInput',
-										loc: { start: 3186, end: 3197 }
+										loc: { start: 3176, end: 3187 }
 									},
-									loc: { start: 3186, end: 3197 }
+									loc: { start: 3176, end: 3187 }
 								},
-								loc: { start: 3186, end: 3198 }
+								loc: { start: 3176, end: 3188 }
 							},
 							directives: [],
-							loc: { start: 3173, end: 3198 }
+							loc: { start: 3163, end: 3188 }
 						}
 					],
 					type: {
@@ -3323,24 +3304,24 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'Rating',
-								loc: { start: 3201, end: 3207 }
+								loc: { start: 3191, end: 3197 }
 							},
-							loc: { start: 3201, end: 3207 }
+							loc: { start: 3191, end: 3197 }
 						},
-						loc: { start: 3201, end: 3208 }
+						loc: { start: 3191, end: 3198 }
 					},
 					directives: [],
-					loc: { start: 3144, end: 3208 }
+					loc: { start: 3134, end: 3198 }
 				}
 			],
-			loc: { start: 3119, end: 3210 }
+			loc: { start: 3109, end: 3200 }
 		},
 		{
 			kind: 'InputObjectTypeDefinition',
 			name: {
 				kind: 'Name',
 				value: 'RatingWhereInput',
-				loc: { start: 3218, end: 3234 }
+				loc: { start: 3208, end: 3224 }
 			},
 			directives: [],
 			fields: [
@@ -3349,29 +3330,29 @@ export const typeDefs = {
 					name: {
 						kind: 'Name',
 						value: 'productId',
-						loc: { start: 3239, end: 3248 }
+						loc: { start: 3229, end: 3238 }
 					},
 					type: {
 						kind: 'NamedType',
 						name: {
 							kind: 'Name',
 							value: 'ID',
-							loc: { start: 3250, end: 3252 }
+							loc: { start: 3240, end: 3242 }
 						},
-						loc: { start: 3250, end: 3252 }
+						loc: { start: 3240, end: 3242 }
 					},
 					directives: [],
-					loc: { start: 3239, end: 3252 }
+					loc: { start: 3229, end: 3242 }
 				}
 			],
-			loc: { start: 3212, end: 3254 }
+			loc: { start: 3202, end: 3244 }
 		},
 		{
 			kind: 'ObjectTypeExtension',
 			name: {
 				kind: 'Name',
 				value: 'Query',
-				loc: { start: 3268, end: 3273 }
+				loc: { start: 3258, end: 3263 }
 			},
 			interfaces: [],
 			directives: [],
@@ -3381,7 +3362,7 @@ export const typeDefs = {
 					name: {
 						kind: 'Name',
 						value: 'ratingConnection',
-						loc: { start: 3278, end: 3294 }
+						loc: { start: 3268, end: 3284 }
 					},
 					arguments: [
 						{
@@ -3389,19 +3370,19 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'where',
-								loc: { start: 3295, end: 3300 }
+								loc: { start: 3285, end: 3290 }
 							},
 							type: {
 								kind: 'NamedType',
 								name: {
 									kind: 'Name',
 									value: 'RatingWhereInput',
-									loc: { start: 3302, end: 3318 }
+									loc: { start: 3292, end: 3308 }
 								},
-								loc: { start: 3302, end: 3318 }
+								loc: { start: 3292, end: 3308 }
 							},
 							directives: [],
-							loc: { start: 3295, end: 3318 }
+							loc: { start: 3285, end: 3308 }
 						}
 					],
 					type: {
@@ -3411,21 +3392,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'Connection',
-								loc: { start: 3321, end: 3331 }
+								loc: { start: 3311, end: 3321 }
 							},
-							loc: { start: 3321, end: 3331 }
+							loc: { start: 3311, end: 3321 }
 						},
-						loc: { start: 3321, end: 3332 }
+						loc: { start: 3311, end: 3322 }
 					},
 					directives: [],
-					loc: { start: 3278, end: 3332 }
+					loc: { start: 3268, end: 3322 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'ratings',
-						loc: { start: 3335, end: 3342 }
+						loc: { start: 3325, end: 3332 }
 					},
 					arguments: [
 						{
@@ -3433,57 +3414,57 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'first',
-								loc: { start: 3343, end: 3348 }
+								loc: { start: 3333, end: 3338 }
 							},
 							type: {
 								kind: 'NamedType',
 								name: {
 									kind: 'Name',
 									value: 'Int',
-									loc: { start: 3350, end: 3353 }
+									loc: { start: 3340, end: 3343 }
 								},
-								loc: { start: 3350, end: 3353 }
+								loc: { start: 3340, end: 3343 }
 							},
 							directives: [],
-							loc: { start: 3343, end: 3353 }
+							loc: { start: 3333, end: 3343 }
 						},
 						{
 							kind: 'InputValueDefinition',
 							name: {
 								kind: 'Name',
 								value: 'skip',
-								loc: { start: 3355, end: 3359 }
+								loc: { start: 3345, end: 3349 }
 							},
 							type: {
 								kind: 'NamedType',
 								name: {
 									kind: 'Name',
 									value: 'Int',
-									loc: { start: 3361, end: 3364 }
+									loc: { start: 3351, end: 3354 }
 								},
-								loc: { start: 3361, end: 3364 }
+								loc: { start: 3351, end: 3354 }
 							},
 							directives: [],
-							loc: { start: 3355, end: 3364 }
+							loc: { start: 3345, end: 3354 }
 						},
 						{
 							kind: 'InputValueDefinition',
 							name: {
 								kind: 'Name',
 								value: 'where',
-								loc: { start: 3366, end: 3371 }
+								loc: { start: 3356, end: 3361 }
 							},
 							type: {
 								kind: 'NamedType',
 								name: {
 									kind: 'Name',
 									value: 'RatingWhereInput',
-									loc: { start: 3373, end: 3389 }
+									loc: { start: 3363, end: 3379 }
 								},
-								loc: { start: 3373, end: 3389 }
+								loc: { start: 3363, end: 3379 }
 							},
 							directives: [],
-							loc: { start: 3366, end: 3389 }
+							loc: { start: 3356, end: 3379 }
 						}
 					],
 					type: {
@@ -3497,28 +3478,28 @@ export const typeDefs = {
 									name: {
 										kind: 'Name',
 										value: 'Rating',
-										loc: { start: 3393, end: 3399 }
+										loc: { start: 3383, end: 3389 }
 									},
-									loc: { start: 3393, end: 3399 }
+									loc: { start: 3383, end: 3389 }
 								},
-								loc: { start: 3393, end: 3400 }
+								loc: { start: 3383, end: 3390 }
 							},
-							loc: { start: 3392, end: 3401 }
+							loc: { start: 3382, end: 3391 }
 						},
-						loc: { start: 3392, end: 3402 }
+						loc: { start: 3382, end: 3392 }
 					},
 					directives: [],
-					loc: { start: 3335, end: 3402 }
+					loc: { start: 3325, end: 3392 }
 				}
 			],
-			loc: { start: 3256, end: 3404 }
+			loc: { start: 3246, end: 3394 }
 		},
 		{
 			kind: 'ObjectTypeDefinition',
 			name: {
 				kind: 'Name',
 				value: 'Rating',
-				loc: { start: 3411, end: 3417 }
+				loc: { start: 3401, end: 3407 }
 			},
 			interfaces: [],
 			directives: [],
@@ -3528,7 +3509,7 @@ export const typeDefs = {
 					name: {
 						kind: 'Name',
 						value: 'id',
-						loc: { start: 3422, end: 3424 }
+						loc: { start: 3412, end: 3414 }
 					},
 					arguments: [],
 					type: {
@@ -3538,21 +3519,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'ID',
-								loc: { start: 3426, end: 3428 }
+								loc: { start: 3416, end: 3418 }
 							},
-							loc: { start: 3426, end: 3428 }
+							loc: { start: 3416, end: 3418 }
 						},
-						loc: { start: 3426, end: 3429 }
+						loc: { start: 3416, end: 3419 }
 					},
 					directives: [],
-					loc: { start: 3422, end: 3429 }
+					loc: { start: 3412, end: 3419 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'comment',
-						loc: { start: 3432, end: 3439 }
+						loc: { start: 3422, end: 3429 }
 					},
 					arguments: [],
 					type: {
@@ -3562,21 +3543,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'String',
-								loc: { start: 3441, end: 3447 }
+								loc: { start: 3431, end: 3437 }
 							},
-							loc: { start: 3441, end: 3447 }
+							loc: { start: 3431, end: 3437 }
 						},
-						loc: { start: 3441, end: 3448 }
+						loc: { start: 3431, end: 3438 }
 					},
 					directives: [],
-					loc: { start: 3432, end: 3448 }
+					loc: { start: 3422, end: 3438 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'email',
-						loc: { start: 3451, end: 3456 }
+						loc: { start: 3441, end: 3446 }
 					},
 					arguments: [],
 					type: {
@@ -3586,21 +3567,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'String',
-								loc: { start: 3458, end: 3464 }
+								loc: { start: 3448, end: 3454 }
 							},
-							loc: { start: 3458, end: 3464 }
+							loc: { start: 3448, end: 3454 }
 						},
-						loc: { start: 3458, end: 3465 }
+						loc: { start: 3448, end: 3455 }
 					},
 					directives: [],
-					loc: { start: 3451, end: 3465 }
+					loc: { start: 3441, end: 3455 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'userName',
-						loc: { start: 3468, end: 3476 }
+						loc: { start: 3458, end: 3466 }
 					},
 					arguments: [],
 					type: {
@@ -3610,21 +3591,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'String',
-								loc: { start: 3478, end: 3484 }
+								loc: { start: 3468, end: 3474 }
 							},
-							loc: { start: 3478, end: 3484 }
+							loc: { start: 3468, end: 3474 }
 						},
-						loc: { start: 3478, end: 3485 }
+						loc: { start: 3468, end: 3475 }
 					},
 					directives: [],
-					loc: { start: 3468, end: 3485 }
+					loc: { start: 3458, end: 3475 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'title',
-						loc: { start: 3488, end: 3493 }
+						loc: { start: 3478, end: 3483 }
 					},
 					arguments: [],
 					type: {
@@ -3634,21 +3615,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'String',
-								loc: { start: 3495, end: 3501 }
+								loc: { start: 3485, end: 3491 }
 							},
-							loc: { start: 3495, end: 3501 }
+							loc: { start: 3485, end: 3491 }
 						},
-						loc: { start: 3495, end: 3502 }
+						loc: { start: 3485, end: 3492 }
 					},
 					directives: [],
-					loc: { start: 3488, end: 3502 }
+					loc: { start: 3478, end: 3492 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'rating',
-						loc: { start: 3505, end: 3511 }
+						loc: { start: 3495, end: 3501 }
 					},
 					arguments: [],
 					type: {
@@ -3658,21 +3639,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'Int',
-								loc: { start: 3513, end: 3516 }
+								loc: { start: 3503, end: 3506 }
 							},
-							loc: { start: 3513, end: 3516 }
+							loc: { start: 3503, end: 3506 }
 						},
-						loc: { start: 3513, end: 3517 }
+						loc: { start: 3503, end: 3507 }
 					},
 					directives: [],
-					loc: { start: 3505, end: 3517 }
+					loc: { start: 3495, end: 3507 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'createdAt',
-						loc: { start: 3520, end: 3529 }
+						loc: { start: 3510, end: 3519 }
 					},
 					arguments: [],
 					type: {
@@ -3682,21 +3663,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'DateTime',
-								loc: { start: 3531, end: 3539 }
+								loc: { start: 3521, end: 3529 }
 							},
-							loc: { start: 3531, end: 3539 }
+							loc: { start: 3521, end: 3529 }
 						},
-						loc: { start: 3531, end: 3540 }
+						loc: { start: 3521, end: 3530 }
 					},
 					directives: [],
-					loc: { start: 3520, end: 3540 }
+					loc: { start: 3510, end: 3530 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'updatedAt',
-						loc: { start: 3543, end: 3552 }
+						loc: { start: 3533, end: 3542 }
 					},
 					arguments: [],
 					type: {
@@ -3706,58 +3687,58 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'DateTime',
-								loc: { start: 3554, end: 3562 }
+								loc: { start: 3544, end: 3552 }
 							},
-							loc: { start: 3554, end: 3562 }
+							loc: { start: 3544, end: 3552 }
 						},
-						loc: { start: 3554, end: 3563 }
+						loc: { start: 3544, end: 3553 }
 					},
 					directives: [],
-					loc: { start: 3543, end: 3563 }
+					loc: { start: 3533, end: 3553 }
 				}
 			],
-			loc: { start: 3406, end: 3565 }
+			loc: { start: 3396, end: 3555 }
 		},
 		{
 			kind: 'ObjectTypeDefinition',
 			name: {
 				kind: 'Name',
 				value: 'Query',
-				loc: { start: 3571, end: 3576 }
+				loc: { start: 3561, end: 3566 }
 			},
 			interfaces: [],
 			directives: [],
 			fields: [],
-			loc: { start: 3566, end: 3576 }
+			loc: { start: 3556, end: 3566 }
 		},
 		{
 			kind: 'ObjectTypeDefinition',
 			name: {
 				kind: 'Name',
 				value: 'Mutation',
-				loc: { start: 3583, end: 3591 }
+				loc: { start: 3573, end: 3581 }
 			},
 			interfaces: [],
 			directives: [],
 			fields: [],
-			loc: { start: 3578, end: 3591 }
+			loc: { start: 3568, end: 3581 }
 		},
 		{
 			kind: 'ScalarTypeDefinition',
 			name: {
 				kind: 'Name',
 				value: 'DateTime',
-				loc: { start: 3600, end: 3608 }
+				loc: { start: 3590, end: 3598 }
 			},
 			directives: [],
-			loc: { start: 3593, end: 3608 }
+			loc: { start: 3583, end: 3598 }
 		},
 		{
 			kind: 'ObjectTypeDefinition',
 			name: {
 				kind: 'Name',
 				value: 'Aggregate',
-				loc: { start: 3615, end: 3624 }
+				loc: { start: 3605, end: 3614 }
 			},
 			interfaces: [],
 			directives: [],
@@ -3767,7 +3748,7 @@ export const typeDefs = {
 					name: {
 						kind: 'Name',
 						value: 'count',
-						loc: { start: 3629, end: 3634 }
+						loc: { start: 3619, end: 3624 }
 					},
 					arguments: [],
 					type: {
@@ -3777,24 +3758,24 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'Int',
-								loc: { start: 3636, end: 3639 }
+								loc: { start: 3626, end: 3629 }
 							},
-							loc: { start: 3636, end: 3639 }
+							loc: { start: 3626, end: 3629 }
 						},
-						loc: { start: 3636, end: 3640 }
+						loc: { start: 3626, end: 3630 }
 					},
 					directives: [],
-					loc: { start: 3629, end: 3640 }
+					loc: { start: 3619, end: 3630 }
 				}
 			],
-			loc: { start: 3610, end: 3642 }
+			loc: { start: 3600, end: 3632 }
 		},
 		{
 			kind: 'ObjectTypeDefinition',
 			name: {
 				kind: 'Name',
 				value: 'Connection',
-				loc: { start: 3649, end: 3659 }
+				loc: { start: 3639, end: 3649 }
 			},
 			interfaces: [],
 			directives: [],
@@ -3804,7 +3785,7 @@ export const typeDefs = {
 					name: {
 						kind: 'Name',
 						value: 'aggregate',
-						loc: { start: 3664, end: 3673 }
+						loc: { start: 3654, end: 3663 }
 					},
 					arguments: [],
 					type: {
@@ -3814,24 +3795,24 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'Aggregate',
-								loc: { start: 3675, end: 3684 }
+								loc: { start: 3665, end: 3674 }
 							},
-							loc: { start: 3675, end: 3684 }
+							loc: { start: 3665, end: 3674 }
 						},
-						loc: { start: 3675, end: 3685 }
+						loc: { start: 3665, end: 3675 }
 					},
 					directives: [],
-					loc: { start: 3664, end: 3685 }
+					loc: { start: 3654, end: 3675 }
 				}
 			],
-			loc: { start: 3644, end: 3687 }
+			loc: { start: 3634, end: 3677 }
 		},
 		{
 			kind: 'ObjectTypeDefinition',
 			name: {
 				kind: 'Name',
 				value: 'Variant',
-				loc: { start: 3693, end: 3700 }
+				loc: { start: 3683, end: 3690 }
 			},
 			interfaces: [],
 			directives: [],
@@ -3841,7 +3822,7 @@ export const typeDefs = {
 					name: {
 						kind: 'Name',
 						value: 'id',
-						loc: { start: 3705, end: 3707 }
+						loc: { start: 3695, end: 3697 }
 					},
 					arguments: [],
 					type: {
@@ -3851,21 +3832,21 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'ID',
-								loc: { start: 3709, end: 3711 }
+								loc: { start: 3699, end: 3701 }
 							},
-							loc: { start: 3709, end: 3711 }
+							loc: { start: 3699, end: 3701 }
 						},
-						loc: { start: 3709, end: 3712 }
+						loc: { start: 3699, end: 3702 }
 					},
 					directives: [],
-					loc: { start: 3705, end: 3712 }
+					loc: { start: 3695, end: 3702 }
 				},
 				{
 					kind: 'FieldDefinition',
 					name: {
 						kind: 'Name',
 						value: 'name',
-						loc: { start: 3715, end: 3719 }
+						loc: { start: 3705, end: 3709 }
 					},
 					arguments: [],
 					type: {
@@ -3875,18 +3856,18 @@ export const typeDefs = {
 							name: {
 								kind: 'Name',
 								value: 'String',
-								loc: { start: 3721, end: 3727 }
+								loc: { start: 3711, end: 3717 }
 							},
-							loc: { start: 3721, end: 3727 }
+							loc: { start: 3711, end: 3717 }
 						},
-						loc: { start: 3721, end: 3728 }
+						loc: { start: 3711, end: 3718 }
 					},
 					directives: [],
-					loc: { start: 3715, end: 3728 }
+					loc: { start: 3705, end: 3718 }
 				}
 			],
-			loc: { start: 3688, end: 3730 }
+			loc: { start: 3678, end: 3720 }
 		}
 	],
-	loc: { start: 0, end: 3731 }
+	loc: { start: 0, end: 3721 }
 } as unknown as DocumentNode;

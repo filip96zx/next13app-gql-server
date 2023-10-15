@@ -14,7 +14,7 @@ input ProductWhereInput {
 	id: ID
 }
 input ProductRelatedWhereInput {
-	id: ID
+	productName: String
 }
 
 enum SortOrder {
@@ -45,7 +45,6 @@ extend type Query {
 	productsRelated(
 		where: ProductRelatedWhereInput
 		skip: Int
-		orderBy: OrderByInput
 		first: Int
 	): [Product!]!
 	productsConnection(where: ProductWhereInput): Connection!

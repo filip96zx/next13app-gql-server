@@ -220,7 +220,7 @@ export type ProductratingsArgs = {
 };
 
 export type ProductRelatedWhereInput = {
-	id?: InputMaybe<Scalars['ID']['input']>;
+	productName?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type ProductWhereInput = {
@@ -292,7 +292,6 @@ export type QueryproductsConnectionArgs = {
 
 export type QueryproductsRelatedArgs = {
 	first?: InputMaybe<Scalars['Int']['input']>;
-	orderBy?: InputMaybe<OrderByInput>;
 	skip?: InputMaybe<Scalars['Int']['input']>;
 	where?: InputMaybe<ProductRelatedWhereInput>;
 };
