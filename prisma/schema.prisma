@@ -19,6 +19,7 @@ model Product {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   averageRating Float @default(0)
+  ratingsCount  Int @default(0)
   categories  ProductCategory[]
   collections ProductCollection[]
   ratings     Rating[]
@@ -30,6 +31,8 @@ model Category{
   id          String @id @default(cuid())
   name        String
   slug        String
+  imageId     String
+  image       Image @relation(fields: [imageId], references: [id]) 
   products    ProductCategory[]
 }
 
@@ -106,6 +109,7 @@ model Image{
   updatedAt   DateTime @updatedAt
   products    ProductImage[] 
   collections CollectionImage[]
+  categories  Category[]
 }
 
 model ProductImage{
