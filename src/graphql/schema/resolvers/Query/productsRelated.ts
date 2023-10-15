@@ -15,6 +15,7 @@ export const productsRelated: NonNullable<
 	if (!where?.productName) {
 		return [];
 	}
+	const productName = where.productName;
 
 	const products = await ctx.prisma.product.findMany({
 		include: { collections: { include: { collection: true } } }
@@ -24,15 +25,20 @@ export const productsRelated: NonNullable<
 			...p,
 			collectionsSlugs: p.collections.map((c) => c.collection.slug)
 		})),
-		query: where.productName
+		query: productName
 	})) as unknown as Array<{ document: Product }>;
 
-	return data
-		.slice(
-			skip || undefined,
-			skip && first ? skip + first : undefined
+	const filteredData = data
+		.filter(
+			({ document }) =>
+				!document.name
+					.toLocaleLowerCase()
+					.includes(productName.toLocaleLowerCase())
 		)
+		.slice(skip || undefined, first ? skip || 0 + first : undefined)
 		.map(({ document }) => ({
 			...parseProductToProductWithNotNullableLists(document)
 		}));
+
+	return filteredData;
 };
