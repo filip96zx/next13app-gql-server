@@ -34,7 +34,6 @@ export async function updateProductAverageRating(productId: string) {
 		include: { ratings: true }
 	});
 	const ratings = product?.ratings ?? [];
-	console.log(product?.ratings, product);
 	const averageRating =
 		ratings.length === 0
 			? 0
