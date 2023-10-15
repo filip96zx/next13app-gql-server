@@ -1,5 +1,4 @@
 import Typesense from 'typesense/src/Typesense';
-import fs from 'fs/promises';
 
 if (!process.env.TYPESENSE_API_KEY)
 	throw new Error('No API key found in .env file');
@@ -16,7 +15,10 @@ let client = new Typesense.Client({
 	connectionTimeoutSeconds: 2
 });
 
-client.collections('products').delete();
+if (client.collections('products')) {
+	client.collections('products').delete();
+}
+
 client.collections().create({
 	name: 'products',
 	fields: [

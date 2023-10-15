@@ -4,6 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
+		"start": "node --loader tsx --require tsx/cjs src/server.ts",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"codegen": "graphql-codegen --config .graphqlrc.ts -w",
 		"postinstall": "pnpm codegen",
