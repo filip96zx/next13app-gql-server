@@ -6,7 +6,7 @@ if (!process.env.TYPESENSE_API_KEY)
 let client = new Typesense.Client({
 	nodes: [
 		{
-			host: 'localhost', // For Typesense Cloud use xxx.a1.typesense.net
+			host: process.env.TYPESENSE_URL!, // For Typesense Cloud use xxx.a1.typesense.net
 			port: 8108, // For Typesense Cloud use 443
 			protocol: 'http' // For Typesense Cloud use https
 		}
@@ -15,29 +15,37 @@ let client = new Typesense.Client({
 	connectionTimeoutSeconds: 2
 });
 
-if (client.collections('products')) {
-	client.collections('products').delete();
-}
-
-client.collections().create({
-	name: 'products',
-	fields: [
-		{ name: 'name', type: 'string' },
-		{ name: 'collectionsSlugs', type: 'string[]', facet: true },
-		{ name: 'averageRating', type: 'float' },
-		{
-			name: 'embedding',
-			type: 'float[]',
-			embed: {
-				from: ['name', 'collectionsSlugs'],
-				model_config: {
-					model_name: 'ts/all-MiniLM-L12-v2'
+const initCollection = () => {
+	if (client.collections('products')) {
+		client.collections('products').delete();
+	}
+	try {
+		client.collections().create({
+			name: 'products',
+			fields: [
+				{ name: 'name', type: 'string' },
+				{ name: 'collectionsSlugs', type: 'string[]', facet: true },
+				{ name: 'averageRating', type: 'float' },
+				{
+					name: 'embedding',
+					type: 'float[]',
+					embed: {
+						from: ['name', 'collectionsSlugs'],
+						model_config: {
+							model_name: 'ts/all-MiniLM-L12-v2'
+						}
+					}
 				}
-			}
-		}
-	],
-	default_sorting_field: 'averageRating'
-});
+			],
+			default_sorting_field: 'averageRating'
+		});
+	} catch (e) {
+		console.log(e);
+		initCollection();
+	}
+};
+
+initCollection();
 
 let productCache: any;
 export async function getData({

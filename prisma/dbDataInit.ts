@@ -158,4 +158,4 @@ const initDb = async (assetsUrl?: string) => {
 	);
 };
 
-await initDb();
+await initDb('/assets');
